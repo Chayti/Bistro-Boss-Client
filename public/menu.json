@@ -1,0 +1,39 @@
+[
+    {
+        "name":"Roast Duck Breast",
+        "recipe":"Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-4-105x105.jpg",
+        "price":14.50
+
+    },
+    {
+        "name":"Tuna Niçoise",
+        "recipe":"Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-105x105.jpg",
+        "price":14.50
+    },
+    {
+        "name":"Escalope de Veau",
+        "recipe":"Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-105x105.jpg",
+        "price":14.50
+    },
+    {
+        "name":"Chicken and Walnut Salad",
+        "recipe":"Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-105x105.jpg",
+        "price":14.50
+    },
+    {
+        "name":"Fish Parmentier",
+        "recipe":"Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-105x105.jpg",
+        "price":14.50
+    },
+    {
+        "name":"Roasted Pork Belly",
+        "recipe":"Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
+        "price":14.50
+    }
+]
