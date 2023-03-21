@@ -4,20 +4,22 @@ import Title from '../Title/Title';
 const Testimonials = () => {
     
     return (
-        <div>
+        <div className='my-20'>
          <Title type ={{smallHeading:'What Our Clients Say',title:'Testimonials', border:'black'}}></Title>
 
-{/* //happy */}
+
          <div className="carousel w-full">
             <div id="slide1" className="carousel-item relative w-full">
-               <div className='mx-auto'>
-               <img src="https://fbsymbols.net/wp-content/uploads/2022/11/quotation-mark-symbol.png" className="w-24" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dignissimos omnis consequatur itaque illo id, libero repudiandae, beatae debitis incidunt reprehenderit quo molestias aspernatur sit deserunt rerum voluptatibus animi. Pariatur?</p>
+               <div className='w-96 mx-auto text-center'>
+               <img className="mx-auto w-24" src="https://fbsymbols.net/wp-content/uploads/2022/11/quotation-mark-symbol.png" />
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dignissimos omnis consequatur itaque illo id, libero repudiandae</p>
+                <br />
+                <small className='text-yellow-700 uppercase text-2xl'>John Doe</small>
                </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                 
-                <a href="#slide4" className="btn btn-circle">❮</a> 
-                <a href="#slide2" className="btn btn-circle">❯</a>
+                <a href="#slide4" className="btn bg-transparent border-0 text-black">❮</a> 
+                <a href="#slide2" className="btn bg-transparent border-0 text-black">❯</a>
                 </div>
             </div> 
             <div id="slide2" className="carousel-item relative w-full">

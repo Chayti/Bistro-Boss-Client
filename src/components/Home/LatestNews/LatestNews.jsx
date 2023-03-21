@@ -4,7 +4,7 @@ import image from '../../../assets/asset/latestnews.jpg'
 import Title from '../Title/Title';
 const LatestNews = () => {
     return (
-        <div className='latest-news p-20 relative text-white mt-20 '>
+        <div className='latest-news p-12 relative text-white mt-20'>
            
            <Title type ={{smallHeading:'From our blog',title:'Latest News', border:'white'}}></Title>
 
