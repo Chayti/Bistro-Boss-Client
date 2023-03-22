@@ -4,7 +4,6 @@ import Title from '../../shared/Title/Title';
 const Testimonials = () => {
 
     return (
-<<<<<<< HEAD
         <div>
             <Title type={{ smallHeading: 'What Our Clients Say', title: 'Testimonials', border: 'black' }}></Title>
 
@@ -20,24 +19,6 @@ const Testimonials = () => {
                         <a href="#slide4" className="btn btn-circle">❮</a>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
-=======
-        <div className='my-20'>
-         <Title type ={{smallHeading:'What Our Clients Say',title:'Testimonials', border:'black'}}></Title>
-
-
-         <div className="carousel w-full">
-            <div id="slide1" className="carousel-item relative w-full">
-               <div className='w-96 mx-auto text-center'>
-               <img className="mx-auto w-24" src="https://fbsymbols.net/wp-content/uploads/2022/11/quotation-mark-symbol.png" />
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dignissimos omnis consequatur itaque illo id, libero repudiandae</p>
-                <br />
-                <small className='text-yellow-700 uppercase text-2xl'>John Doe</small>
-               </div>
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                
-                <a href="#slide4" className="btn bg-transparent border-0 text-black">❮</a> 
-                <a href="#slide2" className="btn bg-transparent border-0 text-black">❯</a>
->>>>>>> 660f65cb52807ff0d566afa927057b8bcda29791
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
                     <img src="/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
