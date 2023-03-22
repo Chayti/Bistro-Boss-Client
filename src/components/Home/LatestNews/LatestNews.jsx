@@ -5,7 +5,13 @@ import Title from '../../shared/Title/Title';
 
 const LatestNews = () => {
     return (
+<<<<<<< HEAD
         <div className='latest-news p-20 relative text-white mt-20 '>
+=======
+        <div className='latest-news p-12 relative text-white mt-20'>
+           
+           <Title type ={{smallHeading:'From our blog',title:'Latest News', border:'white'}}></Title>
+>>>>>>> 660f65cb52807ff0d566afa927057b8bcda29791
 
             <Title type={{ smallHeading: 'From our blog', title: 'Latest News', border: 'white' }}></Title>
 
