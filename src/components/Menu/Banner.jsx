@@ -1,11 +1,12 @@
 import React from 'react';
-import './Banner.css';
+import './Menu.css';
 
 export function Banner() {
 
+
     return (
         <div className="container-lg">
-            <div className="bg-img flex justify-center items-center">
+            <div className="top-banner bg-img flex justify-center items-center">
                 <div className='section text-style text-white flex justify-center items-center font-bold'>
                     <div className="text-center">
                         <h1 className='uppercase text-7xl '>Our Menu</h1>
