@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import {Card} from '../../shared/Card/Card'
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([]);
 
@@ -17,14 +17,11 @@ const Menu = () => {
       <div class="grid grid-cols-2 gap-5 px-10">
         
           {menuItems.map((menuItem) => (
-            <div className="flex space-x-4">
-              <img style={{borderRadius:"0 50% 50%"}} src={menuItem.image} alt="" />
-              <div className="items-center ">
-              <h1 className="uppercase font-serif">{menuItem.name} ------------------</h1>
-              <p className="text-gray-500">{menuItem.recipe}</p>
-              </div>
-              <p className="text-yellow-700">${menuItem.price}</p>
-            </div>
+             <div className="flex space-x-4">
+             <Card>
+                 {menuItem}
+             </Card>
+         </div>
           ))}
         
       </div>
