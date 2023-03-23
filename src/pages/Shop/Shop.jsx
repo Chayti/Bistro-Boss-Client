@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Header from '../../components/shared/Header/Header';
+import Banner from '../../components/Shop/Banner/Banner';
+
 const Shop = () => {
     return (
         <div>
-            <h1>This is shop</h1>
+            <Header></Header>
+          <Banner></Banner>
         </div>
     );
 };

@@ -43,12 +43,9 @@ const Header = () => {
                         <li><NavLink to="/">HOME</NavLink></li>
                         <li><NavLink to="/menu">OUR MENU</NavLink></li>
                         <li tabIndex={0}>
-                            <a>
-                                SHOP
-                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-                            </a>
+                           <NavLink to="/shop">OUR SHOP</NavLink>
                             <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
+                                 <NavLink to="/shop/pizza">Pizza</NavLink>
                                 <li><a>Submenu 2</a></li>
                             </ul>
                         </li>
