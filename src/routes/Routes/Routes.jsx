@@ -4,7 +4,7 @@ import Main from '../../layout/Main';
 import Home from '../../pages/Home/Home';
 import Menu from '../../pages/Menu/Menu';
 import Shop from '../../pages/Shop/Shop';
-
+// home
 const routes = createBrowserRouter([
   {
     path: "/",
