@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Title = ({type}) => {
+    console.log(type.border)
     return (
         <div>
             <i className='flex justify-center relative z-10 mb-2 text-yellow-600 mt-20'>---{type?.smallHeading}---</i>

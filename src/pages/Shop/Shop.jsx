@@ -1,13 +1,16 @@
 import React from 'react';
-
-import Header from '../../components/shared/Header/Header';
 import Banner from '../../components/Shop/Banner/Banner';
+import shopData from '../../components/Shop/shopData/shopData';
+import Tabs from '../../components/Shop/Tabs/Tabs';
+
 
 const Shop = () => {
+    
     return (
         <div>
-            <Header></Header>
+           
           <Banner></Banner>
+          <Tabs shopData={shopData}></Tabs>
         </div>
     );
 };

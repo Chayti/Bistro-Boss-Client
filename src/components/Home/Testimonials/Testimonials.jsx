@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Title from '../../shared/Title/Title';
-import { FaStar, FaQuoteRight } from 'react-icons/fa';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import {  FaQuoteRight } from 'react-icons/fa';
+import { Navigation} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';

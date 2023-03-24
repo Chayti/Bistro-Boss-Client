@@ -43,11 +43,11 @@ const Header = () => {
                         <li><NavLink to="/">HOME</NavLink></li>
                         <li><NavLink to="/menu">OUR MENU</NavLink></li>
                         <li tabIndex={0}>
-                           <NavLink to="/shop">OUR SHOP</NavLink>
-                            <ul className="p-2">
-                                 <NavLink to="/shop/pizza">Pizza</NavLink>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
+                        <NavLink to="/shop">OUR SHOP</NavLink>
+                            {/* <ul className="p-2">
+                                 <NavLink to="/salad">Salad</NavLink>
+                                 <NavLink to="/pizza">Pizza</NavLink>
+                            </ul> */}
                         </li>
                         <li><a>RESERVATION</a></li>
                         <li><a>CONTACT US</a></li>

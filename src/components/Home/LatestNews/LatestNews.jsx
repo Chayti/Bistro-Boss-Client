@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../../../assets/asset/latestnews.jpg'
+import image from '../../../assets/asset/home/latestnews.jpg'
 import Title from '../../shared/Title/Title';
 import '../../shared/css/Common.css' /*bg-fixed*/
 const LatestNews = () => {
