@@ -1,5 +1,5 @@
 import React from 'react';
-import './Banner.css'
+import '../css/Home.css'
 const Banner = () => {
     return (
         <div className="text-center text-white flex relative top-0 justify-center items-center min-h-[700px] bg-image">
