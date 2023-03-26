@@ -1,11 +1,10 @@
 import React from 'react';
-import './LatestNews.css'
-import image from '../../../assets/asset/latestnews.jpg'
+import image from '../../../assets/asset/home/latestnews.jpg'
 import Title from '../../shared/Title/Title';
-
+import '../../shared/css/Common.css' /*bg-fixed*/
 const LatestNews = () => {
     return (
-        <div className='latest-news p-20 relative text-white mt-20 '>
+        <div className='bg-fixed latest-news p-20 pt-10 relative text-white mt-20 '>
 
             <Title type={{ smallHeading: 'From our blog', title: 'Latest News', border: 'white' }}></Title>
 

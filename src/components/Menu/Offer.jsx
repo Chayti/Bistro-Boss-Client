@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../shared/Card';
+import { Card } from '../shared/Card/Card';
 import Title from '../shared/Title/Title';
 
 export const Offer = ({ items }) => {
