@@ -4,9 +4,10 @@ const Tabs = ({ shopData }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (
-    <div className="mt-14">
-      <div className="flex justify-evenly space-x-3 border-b ">
-        {shopData.map((tab, index) => { /* create button for each data. */
+    <div className="mt-14 md:w-10/12 md:mx-auto">
+      <div className="flex justify-center space-x-3 md:space-x-8">
+        {/* create button for each data. */}
+        {shopData.map((tab, index) => {
           return (
             <button
               type="button"

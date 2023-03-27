@@ -2,20 +2,23 @@
     {
         "name":"Caeser Salad",
         "recipe":"Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.",
-        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg"
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "price": 14.50
         
 
     },
     {
         "name":"Cherry Pie",
         "recipe":"Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.",
-        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg"
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "price": 14.50
        
     },
     {
         "name":"Apple Strudel",
         "recipe":"Lettuce, Eggs, Parmesan Cheese, Chicken Breast Fillets.",
-        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg"
+        "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "price": 14.50
       
     }
     
