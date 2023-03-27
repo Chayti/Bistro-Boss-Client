@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Title from '../shared/Title/Title';
-import {  FaQuoteRight } from 'react-icons/fa';
+import {  FaQuoteLeft } from 'react-icons/fa';
 import { Navigation} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -27,11 +27,11 @@ const Testimonials = () => {
             {
                 reviews?.map(review =>
                     <SwiperSlide>
-                     <div className='w-full flex justify-center mb-10'>
+                     <div className='w-8/12 flex mx-auto mb-10'>
                        <div className='text-center'>
-                       <FaQuoteRight className='flex mx-auto text-black text-7xl my-10'/> 
+                       <FaQuoteLeft className='flex mx-auto text-black text-7xl my-10'/> 
                        <p>{review.reviews}</p>
-                       <small className='text-yellow-700 uppercase'>{review.name}</small>
+                       <small className='text-yellow-700 uppercase text-2xl'>{review.name}</small>
                        </div>
                      </div>
                     </SwiperSlide>)

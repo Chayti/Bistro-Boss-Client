@@ -11,7 +11,7 @@ const Salad = () => {
    
     return (
         <div>
-            <div className="grid grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center">
+            <div className="grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center">
             {
                     items?.salad?.map((item) => 
                     <Cards>

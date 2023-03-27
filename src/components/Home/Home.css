@@ -1,17 +1,44 @@
 
-/* Latest News */
-.latest-news{
-    background-image: url('../../assets/asset/home/latestnews.jpg');
+/* Category */
+.slide:after{
+  content:'';
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  height:100%;
+  background: linear-gradient(to bottom,rgba(66, 65, 65, 0.24) 0%,rgba(140, 135, 135, 0) 100%);
+
+}
+
+.container{
+  position: relative;
   
 }
+
+.text-overlay{
+  position: absolute;
+  color: white;
+  font-family: 'Cinzel', serif;
+  text-shadow: 2px 2px black;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* About */
 .about-image{
     background-image: url('../../assets/asset/home/chef-service.jpg');
-    min-height: 400px;
+    height: 500px;
     
 }
 
 /* Latest News */
+.latest-news{
+  background-image: url('../../assets/asset/home/latestnews.jpg');
+
+}
+
 .latest-news:after {
     content:'';
     position:absolute;
@@ -21,30 +48,4 @@
     height:100%;
     background: linear-gradient(to bottom,rgba(0,0,0,.5) 0%,rgba(0,0,0,.9) 100%);
   
-  }
-/* Category */
-  .slide:after{
-    content:'';
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:100%;
-    height:100%;
-    background: linear-gradient(to bottom,rgba(66, 65, 65, 0.24) 0%,rgba(140, 135, 135, 0) 100%);
-  
-  }
-
-  .container{
-    position: relative;
-    
-  }
-
-  .text-overlay{
-    position: absolute;
-    color: white;
-    font-family: 'Cinzel', serif;
-    text-shadow: 2px 2px black;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }

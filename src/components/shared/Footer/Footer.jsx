@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='w-56'>
             <h3 className='text-center mb-5'>CONTACT US</h3>
             <p className='text-sm text-center'>
-                123 ABC Street, Uni 21, Bangladesh
+                 ABC Street, Uni 21, Bangladesh
                 +88 012 345 6789
                 <br />
                 Mon - Fri: 08:00 - 22:00

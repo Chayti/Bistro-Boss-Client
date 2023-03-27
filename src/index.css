@@ -10,7 +10,12 @@
   background-attachment: fixed;
 
 }
+.text{
 
+  font-family: 'Cinzel', serif;
+  
+
+}
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
