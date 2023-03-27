@@ -1,10 +1,9 @@
 import React from 'react';
-import useItems from '../../../Hooks/useItems';
-import Cards from '../Cards/Cards';
+import useItems from '../../Hooks/useItems';
+import Cards from '../shared/Card/Card2';
 
-
-const Salad = () => {
-    const [items,,loading] = useItems();
+const Desserts = () => {
+    const [items,loading] = useItems();
     if(loading){
         return <div>loading...</div>
     }
@@ -13,7 +12,7 @@ const Salad = () => {
         <div>
             <div className="grid grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center">
             {
-                    items?.salad?.map((item) => 
+                    items?.dessert?.map((item) => 
                     <Cards>
                         {item}
                     </Cards>
@@ -25,4 +24,4 @@ const Salad = () => {
     );
 };
 
-export default Salad;
+export default Desserts;

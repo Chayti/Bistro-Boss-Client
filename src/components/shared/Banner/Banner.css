@@ -1,0 +1,13 @@
+/*Home Banner */
+.bg-home-image{
+    background-image: url('../../../assets/asset/home/banner.jpg');
+    background-size: cover;
+    
+}
+
+.text-style{
+    text-shadow: rgb(0, 0, 0) 23.0533px -2.71px 17.4091px;
+    font-family: 'Cinzel', serif;
+    
+
+}

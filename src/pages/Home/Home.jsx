@@ -1,12 +1,13 @@
 import React from 'react';
-import About from '../../components/Home/About/About';
-import Banner from '../../components/Home/Banner/Banner';
-import Category from '../../components/Home/Category/Category'
-import CallUs from '../../components/Home/CallUs/CallUs';
-import ChefRecommends from '../../components/Home/ChefReccommends/ChefRecommends';
-import LatestNews from '../../components/Home/LatestNews/LatestNews';
-import Menu from '../../components/Home/Menu/Menu';
-import Testimonials from '../../components/Home/Testimonials/Testimonials';
+import About from '../../components/Home/About';
+
+import Category from '../../components/Home/Category'
+import CallUs from '../../components/Home/CallUs';
+import ChefRecommends from '../../components/Home/ChefRecommends';
+import LatestNews from '../../components/Home/LatestNews';
+import Menu from '../../components/Home/Menu';
+import Testimonials from '../../components/Home/Testimonials';
+import Banner from '../../components/shared/Banner/Banner';
 
 
 
@@ -15,7 +16,7 @@ const Home = () => {
     return (
         <div >
            
-          <Banner></Banner>
+          <Banner banner = {{title: 'Culinary Cloud', description:'ABC Main Street, Uni 21, Bangladesh'}}></Banner>
            <Category></Category>
            <About></About>
            <Menu></Menu>

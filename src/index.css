@@ -3,6 +3,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.bg-fixed{
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
