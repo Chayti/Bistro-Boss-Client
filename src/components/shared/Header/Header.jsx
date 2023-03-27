@@ -26,7 +26,7 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1 active-style">
                         <li><NavLink  to="/">HOME</NavLink></li>
                         <li><NavLink to="/menu">OUR MENU</NavLink></li>
-                        <li tabIndex={0}>
+                        <li>
                         <NavLink to="/shop">OUR SHOP</NavLink>
                         </li>
                         <li><NavLink to="/reservation">RESERVATION</NavLink></li>
