@@ -3,11 +3,12 @@
 }
 
 .active-style a.active{
+    background-color: transparent;
+   color: rgba(254, 240, 138, 0.708);
     
-    background-color: rgba(254, 240, 138, 0.708);
-    color: white;
 }
 .active-style a:focus{
-    background-color: rgba(253, 223, 71, 0.708);
-    color: white;
+    background-color: transparent;
+    color: rgba(253, 223, 71, 0.983);
+    
 }
