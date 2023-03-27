@@ -1,21 +1,20 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
-const useItems= ()=>{
+const useItems = () => {
     const [items, setItems] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch('menu1.json')
             .then(res => res.json())
-            .then(data => 
-                {
-                    setItems(data)
-                    setLoading(false)
-                }
+            .then(data => {
+                setItems(data)
+                setLoading(false)
+            }
             )
-    }, [items])
+    }, [])
 
-    return [items,loading];
+    return [items, loading];
 };
 
 export default useItems;

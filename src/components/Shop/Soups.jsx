@@ -2,8 +2,8 @@ import React from 'react';
 import useItems from '../../Hooks/useItems';
 import Cards from '../shared/Card/Card2';
 const Soups = () => {
-    const [items,loading] = useItems();
-    if(loading){
+    const [items, loading] = useItems();
+    if (loading) {
         return <div>loading...</div>
     }
     console.log(items)
@@ -16,7 +16,7 @@ const Soups = () => {
                         {item}
                     </Cards>
                     )
-            }
+                }
 
             </div>
         </div>

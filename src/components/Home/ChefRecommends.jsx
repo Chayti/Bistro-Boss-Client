@@ -10,7 +10,7 @@ const ChefRecommends = () => {
             .then(res => res.json())
             .then(data => setSpecial(data))
     }, [])
-    console.log(specials)
+    // console.log(specials)
     return (
         <div>
 
@@ -20,7 +20,8 @@ const ChefRecommends = () => {
             <div className="grid grid-cols-3 gap-2 mt-10 place-items-center md:w-10/12 md:mx-auto">
 
                 {
-                    specials.map((special) => <Chef
+                    specials.map((special, index) => <Chef
+                        key={index}
                         special={special}
                     ></Chef>)
                 }

@@ -3,8 +3,8 @@ import useItems from '../../Hooks/useItems';
 import Cards from '../shared/Card/Card2';
 
 const Drinks = () => {
-    const [items,loading] = useItems();
-    if(loading){
+    const [items, loading] = useItems();
+    if (loading) {
         return <div>loading...</div>
     }
     return (
@@ -16,7 +16,7 @@ const Drinks = () => {
                         {item}
                     </Cards>
                     )
-            }
+                }
 
             </div>
         </div>

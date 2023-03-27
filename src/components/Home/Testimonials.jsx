@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Title from '../shared/Title/Title';
 import {  FaQuoteLeft } from 'react-icons/fa';
 import { Navigation} from 'swiper';
@@ -9,14 +9,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
-    
+
 
     useEffect(() => {
-      fetch("reviews.json")
-        .then((res) => res.json())
-        .then((data) => setReviews(data));
+        fetch("reviews.json")
+            .then((res) => res.json())
+            .then((data) => setReviews(data));
     }, []);
-   
+
 
     return (
         <div>
