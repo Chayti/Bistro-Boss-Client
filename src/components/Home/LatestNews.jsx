@@ -1,7 +1,7 @@
 import React from 'react';
-import image from '../../../assets/asset/home/latestnews.jpg'
-import Title from '../../shared/Title/Title';
-import '../../shared/css/Common.css' /*bg-fixed*/
+import image from '../../assets/asset/home/latestnews.jpg'
+import Title from '../shared/Title/Title';
+
 const LatestNews = () => {
     return (
         <div className='bg-fixed latest-news p-20 pt-10 relative text-white mt-20 '>

@@ -1,16 +1,16 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import image1 from '../../../assets/asset/home/slide1.jpg'
-import image2 from '../../../assets/asset/home/slide-2.jpg'
-import image3 from '../../../assets/asset/home/slide-3.jpg'
-import image4 from '../../../assets/asset/home/slide-4.jpg'
-import image5 from '../../../assets/asset/home/slide-5.jpg'
+import image1 from '../../assets/asset/home/slide1.jpg'
+import image2 from '../../assets/asset/home/slide-2.jpg'
+import image3 from '../../assets/asset/home/slide-3.jpg'
+import image4 from '../../assets/asset/home/slide-4.jpg'
+import image5 from '../../assets/asset/home/slide-5.jpg'
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css';
-import Title from "../../shared/Title/Title";
-import '../css/Home.css'
+import Title from '../shared/Title/Title';
+import './Home.css'
 
 const Category = () => {
   

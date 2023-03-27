@@ -1,7 +1,7 @@
 import React from 'react';
-import Banner from '../../components/Shop/Banner/Banner';
-import shopData from '../../components/Shop/shopData/shopData';
-import Tabs from '../../components/Shop/Tabs/Tabs';
+import Banner2 from '../../components/shared/Banner2/Banner2';
+import shopData from '../../components/Shop/shopData';
+import Tabs from '../../components/Shop/Tabs';
 
 
 const Shop = () => {
@@ -9,7 +9,7 @@ const Shop = () => {
     return (
         <div>
            
-          <Banner></Banner>
+           <Banner2 banner = {{title: 'Our Shop', description:'Would you like to try a dish?', image:'bg-shop-banner'}}></Banner2>
           <Tabs shopData={shopData}></Tabs>
         </div>
     );

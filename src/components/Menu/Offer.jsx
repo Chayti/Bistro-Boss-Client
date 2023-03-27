@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from '../shared/Card/Card';
 import Title from '../shared/Title/Title';
-
+import './Menu.css'
 export const Offer = ({ items }) => {
     console.log(items)
 

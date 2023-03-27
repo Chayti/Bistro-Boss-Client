@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../shared/Card/Card';
-import '../shared/css/Common.css' /*bg-fixed*/
+import './Menu.css'
 export const Salad = ({ items }) => {
     console.log(items)
 

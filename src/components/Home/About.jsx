@@ -1,6 +1,6 @@
 import React from 'react';
-import '../css/Home.css'
-import '../../shared/css/Common.css' /*bg-fixed*/
+import './Home.css'
+
 const About = () => {
     return (
         <div className='bg-fixed about-image flex justify-center mt-20 items-center'>
