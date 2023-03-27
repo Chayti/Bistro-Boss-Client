@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Title from '../../shared/Title/Title';
+import Title from '../shared/Title/Title';
 import Chef from './Chef';
 
 const ChefRecommends = () => {

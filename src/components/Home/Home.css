@@ -1,24 +1,12 @@
-/* Banner */
-.bg-image{
-    background-image: url('../../../assets/asset/home/banner.jpg');
-    background-size: cover;
-    
-}
 
-.text-style{
-    text-shadow: rgb(0, 0, 0) 23.0533px -2.71px 17.4091px;
-    font-family: 'Cinzel', serif;
-    
-
-}
 /* Latest News */
 .latest-news{
-    background-image: url('../../../assets/asset/home/latestnews.jpg');
+    background-image: url('../../assets/asset/home/latestnews.jpg');
   
 }
 /* About */
 .about-image{
-    background-image: url('../../../assets/asset/home/chef-service.jpg');
+    background-image: url('../../assets/asset/home/chef-service.jpg');
     min-height: 400px;
     
 }

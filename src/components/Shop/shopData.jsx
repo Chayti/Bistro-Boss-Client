@@ -1,9 +1,9 @@
 import React from 'react';
-import Salad from '../../Shop/Salad/Salad'
-import Pizza from '../../Shop/Pizza/Pizza';
-import Soups from '../../Shop/Soups/Soups'
-import Desserts from '../../Shop/Desserts/Desserts';
-import Drinks from '../../Shop/Drinks/Drinks'
+import Salad from './Salad'
+import Pizza from './Pizza';
+import Soups from './Soups'
+import Desserts from './Desserts';
+import Drinks from './Drinks'
 
 const shopData = [
     {

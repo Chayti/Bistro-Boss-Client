@@ -2,11 +2,7 @@
                   shared
 ---------------------------------------------*/
 
-.bg-img{
-    height: 100vh;
-    width: 100%;
-  
-}
+
 
 .bg-img2{
     height: 80vh;
@@ -15,12 +11,7 @@
 }
 
 
-.section{
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.50) 0%,rgba(0, 0, 0, 0.50) 70%);
-    opacity: 0.8;
-    height: 80vh;
-    width: 90%;
-}
+
 
 .section2{
     background: linear-gradient(to right, rgba(0, 0, 0, 0.74) 0%,rgba(0, 0, 0, 0.74) 70%);
@@ -38,9 +29,7 @@
                   topbanner 
 ---------------------------------------------*/
 
-.top-banner{
-    background-image: url('../../assets/asset/menu/banner3.jpg');
-}
+
 
 /* ------------------------------------------
                   dessert 

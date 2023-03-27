@@ -3,8 +3,9 @@ import {useState, useEffect} from 'react';
 const useItems= ()=>{
     const [items, setItems] = useState({});
     const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        fetch('menu3.json')
+        fetch('menu1.json')
             .then(res => res.json())
             .then(data => 
                 {
@@ -14,7 +15,7 @@ const useItems= ()=>{
             )
     }, [items])
 
-    return [items, setItems,loading];
+    return [items,loading];
 };
 
 export default useItems;
