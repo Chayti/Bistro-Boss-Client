@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import './Header.css'
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
-
+//fixed
 const Header = () => {
 
     return (
