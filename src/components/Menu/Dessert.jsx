@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card } from '../shared/Card/Card';
+import Card from '../shared/Card/Card';
 import './Menu.css'
-export const Dessert = ({ items }) => {
-    console.log(items)
+const Dessert = ({ items }) => {
+    // console.log(items)
 
     return (
         <>
@@ -18,10 +18,10 @@ export const Dessert = ({ items }) => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-5 px-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-10">
                 {
-                    items?.map((item) =>
-                        <div className="flex space-x-4">
+                    items?.map((item, index) =>
+                        <div className="flex space-x-4" key={index}>
                             <Card>
                                 {item}
                             </Card>
@@ -33,3 +33,5 @@ export const Dessert = ({ items }) => {
 
     );
 };
+
+export default Dessert;

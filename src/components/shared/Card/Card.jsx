@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-export const Card = ({ children }) => {
-    console.log(children)
+const Card = ({ children }) => {
+    // console.log(children)
     const { image, name, recipe, price } = children
 
     return (
@@ -15,3 +15,5 @@ export const Card = ({ children }) => {
         </>
     );
 };
+
+export default Card;

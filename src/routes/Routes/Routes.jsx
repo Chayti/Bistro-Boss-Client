@@ -1,9 +1,10 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../layout/Main';
-import Home from '../../pages/Home/Home';
-import Menu from '../../pages/Menu/Menu';
-import Shop from '../../pages/Shop/Shop';
+import Home from '../../pages/Home';
+import Menu from '../../pages/Menu';
+import Shop from '../../pages/Shop';
+
 
 const routes = createBrowserRouter([
   {
@@ -24,13 +25,13 @@ const routes = createBrowserRouter([
       },
       {
         path: "/shop",
-        element: <Shop/>,
-     }
-   
+        element: <Shop />,
+      }
+
 
     ],
   },
-  
+
 ]);
 
 export default routes;

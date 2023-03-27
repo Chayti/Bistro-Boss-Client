@@ -13,69 +13,69 @@ import Title from '../shared/Title/Title';
 import './Home.css'
 
 const Category = () => {
-  
+
   const images = [
     {
       slide: image1,
-      name:'SALADS'
+      name: 'SALADS'
     },
     {
       slide: image2,
-      name:'SOUPS'
+      name: 'SOUPS'
     },
     {
       slide: image3,
-      name:'PIZZAS'
+      name: 'PIZZAS'
     },
     {
       slide: image4,
-      name:'DESSERTS'
+      name: 'DESSERTS'
     },
     {
       slide: image5,
-      name:'DRINKS'
+      name: 'DRINKS'
     }
   ];
   return (
     <div>
       <Title type={{ smallHeading: 'From 11:00am to 10:00pm', title: 'ORDER ONLINE', border: 'black' }}></Title>
-    <div className="flex justify-center">
-      
+      <div className="flex justify-center">
 
-     <Swiper
 
-        slidesPerView={1}
-        spaceBetween={2}
-        pagination={{
-          clickable: true,
-        }}
-        breakpoints={{
-          "@0.00": {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          "@0.75": {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          "@1.00": {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          "@1.50": {
-            slidesPerView: 4,
-            spaceBetween: 50,
-          },
-        }}
-        modules={[Pagination]}
-        className="mySwiper w-11/12"
-      >
-        {images.map((image,i) => (
-         <SwiperSlide className="slide container" ><img className="flex mx-auto" src={image.slide} alt=""  />
-         <h1 className="text-overlay text-3xl">{image.name}</h1></SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+        <Swiper
+
+          slidesPerView={1}
+          spaceBetween={2}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            "@0.00": {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            "@0.75": {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            "@1.00": {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            "@1.50": {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
+          modules={[Pagination]}
+          className="mySwiper w-11/12"
+        >
+          {images.map((image, index) => (
+            <SwiperSlide key={index} className="slide container" ><img className="flex mx-auto" src={image.slide} alt="" />
+              <h1 className="text-overlay text-3xl">{image.name}</h1></SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };

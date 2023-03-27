@@ -8,7 +8,7 @@ const LatestNews = () => {
 
             <Title type={{ smallHeading: 'From our blog', title: 'Latest News', border: 'white' }}></Title>
 
-            <div class="relative z-10 flex justify-center items-center">
+            <div className="relative z-10 flex justify-center items-center">
                 <div>
                     <img src={image} />
                 </div>

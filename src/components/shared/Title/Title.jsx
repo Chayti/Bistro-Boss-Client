@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Title = ({type}) => {
-    console.log(type.border)
+const Title = ({ type }) => {
+    // console.log(type.border)
     return (
         <div>
             <i className='flex justify-center relative z-10 mb-2 text-yellow-600 mt-20'>---{type?.smallHeading}---</i>
-              <h1 className={`relative z-10 text-3xl mx-auto uppercase text-center mb-10 border-t-4 border-b-4 py-5 w-3/12  border-${type.border}`}>{type.title}</h1> 
+            <h1 className={`relative z-10 text-3xl mx-auto uppercase text-center mb-10 border-t-4 border-b-4 py-5 w-3/12  border-${type.border}`}>{type.title}</h1>
         </div>
     );
 };

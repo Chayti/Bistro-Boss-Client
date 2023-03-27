@@ -4,21 +4,21 @@ import Cards from '../shared/Card/Card2';
 
 
 const Salad = () => {
-    const [items,loading] = useItems();
-    if(loading){
+    const [items, loading] = useItems();
+    if (loading) {
         return <div>loading...</div>
     }
-   
+
     return (
         <div>
             <div className="grid grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center">
-            {
-                    items?.salad?.map((item) => 
-                    <Cards>
-                        {item}
-                    </Cards>
+                {
+                    items?.salad?.map((item, index) =>
+                        <Cards key={index}>
+                            {item}
+                        </Cards>
                     )
-            }
+                }
 
             </div>
         </div>
