@@ -14,7 +14,7 @@ const Menu = () => {
     <div >
 
       <Title type={{ smallHeading: 'Check it out', title: 'FROM OUR MENU', border: 'black' }}></Title>
-      <div className="grid grid-cols-2 gap-5 px-10">
+      <div className="grid md:grid-cols-2 gap-5 px-10">
 
         {items.dishes.map((menuItem, index) => (
           <div className="flex space-x-4" key={index}>
