@@ -11,8 +11,8 @@ const Drinks = () => {
         <div>
             <div className="grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center">
             {
-                    items?.offer?.map((item) => 
-                    <Cards>
+                    items?.offer?.map((item, index) => 
+                    <Cards keys={index}>
                         {item}
                     </Cards>
                     )
