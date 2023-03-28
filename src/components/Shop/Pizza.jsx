@@ -11,8 +11,8 @@ const Pizza = () => {
         <div>
             <div className="grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center">
             {
-                    items?.pizza.map((item) => 
-                    <Cards>
+                    items?.pizza.map((item, index) => 
+                    <Cards keys={index}>
                         {item}
                     </Cards>
                     )

@@ -43,3 +43,7 @@
 .bg-contact-banner{
     background-image: url('../../../assets/asset/contact/banner.jpg');
 }
+
+.bg-reservation-banner{
+    background-image: url('../../../assets/asset/reservation/category-pizza.jpg');
+}
