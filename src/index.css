@@ -17,6 +17,27 @@
 
 }
 
+/* dashboard layout */
+.bg-dashboard-layout-image{
+  background-image: url('../src/assets/asset/dashboard/image-5.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.dashboard-style a.active{
+  background-color: transparent;
+ color: rgb(255, 255, 255);
+  
+}
+.dashboard-style a:focus{
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  
+}
+
+
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

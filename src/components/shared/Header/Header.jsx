@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaShoppingBag } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import './Header.css'
 // https://daisyui.com/components/navbar/
@@ -38,7 +38,15 @@ const Header = () => {
                         <li><NavLink to="/contact">CONTACT US</NavLink></li>
 
                     </ul>
-                    <a ><FaShoppingBag /></a>
+                    <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className=" m-1"><FaUserCircle/></label>
+                    <ul tabIndex={0} className="active-style dropdown-content menu p-2 shadow rounded-box w-52 border-gray-100 border-2">
+                        <li><NavLink  to="/dashboard">Dashboard</NavLink></li>
+                        <li><NavLink  to="/logout">Log out</NavLink></li>
+                       
+                    </ul>
+                    </div>
+                    
                 </div>
             </div>
         </div>

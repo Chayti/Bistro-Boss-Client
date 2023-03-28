@@ -25,8 +25,8 @@ const Testimonials = () => {
             {/* //happy */}
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
             {
-                reviews?.map(review =>
-                    <SwiperSlide>
+                reviews?.map((review,index) =>
+                    <SwiperSlide key={index} >
                      <div className='w-8/12 flex mx-auto mb-10'>
                        <div className='text-center'>
                        <FaQuoteLeft className='flex mx-auto text-black text-7xl my-10'/> 

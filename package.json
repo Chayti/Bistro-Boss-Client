@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.28.0",
     "daisyui": "^2.51.4",
     "emailjs": "^4.0.1",
     "react": "^18.2.0",

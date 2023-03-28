@@ -1,0 +1,32 @@
+[
+    {
+        "id":"104M",
+        "name": "Roast Duck Breast",
+        "price": 14.50
+    },
+    {
+        "id":"101T",
+        "name": "Tuna Niçoise",
+        "price": 14.50
+    },
+    {
+        "id":"100E",
+        "name": "Escalope de Veau",
+        "price": 14.50
+    },
+    {
+        "id":"100A",
+        "name": "Chicken and Walnut Salad",
+        "price": 14.50
+    },
+    {
+        "id":"102B",
+        "name": "Fish Parmentier",
+        "price": 14.50
+    },
+    {
+        "id":"103C",
+        "name": "Roasted Pork Belly",
+        "price": 14.50
+    }
+]
