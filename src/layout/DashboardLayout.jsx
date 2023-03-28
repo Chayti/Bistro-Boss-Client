@@ -10,7 +10,10 @@ const DashboardLayout = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         
         <div className="drawer-content flex flex-col items-center justify-center">
-          
+       <div className='h-24'>
+        
+       </div>
+       <label htmlFor="my-drawer-2" className="btn w-full mt-5 rounded-none drawer-button lg:hidden bg-[#d1a054] text-black text font-extrabold">Open dashboard</label>
          <Outlet></Outlet>
         
         </div> 
