@@ -6,6 +6,7 @@ import MyHistory from '../../components/Dashboard/MyHistory';
 import MyOrders from '../../components/Dashboard/MyOrders';
 import DashboardLayout from '../../layout/DashboardLayout';
 import Main from '../../layout/Main';
+import Contact from '../../pages/Contact';
 import Home from '../../pages/Home';
 import Menu from '../../pages/Menu';
 import Shop from '../../pages/Shop';
@@ -31,7 +32,11 @@ const routes = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />,
-      }
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
 
 
     ],
