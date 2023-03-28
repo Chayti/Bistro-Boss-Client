@@ -9,7 +9,9 @@ import DashboardLayout from '../../layout/DashboardLayout';
 import Main from '../../layout/Main';
 import Contact from '../../pages/Contact';
 import Home from '../../pages/Home';
+import Login from '../../pages/Login';
 import Menu from '../../pages/Menu';
+import Registration from '../../pages/Registration';
 import Shop from '../../pages/Shop';
 
 
@@ -38,15 +40,22 @@ const routes = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-
+      {
+        path: "/register",
+        element: <Registration></Registration>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      }
 
     ],
-    
+
   },
   {
     path: '/dashboard',
     element: <DashboardLayout></DashboardLayout>,
-    children:[
+    children: [
       {
         path: "/dashboard",
         element: <Dashboard />,
@@ -69,8 +78,8 @@ const routes = createBrowserRouter([
       }
 
     ]
-   
-}
+
+  }
 
 ]);
 
