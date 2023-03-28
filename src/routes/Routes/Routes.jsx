@@ -1,9 +1,10 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import AllUsers from '../../components/Dashboard/AllUsers';
-import Dashboard from '../../components/Dashboard/Dashboard';
-import MyHistory from '../../components/Dashboard/MyHistory';
-import MyOrders from '../../components/Dashboard/MyOrders';
+import AllUsers from '../../pages/Dashboard/AllUsers';
+import Dashboard from '../../pages/Dashboard/Dashboard';
+import MyHistory from '../../pages/Dashboard/MyHistory';
+import MyOrders from '../../pages/Dashboard/MyOrders';
+import Reservation from '../../pages/Dashboard/Reservation';
 import DashboardLayout from '../../layout/DashboardLayout';
 import Main from '../../layout/Main';
 import Contact from '../../pages/Contact';
@@ -61,6 +62,10 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard/all-users",
         element: <AllUsers />,
+      },
+      {
+        path: "/dashboard/reservation",
+        element: <Reservation />,
       }
 
     ]
