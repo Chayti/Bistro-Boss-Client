@@ -2,7 +2,6 @@ import React from 'react';
 import ContactForm from '../components/Contact/ContactForm';
 import ContactLocation from '../components/Contact/ContactLocation';
 import Banner2 from '../components/shared/Banner2/Banner2';
-import Card3 from '../components/shared/Card/Card3';
 import Title from '../components/shared/Title/Title';
 
 const Contact = () => {
