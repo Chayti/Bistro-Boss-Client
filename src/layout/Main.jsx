@@ -1,14 +1,19 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../components/shared/Footer/Footer';
 import Header from '../components/shared/Header/Header';
 
 const Main = () => {
+
+    const location = useLocation();
+    const isLoginPage = location.pathname === '/login';
+    const isRegisterPage = location.pathname === '/register';
+
     return (
         <div>
-           <Header></Header>
-           <Outlet></Outlet>
-           <Footer></Footer> 
+            {(!isLoginPage && !isRegisterPage) && <Header />}
+            <Outlet />
+            {(!isLoginPage && !isRegisterPage) && <Footer />}
         </div>
     );
 };

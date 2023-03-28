@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 import './Header.css'
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
 //fixed
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
 
     return (
         <div>
@@ -39,14 +41,37 @@ const Header = () => {
 
                     </ul>
                     <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className=" m-1"><FaUserCircle/></label>
-                    <ul tabIndex={0} className="active-style dropdown-content menu p-2 shadow rounded-box w-52 border-gray-100 border-2">
-                        <li><NavLink  to="/dashboard">Dashboard</NavLink></li>
-                        <li><NavLink  to="/logout">Log out</NavLink></li>
-                       
-                    </ul>
+                        <label tabIndex={0} className=" m-1">
+                            {user?.uid
+                                ? (
+                                    <div className="avatar lg:flex lg:items-center">
+                                        <div className="w-10 h-10 ml-4 lg:ml-9 lg:mr-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                            <img src={user?.photoURL || ""} alt="photoURL" />
+                                        </div>
+                                    </div>
+                                )
+                                : <FaUserCircle />
+                            }
+                        </label>
+                        <ul tabIndex={0} className="active-style dropdown-content menu p-2 shadow rounded-box w-52 border-gray-100 border-2">
+                            {user?.uid && <li><NavLink to="/dashboard">Dashboard</NavLink></li>}
+                            <li>
+                                {user?.uid ? (
+                                    <button
+                                        onClick={logOut}
+                                    >
+                                        Sign Out
+                                    </button>
+                                ) : (
+                                    <NavLink to="/login">
+                                        Login
+                                    </NavLink>
+                                )}
+                            </li>
+
+                        </ul>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Card3 = ({ children, icon }) => {
-    console.log(children, icon)
+    // console.log(children, icon)
     const { title, name, data } = children
     return (
 
