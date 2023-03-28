@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useItems from "../../Hooks/useItems";
 import Card from '../shared/Card/Card'
+import Spinner from "../shared/Spinner/Spinner";
 import Title from '../shared/Title/Title';
 
 const Menu = () => {
   const [items, loading] = useItems();
   if (loading) {
-    return <div>loading...</div>
-  }
-
+    return <Spinner></Spinner>
+}
   return (
     <div >
 
