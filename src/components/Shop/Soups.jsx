@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigation } from 'react-router';
 import useItems from '../../Hooks/useItems';
 import Cards from '../shared/Card/Card2';
+import Spinner from '../shared/Spinner/Spinner';
 const Soups = () => {
     const [items, loading] = useItems();
+   
     if (loading) {
-        return <div>loading...</div>
+        return <Spinner></Spinner>
     }
     console.log(items)
     return (

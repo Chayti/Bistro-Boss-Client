@@ -5,6 +5,7 @@ import Pizza from '../components/Menu/Pizza';
 import Salad from '../components/Menu/Salad';
 import Soup from '../components/Menu/Soup';
 import Banner2 from '../components/shared/Banner2/Banner2';
+import Spinner from '../components/shared/Spinner/Spinner';
 import useItems from '../Hooks/useItems';
 
 
@@ -12,7 +13,7 @@ const Menu = () => {
 
     const [items, loading] = useItems();
     if (loading) {
-        return <div>loading...</div>
+        return <Spinner></Spinner>
     }
 
     return (

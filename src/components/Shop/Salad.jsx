@@ -1,12 +1,13 @@
 import React from 'react';
 import useItems from '../../Hooks/useItems';
 import Cards from '../shared/Card/Card2';
+import Spinner from '../shared/Spinner/Spinner';
 
 
 const Salad = () => {
     const [items, loading] = useItems();
     if (loading) {
-        return <div>loading...</div>
+        return <Spinner></Spinner>
     }
 
     return (
