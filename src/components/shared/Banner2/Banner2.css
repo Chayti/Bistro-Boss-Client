@@ -11,10 +11,34 @@
     width: 90%;
 }
 
+.text-animation{
+    font-size: 4em;
+    font-weight:bolder;
+    text-transform: uppercase; 
+    text-shadow:none;
+    background-image: linear-gradient(to right, yellow, tomato, #5485d0, #64f38c);
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    color: transparent;
+    background-size: 300%;
+    background-position: -100%;  
+    animation: animatedText 5s infinite alternate-reverse;
+}
+
+@keyframes animatedText{
+    to{
+      background-position: 100%; 
+    }
+}
+
 .bg-menu-banner{
     background-image: url('../../../assets/asset/menu/banner3.jpg');
 }
 
 .bg-shop-banner{
     background-image: url('../../../assets/asset/shop/banner2.jpg');
+}
+
+.bg-contact-banner{
+    background-image: url('../../../assets/asset/contact/banner.jpg');
 }
