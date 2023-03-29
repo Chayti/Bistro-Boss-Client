@@ -30,13 +30,20 @@ const DashboardLayout = () => {
             <li><NavLink to='/dashboard/updateRecipe'>Update Recipe</NavLink></li>
             <li><NavLink to='/dashboard/manageBookings'>Manage Bookings</NavLink></li>
             <li><NavLink to='/dashboard/all-users'>All Users</NavLink></li>
+
+            <hr />
             <li><NavLink to='/dashboard/user-home'>User Home</NavLink></li>
             <li><NavLink to='/dashboard/reservation'>Reservation</NavLink></li>
             <li><NavLink to='/dashboard/myBookings'>My Bookings</NavLink></li>
             <li><NavLink to='/dashboard/my-orders'>My Orders</NavLink></li>
             <li><NavLink to='/dashboard/paymentHistory'>Payment History</NavLink></li>
             <li><NavLink to='/dashboard/addReview'>Add Review</NavLink></li>
+
+            <hr />
             <li><NavLink to='/'>Home</NavLink></li>
+            <li><NavLink to='/menu'>Menu</NavLink></li>
+            <li><NavLink to='/shop'>Shop</NavLink></li>
+            <li><NavLink to='/contact'>Contact</NavLink></li>
 
           </ul>
 
