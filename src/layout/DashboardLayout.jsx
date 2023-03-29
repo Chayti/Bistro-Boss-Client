@@ -26,7 +26,7 @@ const DashboardLayout = () => {
             </div>
 
             <li><NavLink to='/dashboard/reservation'>Reservation</NavLink></li>
-            <li><NavLink to='/dashboard/my-orders'>My Orders</NavLink></li>
+            <li><NavLink to='/dashboard/mycart'>My Cart</NavLink></li>
             <li><NavLink to='/dashboard/history'>My History</NavLink></li>
             <li><NavLink to='/dashboard/all-users'>All Users</NavLink></li>
             <li><NavLink to='/dashboard/manage-items'>Manage Items</NavLink></li>

@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import AllUsers from '../../pages/Dashboard/AllUsers';
 import Dashboard from '../../pages/Dashboard/Dashboard';
 import MyHistory from '../../pages/Dashboard/MyHistory';
-import MyOrders from '../../pages/Dashboard/MyOrders';
+
 import Reservation from '../../pages/Dashboard/Reservation';
 import DashboardLayout from '../../layout/DashboardLayout';
 import Main from '../../layout/Main';
@@ -14,6 +14,7 @@ import Menu from '../../pages/Menu';
 import Registration from '../../pages/Registration';
 import Shop from '../../pages/Shop';
 import ManageItems from '../../pages/Dashboard/ManageItems';
+import MyCart from '../../pages/Dashboard/MyCart';
 
 
 const routes = createBrowserRouter([
@@ -62,8 +63,8 @@ const routes = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "/dashboard/my-orders",
-        element: <MyOrders />,
+        path: "/dashboard/mycart",
+        element: <MyCart />,
       },
       {
         path: "/dashboard/history",
