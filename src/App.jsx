@@ -21,7 +21,7 @@ function App() {
 
         ? <div>
           <Spinner />
-          <h3 className="text-animation text-center text-4xl bg-white normal-case">Welcome to <br />Culinary Cloud Restaurant</h3>
+          <h3 className="text1 text-animation text-center text-6xl bg-white normal-case">Welcome to <br />Culinary Cloud Restaurant</h3>
         </div>
 
         : <RouterProvider router={routes}></RouterProvider>

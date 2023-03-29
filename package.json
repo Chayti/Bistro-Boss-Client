@@ -21,6 +21,7 @@
     "react-hook-form": "^7.43.8",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.9.0",
+    "recharts": "^2.5.0",
     "sweetalert": "^2.1.2",
     "swiper": "^9.1.1"
   },
