@@ -13,7 +13,10 @@ import Login from '../../pages/Login';
 import Menu from '../../pages/Menu';
 import Registration from '../../pages/Registration';
 import Shop from '../../pages/Shop';
-import ManageItems from '../../pages/Dashboard/ManageItems';
+import AdminHome from '../../pages/Dashboard/AdminHome';
+import AddReview from '../../pages/Dashboard/AddReview';
+import UpdateFood from '../../pages/Dashboard/UpdateFood';
+import AddFood from '../../pages/Dashboard/AddFood';
 
 
 const routes = createBrowserRouter([
@@ -62,6 +65,26 @@ const routes = createBrowserRouter([
         element: <Dashboard />,
       },
       {
+        path: "/dashboard/user-home",
+        element: <Dashboard />,
+      },
+      {
+        path: "/dashboard/admin-home",
+        element: <AdminHome />,
+      },
+      {
+        path: "/dashboard/addFood",
+        element: <AddFood />,
+      },
+      {
+        path: "/dashboard/updateFood",
+        element: <UpdateFood />,
+      },
+      {
+        path: "/dashboard/addReview",
+        element: <AddReview />,
+      },
+      {
         path: "/dashboard/my-orders",
         element: <MyOrders />,
       },
@@ -76,11 +99,7 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard/reservation",
         element: <Reservation />,
-      },
-      {
-        path: "/dashboard/manage-items",
-        element: <ManageItems />,
-      },
+      }
 
     ]
 
