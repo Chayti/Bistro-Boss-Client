@@ -13,10 +13,13 @@ import Registration from '../../pages/Registration';
 import Shop from '../../pages/Shop';
 import MyCart from '../../pages/Dashboard/MyCart';
 import ManageItems from '../../pages/Dashboard/ManageItems';
-import AddFood from '../../pages/Dashboard/AddFood';
 import AddReview from '../../pages/Dashboard/AddReview';
-import UpdateFood from '../../pages/Dashboard/UpdateFood';
 import AdminHome from '../../pages/Dashboard/AdminHome';
+import AddRecipe from '../../pages/Dashboard/AddRecipe';
+import UpdateRecipe from '../../pages/Dashboard/UpdateRecipe';
+import PaymentHistory from '../../pages/Dashboard/PaymentHistory';
+import MyBookings from '../../pages/Dashboard/MyBookings';
+import ManageBookings from '../../pages/Dashboard/ManageBookings';
 
 
 const routes = createBrowserRouter([
@@ -73,12 +76,24 @@ const routes = createBrowserRouter([
         element: <AdminHome />,
       },
       {
-        path: "/dashboard/addFood",
-        element: <AddFood />,
+        path: "/dashboard/addRecipe",
+        element: <AddRecipe />,
       },
       {
-        path: "/dashboard/updateFood",
-        element: <UpdateFood />,
+        path: "/dashboard/updateRecipe",
+        element: <UpdateRecipe />,
+      },
+      {
+        path: "/dashboard/manageBookings",
+        element: <ManageBookings />,
+      },
+      {
+        path: "/dashboard/myBookings",
+        element: <MyBookings />,
+      },
+      {
+        path: "/dashboard/paymentHistory",
+        element: <PaymentHistory />,
       },
       {
         path: "/dashboard/addReview",
