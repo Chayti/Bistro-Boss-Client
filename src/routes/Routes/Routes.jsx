@@ -13,6 +13,7 @@ import Login from '../../pages/Login';
 import Menu from '../../pages/Menu';
 import Registration from '../../pages/Registration';
 import Shop from '../../pages/Shop';
+import ManageItems from '../../pages/Dashboard/ManageItems';
 
 
 const routes = createBrowserRouter([
@@ -75,7 +76,11 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard/reservation",
         element: <Reservation />,
-      }
+      },
+      {
+        path: "/dashboard/manage-items",
+        element: <ManageItems />,
+      },
 
     ]
 
