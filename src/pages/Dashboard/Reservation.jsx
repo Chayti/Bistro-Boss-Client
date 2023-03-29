@@ -12,14 +12,14 @@ const Reservation = () => {
             </div>
             <div className=" p-6">
 
-            <Title type={{ smallHeading: "Reservation", title: "Book A Table", border: 'black' }}></Title>
-           <ReservationForm></ReservationForm>
-           <Title type={{ smallHeading: "Visit Us", title: "OUR LOCATION", border: 'black' }}></Title>
-               <div className=' flex mx-auto'>
-                <ContactLocation></ContactLocation>
-               </div>
-            
-        </div>
+                <Title type={{ smallHeading: "Reservation", title: "Book A Table", border: 'black' }}></Title>
+                <ReservationForm></ReservationForm>
+                <Title type={{ smallHeading: "Visit Us", title: "OUR LOCATION", border: 'black' }}></Title>
+                <div className=' flex mx-auto'>
+                    <ContactLocation></ContactLocation>
+                </div>
+
+            </div>
         </div>
     );
 };

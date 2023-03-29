@@ -38,7 +38,7 @@ const ManageItems = () => {
     return (
         
         
-        <div className='w-11/12 p-10 shadow-2xl bg-white rounded-2xl'>
+        <div className='my-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
            
             <h1 className='text-3xl text mb-4 font-bold'>Total users: {items.length}</h1>
            <div className="overflow-x-auto">

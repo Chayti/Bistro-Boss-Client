@@ -36,13 +36,28 @@ const AllUsers = () => {
             "role": 'user'
         },
         {
+            "email":"john@gmail.com",
+            "name": "John",
+            "role": 'user'
+        },
+        {
             "email":"jane@gmail.com",
             "name": "Jane",
             "role": 'user'
-        }
+        },
+        {
+            "email":"john@gmail.com",
+            "name": "John",
+            "role": 'user'
+        },
+        {
+            "email":"john@gmail.com",
+            "name": "John",
+            "role": 'user'
+        },
     ]
     return (
-        <div className='w-11/12 p-10 shadow-2xl bg-white rounded-2xl'>
+        <div className='my-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
             <h1 className='text-3xl text mb-4 font-bold'>Total users: {users.length}</h1>
            <div className="overflow-x-auto">
             <table className="table w-full">

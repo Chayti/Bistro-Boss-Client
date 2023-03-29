@@ -8,13 +8,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-      // Simulate loading time
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 5000);
-    }, []);
-
-  
+    // Simulate loading time
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 7000);
+  }, []);
 
   return (
     <>
@@ -23,7 +21,7 @@ function App() {
 
         ? <div>
           <Spinner />
-          
+         
         </div>
 
         : <RouterProvider router={routes}></RouterProvider>
