@@ -6,7 +6,7 @@ const DashboardLayout = () => {
   return (
     <div>
       {/* <Header></Header> */}
-      <div className="drawer drawer-mobile bg-dashboard-layout-image">
+      <div className="drawer drawer-mobile bg-white">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
         <div className="drawer-content flex flex-col items-center justify-center">
