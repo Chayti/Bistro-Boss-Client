@@ -16,8 +16,8 @@ const AdminHome = () => {
                 <Card4 icon={<FaTruck size={32} />}>{{ title: "Orders", data: 500, color1: 'from-[#68aaff]', color2: 'to-[#95f8fe]' }}</Card4>
 
             </div>
-            <div class="flex flex-wrap justify-center mt-12">
-                <div class="w-full sm:w-1/2 md:w-1/2 pr-4 mb-4 bg-green">
+            <div class="flex flex-wrap justify-center mt-12 bg-white shadow-2xl">
+                <div class="w-full sm:w-1/2 md:w-1/2 pr-4 mb-4">
                     <Chart></Chart>
                 </div>
                 <div class="w-full sm:w-1/2 md:w-1/2 px-4 mb-4">
