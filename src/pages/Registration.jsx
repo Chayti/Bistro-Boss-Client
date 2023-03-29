@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import illustration from "../assets/others/authentication2.png";
+import SocialAuth from "../components/SocialAuth";
 import { AuthContext } from "../contexts/AuthProvider";
-import SocialAuth from "./SocialAuth";
 
 const Registration = () => {
   const [error, setError] = useState("");
@@ -51,9 +51,8 @@ const Registration = () => {
   };
   return (
     <div className="bg-authentication min-h-screen flex items-center">
-      <section className="container mx-auto p-12 h-full">
+      <section className="mx-auto p-12 h-full">
         <div className="grid md:grid-cols-2">
-
           <div className="">
             <h1 className="font-bold text-center text-3xl">Sign Up</h1>
             <form onSubmit={handleSubmit} className="md:w-1/2 mx-auto">
@@ -118,7 +117,6 @@ const Registration = () => {
               alt="Password_image"
             />
           </div>
-
         </div>
       </section>
     </div>

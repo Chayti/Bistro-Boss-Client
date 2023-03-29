@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.28.0",
+    "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.0.0",
     "daisyui": "^2.51.4",
     "date-fns": "^2.29.3",
     "emailjs": "^4.0.1",
@@ -20,7 +22,9 @@
     "react-google-recaptcha": "^2.1.0",
     "react-hook-form": "^7.43.8",
     "react-icons": "^4.8.0",
+    "react-rating": "^2.0.5",
     "react-router-dom": "^6.9.0",
+    "recharts": "^2.5.0",
     "sweetalert": "^2.1.2",
     "swiper": "^9.1.1"
   },
