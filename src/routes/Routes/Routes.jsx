@@ -2,8 +2,6 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import AllUsers from '../../pages/Dashboard/AllUsers';
 import Dashboard from '../../pages/Dashboard/Dashboard';
-import MyHistory from '../../pages/Dashboard/MyHistory';
-import MyOrders from '../../pages/Dashboard/MyOrders';
 import Reservation from '../../pages/Dashboard/Reservation';
 import DashboardLayout from '../../layout/DashboardLayout';
 import Main from '../../layout/Main';
@@ -13,10 +11,12 @@ import Login from '../../pages/Login';
 import Menu from '../../pages/Menu';
 import Registration from '../../pages/Registration';
 import Shop from '../../pages/Shop';
-import AdminHome from '../../pages/Dashboard/AdminHome';
+import MyCart from '../../pages/Dashboard/MyCart';
+import ManageItems from '../../pages/Dashboard/ManageItems';
+import AddFood from '../../pages/Dashboard/AddFood';
 import AddReview from '../../pages/Dashboard/AddReview';
 import UpdateFood from '../../pages/Dashboard/UpdateFood';
-import AddFood from '../../pages/Dashboard/AddFood';
+import AdminHome from '../../pages/Dashboard/AdminHome';
 
 
 const routes = createBrowserRouter([
@@ -85,25 +85,26 @@ const routes = createBrowserRouter([
         element: <AddReview />,
       },
       {
-        path: "/dashboard/my-orders",
-        element: <MyOrders />,
-      },
-      {
-        path: "/dashboard/history",
-        element: <MyHistory />,
-      },
-      {
         path: "/dashboard/all-users",
         element: <AllUsers />,
       },
       {
         path: "/dashboard/reservation",
         element: <Reservation />,
+      },
+      {
+        path: "/dashboard/manage-items",
+        element: <ManageItems />,
+      },
+      {
+        path: "/dashboard/mycart",
+        element: <MyCart />,
       }
 
     ]
 
   }
+
 
 ]);
 

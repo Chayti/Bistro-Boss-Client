@@ -28,9 +28,10 @@ const DashboardLayout = () => {
             <li><NavLink to='/dashboard/admin-home'>Admin Home</NavLink></li>
             <li><NavLink to='/dashboard/user-home'>User Home</NavLink></li>
             <li><NavLink to='/dashboard/reservation'>Reservation</NavLink></li>
-            <li><NavLink to='/dashboard/my-orders'>My Orders</NavLink></li>
+            <li><NavLink to='/dashboard/mycart'>My Cart</NavLink></li>
             <li><NavLink to='/dashboard/history'>My History</NavLink></li>
             <li><NavLink to='/dashboard/all-users'>All Users</NavLink></li>
+            <li><NavLink to='/dashboard/manage-items'>Manage Items</NavLink></li>
             <li><NavLink to='/'>Home</NavLink></li>
 
           </ul>
