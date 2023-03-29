@@ -1,112 +1,30 @@
 import React from "react";
-import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend,
-    LabelList
-} from "recharts";
-
-const data = [
-    {
-        name: "Page A",
-        uv: 4000,
-        pv: 2400,
-        amt: 2400
-    },
-    {
-        name: "Page B",
-        uv: 3000,
-        pv: 1398,
-        amt: 2210
-    },
-    {
-        name: "Page C",
-        uv: 2000,
-        pv: 9800,
-        amt: 2290
-    },
-    {
-        name: "Page D",
-        uv: 2780,
-        pv: 3908,
-        amt: 2000
-    },
-    {
-        name: "Page E",
-        uv: 1890,
-        pv: 4800,
-        amt: 2181
-    },
-    {
-        name: "Page F",
-        uv: 2390,
-        pv: 3800,
-        amt: 2500
-    },
-    {
-        name: "Page G",
-        uv: 3490,
-        pv: 4300,
-        amt: 2100
-    }
-];
-
-const CustomizedLabel = (props) => {
-    const { x, y, stroke, value } = props;
-
-    return (
-        <text x={x} y={y} dy={-4} fill={stroke} fontSize={10} textAnchor="middle">
-            {value}
-        </text>
-    );
-};
-
-const CustomizedAxisTick = (props) => {
-    const { x, y, payload } = props;
-
-    return (
-        <g transform={`translate(${x},${y})`}>
-            <text
-                x={0}
-                y={0}
-                dy={16}
-                textAnchor="end"
-                fill="#666"
-                transform="rotate(-35)"
-            >
-                {payload.value}
-            </text>
-        </g>
-    );
-};
+import Chart from "../../components/Charts/Chart";
+import Chart1 from "../../components/Charts/Chart1";
+import Card4 from "../../components/shared/Card/Card4";
+import { FaWallet, FaTruck, FaUsers } from "react-icons/fa";
+import { GiCook } from "react-icons/gi";
 
 const AdminHome = () => {
     return (
-        <LineChart
-            width={500}
-            height={300}
-            data={data}
-            margin={{
-                top: 20,
-                right: 30,
-                left: 20,
-                bottom: 10
-            }}
-        >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" height={60} tick={<CustomizedAxisTick />} />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="pv" stroke="#8884d8">
-                <LabelList content={<CustomizedLabel />} />
-            </Line>
-            <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
+        <div className="mt-8">
+            <h2 className="text text-animation p-4 text-3xl normal-case">Hi, Welcome Back!</h2>
+            <div class="flex flex-wrap justify-center">
+                <Card4 icon={<FaWallet size={32} />}>{{ title: "Revenue", data: 1000, color1: 'from-[#b82bf6]', color2: 'to-[#f0c0ee]' }}</Card4>
+                <Card4 icon={<FaUsers size={32} />}>{{ title: "Customers", data: 1500, color1: 'from-[#d1a054]', color2: 'to-[#ffe1a4]' }}</Card4>
+                <Card4 icon={<GiCook size={32} />}>{{ title: "Products", data: 103, color1: 'from-[#ff4079]', color2: 'to-[#f6b7e0]' }}</Card4>
+                <Card4 icon={<FaTruck size={32} />}>{{ title: "Orders", data: 500, color1: 'from-[#68aaff]', color2: 'to-[#95f8fe]' }}</Card4>
+
+            </div>
+            <div class="flex flex-wrap justify-center mt-12">
+                <div class="w-full sm:w-1/2 md:w-1/2 pr-4 mb-4 bg-green">
+                    <Chart></Chart>
+                </div>
+                <div class="w-full sm:w-1/2 md:w-1/2 px-4 mb-4">
+                    <Chart1></Chart1>
+                </div>
+            </div>
+        </div>
     )
 }
 

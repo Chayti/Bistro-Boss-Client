@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^4.28.0",
+    "d3-scale": "^4.0.2",
+    "d3-scale-chromatic": "^3.0.0",
     "daisyui": "^2.51.4",
     "date-fns": "^2.29.3",
     "emailjs": "^4.0.1",

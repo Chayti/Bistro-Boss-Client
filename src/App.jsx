@@ -11,7 +11,7 @@ function App() {
     // Simulate loading time
     setTimeout(() => {
       setIsLoading(false);
-    }, 7000);
+    }, 5000);
   }, []);
 
   return (
@@ -21,7 +21,6 @@ function App() {
 
         ? <div>
           <Spinner />
-          <h3 className="text1 text-animation text-center text-6xl bg-white normal-case">Welcome to <br />Culinary Cloud Restaurant</h3>
         </div>
 
         : <RouterProvider router={routes}></RouterProvider>
