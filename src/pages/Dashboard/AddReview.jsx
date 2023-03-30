@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaRocket } from "react-icons/fa";
 import Rating from 'react-rating';
 import swal from 'sweetalert';
+import Title from '../../components/shared/Title/Title';
 
 const AddReview = () => {
 
@@ -14,8 +15,9 @@ const AddReview = () => {
 
     return (
         <>
-
-            <p className="text text-3xl mt-5 text-center text-animation text font-extrabold">Sharing is Caring!!! <br />Would you like to give a review?</p><hr />
+            <div className="w-full">
+                <Title type={{ smallHeading: "Sharing is Caring!!!", title: "Give a review..." }}></Title>
+            </div>
             <div className="bg-[#eceae380] mx-10 my-6 px-32 w-10/12 shadow-2xl">
 
                 <p className="text text-animation text-lg my-4 text-center">Rate US!</p>
