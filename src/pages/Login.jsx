@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import illustration from "../assets/others/authentication2.png";
 import SocialAuth from "../components/SocialAuth";
@@ -6,11 +6,11 @@ import { AuthContext } from "../contexts/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const { signIn, setLoading } = useContext(AuthContext);
+  const {user, signIn, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-
+  console.log(location.state?.from?.pathname)
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -23,9 +23,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError("");
-        if (user?.uid) {
-          navigate(from, { replace: true });
-        }
+        
       })
       .catch((error) => {
         console.error(error);
@@ -35,8 +33,13 @@ const Login = () => {
         setLoading(false);
       });
   };
+  
+ 
   return (
     <div className="bg-authentication min-h-screen flex items-center">
+      {
+        user && navigate(from, { replace: true })
+      }
       <section className="container mx-auto p-12 h-full">
         <div className="grid md:grid-cols-2">
           <div className="">

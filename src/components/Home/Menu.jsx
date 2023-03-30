@@ -13,7 +13,7 @@ const Menu = () => {
   return (
     <div >
 
-      <Title type={{ smallHeading: 'Check it out', title: 'FROM OUR MENU', border: 'black' }}></Title>
+      <Title type={{ smallHeading: 'Check it out', title: 'FROM OUR MENU'}}></Title>
       <div className="grid md:grid-cols-2 gap-5 px-10">
 
         {items.dishes.map((menuItem, index) => (

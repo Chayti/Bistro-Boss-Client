@@ -102,16 +102,18 @@ const CheckoutForm = () => {
 
     return (
         <>
-            <form >
+            <form>
                 <CardElement
                     options={{
                         style: {
                             base: {
                                 fontSize: '16px',
                                 color: '#424770',
+                                
                                 '::placeholder': {
                                     color: '#aab7c4',
                                 },
+                                
                              
                             },
                             invalid: {
@@ -121,7 +123,7 @@ const CheckoutForm = () => {
                     }}
                 />
                 <button
-                    className='btn w-48 flex mx-auto btn-sm mt-14 btn-primary'
+                    className='btn px-20 py-2 flex mx-auto btn-sm mt-14 btn-primary '
                     type="submit"
                     >
                     Pay
