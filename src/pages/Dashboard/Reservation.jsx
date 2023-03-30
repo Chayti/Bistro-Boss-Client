@@ -8,7 +8,7 @@ const Reservation = () => {
     const navigate = useNavigate();
     return (
         <div className='bg-white'>
-            <div className='h-52'>
+            <div className='h-48'>
 
             </div>
             <div className=" p-6">
