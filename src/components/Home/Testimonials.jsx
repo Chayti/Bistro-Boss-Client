@@ -20,7 +20,7 @@ const Testimonials = () => {
 
     return (
         <div>
-            <Title type={{ smallHeading: 'What Our Clients Say', title: 'Testimonials', border: 'black' }}></Title>
+            <Title type={{ smallHeading: 'What Our Clients Say', title: 'Testimonials' }}></Title>
 
             {/* //happy */}
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
