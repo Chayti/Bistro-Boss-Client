@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import Dessert from '../components/Menu/Dessert';
 import Offer from '../components/Menu/Offer';
 import Pizza from '../components/Menu/Pizza';
@@ -18,6 +19,9 @@ const Menu = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CC Restaurant | Menu</title>
+            </Helmet>
             <Banner2 banner={{ title: 'Our Menu', description: 'Would you like to try a dish?', image: 'bg-menu-banner' }}></Banner2>
             <div>
                 {items && <Offer items={items.offer}></Offer>}

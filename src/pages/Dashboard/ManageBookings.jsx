@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { TiTick } from 'react-icons/ti';
 import { useNavigate } from 'react-router-dom';
 import Title from '../../components/shared/Title/Title';
@@ -41,6 +42,9 @@ const ManageBookings = () => {
     ]
     return (
         <>
+            <Helmet>
+                <title>CC Restaurant | Manage Bookings</title>
+            </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "At a Glance!", title: "Manage all bookings" }}></Title>
             </div>

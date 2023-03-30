@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from 'react-helmet';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import illustration from "../assets/others/authentication2.png";
 import SocialAuth from "../components/SocialAuth";
@@ -6,7 +7,7 @@ import { AuthContext } from "../contexts/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const {user, signIn, setLoading } = useContext(AuthContext);
+  const { user, signIn, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -23,7 +24,7 @@ const Login = () => {
         console.log(user);
         form.reset();
         setError("");
-        
+
       })
       .catch((error) => {
         console.error(error);
@@ -33,8 +34,8 @@ const Login = () => {
         setLoading(false);
       });
   };
-  
- 
+
+
   return (
     <div className="bg-authentication min-h-screen flex items-center">
       {
@@ -43,6 +44,9 @@ const Login = () => {
       <section className="container mx-auto p-12 h-full">
         <div className="grid md:grid-cols-2">
           <div className="">
+            <Helmet>
+              <title>CC Restaurant | Login</title>
+            </Helmet>
             <img
               src={illustration}
               className="h-4/5 block mx-auto"
