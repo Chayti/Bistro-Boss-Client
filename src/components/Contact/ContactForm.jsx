@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import swal from 'sweetalert';
 import ReCAPTCHA from "react-google-recaptcha";
+import { FaPaperPlane } from "react-icons/fa";
 import InputField from '../shared/InputField';
 
 const ContactForm = () => {
@@ -114,8 +115,9 @@ const ContactForm = () => {
                 />
 
                 <div className="text-center mt-8">
-                    <button className={`btn4 py-2 px-8 ${verified == false ? "opacity-50 cursor-not-allowed" : ""}`}>
+                    <button className={`btn4 inline-flex items-center py-2 inline px-8 ${verified == false ? "opacity-50 cursor-not-allowed" : ""}`}>
                         Send Message
+                        <FaPaperPlane className="ml-2" style={{ verticalAlign: 'middle' }} />
                     </button>
                 </div>
             </form >
