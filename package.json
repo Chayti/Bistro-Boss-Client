@@ -26,11 +26,8 @@
     "react-icons": "^4.8.0",
     "react-rating": "^2.0.5",
     "react-router-dom": "^6.9.0",
-<<<<<<< HEAD
     "stripe": "^11.16.0",
-=======
     "recharts": "^2.5.0",
->>>>>>> 24461ebe6497ce8502af37714907ae9385fafeb4
     "sweetalert": "^2.1.2",
     "swiper": "^9.1.1"
   },

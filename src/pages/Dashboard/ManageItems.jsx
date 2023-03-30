@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const ManageItems = () => {
+    const navigate = useNavigate();
     const items = [
         {
             "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
@@ -63,7 +65,7 @@ const ManageItems = () => {
                 <td><img className='h-14' src={item.image} alt="" /></td>
                 <td>{item.name}</td>
                 <td>${item.price}</td>
-                <td><button className='btn bg-[#d1a054] tooltip text-white border-0' data-tip='edit'><FaRegEdit/></button></td>
+                <td><button onClick={()=>navigate('/dashboard/updateItem')} className='btn bg-[#d1a054] tooltip text-white border-0' data-tip='edit'><FaRegEdit/></button></td>
                 <td><button className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt/></button></td>
               </tr>)
                }

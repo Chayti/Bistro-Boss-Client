@@ -16,6 +16,11 @@ import ManageItems from '../../pages/Dashboard/ManageItems';
 import AddReview from '../../pages/Dashboard/AddReview';
 import AdminHome from '../../pages/Dashboard/AdminHome';
 import Payment from '../../pages/Dashboard/Payment';
+import AddItem from '../../pages/Dashboard/AddItem';
+import UpdateItem from '../../pages/Dashboard/UpdateItem';
+import ManageBookings from '../../pages/Dashboard/ManageBookings';
+import MyBookings from '../../pages/Dashboard/MyBookings';
+import PaymentHistory from '../../pages/Dashboard/PaymentHistory';
 
 
 const routes = createBrowserRouter([
@@ -74,12 +79,12 @@ const routes = createBrowserRouter([
         element: <AdminHome />,
       },
       {
-        path: "/dashboard/addRecipe",
-        element: <AddRecipe />,
+        path: "/dashboard/addItem",
+        element: <AddItem />,
       },
       {
-        path: "/dashboard/updateRecipe",
-        element: <UpdateRecipe />,
+        path: "/dashboard/updateItem",
+        element: <UpdateItem />,
       },
       {
         path: "/dashboard/manageBookings",
@@ -98,7 +103,7 @@ const routes = createBrowserRouter([
         element: <AddReview />,
       },
       {
-        path: "/dashboard/all-users",
+        path: "/dashboard/allUsers",
         element: <AllUsers />,
       },
       {
@@ -106,7 +111,7 @@ const routes = createBrowserRouter([
         element: <Reservation />,
       },
       {
-        path: "/dashboard/manage-items",
+        path: "/dashboard/manageItems",
         element: <ManageItems />,
       },
       {

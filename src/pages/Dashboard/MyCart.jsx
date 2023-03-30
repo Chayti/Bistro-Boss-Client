@@ -57,6 +57,7 @@ const MyCart = () => {
         <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
            
        <div className='flex justify-between items-center text-3xl text mb-4 font-bold'>
+
        <h1 >Total orders: {orders.length}</h1><h1>Total Price: ${total}</h1> <button onClick={()=>navigate('/dashboard/payment')}  className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
        </div>
        <div className="overflow-x-auto">
@@ -78,7 +79,12 @@ const MyCart = () => {
             <td><img className='h-14' src={order.image} alt="" /></td>
             <td>{order.name}</td>
             <td>${parseFloat(order.price).toFixed(2)}</td>
-            <td><button className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt/></button></td>
+
+            <td><button  onClick={() => swal({
+                        title: "Are you sure?",
+                        text: "Message sent",
+                        icon: "error",
+                    })} className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt/></button></td>
           </tr>)
            }
             </tbody>

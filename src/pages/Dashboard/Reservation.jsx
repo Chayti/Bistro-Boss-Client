@@ -1,10 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ContactLocation from '../../components/Contact/ContactLocation';
 import Title from '../../components/shared/Title/Title';
 import ReservationForm from './ReservationForm';
 
 const Reservation = () => {
-
+    const navigate = useNavigate();
     return (
         <div className='bg-white'>
             <div className='h-52'>
