@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { Link,  useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet';
+import { Link, useNavigate } from "react-router-dom";
 import illustration from "../assets/others/authentication2.png";
 import SocialAuth from "../components/SocialAuth";
 import { AuthContext } from "../contexts/AuthProvider";
@@ -9,11 +10,11 @@ const Registration = () => {
   const { user, createUser, updateUserProfile, verifyEmail } =
     useContext(AuthContext);
 
-    const navigate = useNavigate();
-    if(user){
-      navigate('/')
-    }
-    
+  const navigate = useNavigate();
+  if (user) {
+    navigate('/')
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -59,6 +60,9 @@ const Registration = () => {
       <section className="mx-auto p-12 h-full">
         <div className="grid md:grid-cols-2">
           <div className="">
+            <Helmet>
+              <title>CC Restaurant | Registration</title>
+            </Helmet>
             <h1 className="font-bold text-center text-3xl">Sign Up</h1>
             <form onSubmit={handleSubmit} className="md:w-1/2 mx-auto">
               {/* Input field with level from daisyui */}

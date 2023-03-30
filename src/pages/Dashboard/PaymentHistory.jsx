@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Title from '../../components/shared/Title/Title';
@@ -41,6 +42,9 @@ const PaymentHistory = () => {
     ]
     return (
         <>
+            <Helmet>
+                <title>CC Restaurant | Payment History</title>
+            </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "At a Glance!", title: "Payment history" }}></Title>
             </div>

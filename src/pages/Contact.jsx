@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import ContactForm from '../components/Contact/ContactForm';
 import ContactLocation from '../components/Contact/ContactLocation';
 import Banner2 from '../components/shared/Banner2/Banner2';
@@ -8,6 +9,9 @@ const Contact = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>CC Restaurant | Contact Us</title>
+            </Helmet>
 
             <Banner2 banner={{ title: 'CONTACT US', description: `Do you wanna connect with us?`, image: 'bg-contact-banner' }}></Banner2>
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { FaRegTrashAlt, FaUserCog, } from 'react-icons/fa';
 import Title from '../../components/shared/Title/Title';
 
@@ -60,6 +61,9 @@ const AllUsers = () => {
     ]
     return (
         <>
+            <Helmet>
+                <title>CC Restaurant | All Users</title>
+            </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "How many??", title: "Manage all users" }}></Title>
             </div>        <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>

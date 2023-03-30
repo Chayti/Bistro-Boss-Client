@@ -1,5 +1,6 @@
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 const CheckoutForm = () => {
     const [cardError, setCardError] = useState('');
@@ -102,6 +103,9 @@ const CheckoutForm = () => {
 
     return (
         <>
+            <Helmet>
+                <title>CC Restaurant | Checkout</title>
+            </Helmet>
             <form>
                 <CardElement
                     options={{
@@ -109,12 +113,12 @@ const CheckoutForm = () => {
                             base: {
                                 fontSize: '16px',
                                 color: '#424770',
-                                
+
                                 '::placeholder': {
                                     color: '#aab7c4',
                                 },
-                                
-                             
+
+
                             },
                             invalid: {
                                 color: '#9e2146',
@@ -125,7 +129,7 @@ const CheckoutForm = () => {
                 <button
                     className='btn px-20 py-2 flex mx-auto btn-sm mt-14 btn-primary '
                     type="submit"
-                    >
+                >
                     Pay
                 </button>
             </form>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaTable } from "react-icons/fa";
-import InputField from '../../components/shared/InputField';
+import InputField from './shared/InputField';
 
 
 const ReservationForm = () => {
@@ -25,9 +25,10 @@ const ReservationForm = () => {
     const [selectedTime, setSelectedTime] = useState(null);
     const navigate = useNavigate();
     console.log(selectedTime)
-    return (
-        <div className=''>
 
+    return (
+
+        <div className=''>
             <form className="rounded-lg" >
                 <div className="flex flex-wrap mb-4">
                     <div className="w-full md:w-1/3 px-4 mb-4 md:mb-0 ">

@@ -1,6 +1,6 @@
 import React from 'react';
 import About from '../components/Home/About';
-
+import { Helmet } from 'react-helmet';
 import Category from '../components/Home/Category'
 import CallUs from '../components/Home/CallUs';
 import ChefRecommends from '../components/Home/ChefRecommends';
@@ -9,12 +9,13 @@ import Menu from '../components/Home/Menu';
 import Testimonials from '../components/Home/Testimonials';
 import Banner from '../components/shared/Banner/Banner';
 
-
-
-
 const Home = () => {
     return (
         <div >
+
+            <Helmet>
+                <title>Culinary Cloud Restaurant </title>
+            </Helmet>
 
             <Banner banner={{ title: 'Culinary Cloud', description: 'ABC Main Street, Uni 21, Bangladesh' }}></Banner>
             <Category></Category>
