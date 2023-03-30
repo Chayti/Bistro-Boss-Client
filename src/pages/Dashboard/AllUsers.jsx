@@ -83,7 +83,11 @@ const AllUsers = () => {
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
                                     <td><button className='btn tooltip bg-[#d1a054] text-white border-0' data-tip='make admin'><FaUserCog /></button></td>
-                                    <td><button className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
+                                    <td><button onClick={() => swal({
+                                        title: "Are you sure?",
+                                        text: "Message sent",
+                                        icon: "error",
+                                    })}  className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
                                 </tr>)
                             }
                         </tbody>

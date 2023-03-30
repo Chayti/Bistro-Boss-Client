@@ -1,21 +1,24 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import profile from '../../assets/others/profile.png'
-import { useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import {  FaCalendarAlt, FaCartPlus, FaCcAmazonPay, FaPhone, FaRegListAlt, FaRegStar, FaStoreAlt } from 'react-icons/fa';
 import Card4 from '../../components/shared/Card/Card4';
 const UserHome = () => {
-    const navigate = useNavigate();
-    const { user } = useContext(AuthContext);
+    const {user } = useContext(AuthContext);
     console.log(user)
     return (
        
         <div className='h-screen  pt-10 w-full'>
              <h2 className="text-center text text-animation p-4 text-3xl normal-case">Hi, Welcome Back!</h2>
             <div class="flex flex-wrap justify-center">
-                <Card4 icon={<FaRegListAlt size={32} />}>{{ title: "MENU", data: 103, color1: 'from-[#b82bf6]', color2: 'to-[#f0c0ee]' }}</Card4>
-                <Card4 icon={<FaStoreAlt size={32} />}>{{ title: "SHOP", data: 103, color1: 'from-[#d1a054]', color2: 'to-[#ffe1a4]' }}</Card4>
-                <Card4 icon={<FaPhone size={32} />}>{{ title: "CONTACT", data: '03', color1: 'from-[#ff4079]', color2: 'to-[#f6b7e0]' }}</Card4>
+
+                
+                <Card4  icon={<FaRegListAlt size={32} />}>{{ title: "MENU", data: 205, color1: 'from-[#b82bf6]', color2: 'to-[#f0c0ee]',page:'/menu', cursor:'cursor-pointer' }}</Card4>   
+                    
+                <Card4 icon={<FaStoreAlt size={32} />}>{{ title: "SHOP", data: 103, color1: 'from-[#d1a054]', color2: 'to-[#ffe1a4]',page:'/shop',cursor:'cursor-pointer' }}</Card4>
+
+                <Card4  icon={<FaPhone size={32} />}>{{ title: "CONTACT", data: '03', color1: 'from-[#ff4079]', color2: 'to-[#f6b7e0]',page:'/contact',cursor:'cursor-pointer' }}</Card4>
                 
 
             </div>
