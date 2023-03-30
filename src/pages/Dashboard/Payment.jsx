@@ -14,10 +14,11 @@ const Payment = () => {
     //     return <Loading></Loading>
     // }
     return (
-        <div className='w-full h-full mt-48'>
-            <h3 className="text-7xl text-center text-animation">Payment</h3>
+        <> <h3 className="text-7xl mt-18 text-center text-animation text">Payment</h3>
+        <div className='w-9/12 rounded-xl  mt-14'>
+           
             {/* <p className="text-xl">Please pay <strong>$14.50</strong> for your appointment on {appointmentDate} at {slot}</p> */}
-            <div className='w-6/12 my-20 mx-auto'>
+            <div className='w-6/12 mt-5 mx-auto '>
                 <Elements stripe={stripePromise}>
                     <CheckoutForm
                         
@@ -25,6 +26,7 @@ const Payment = () => {
                 </Elements>
             </div>
         </div>
+        </>
     );
 };
 

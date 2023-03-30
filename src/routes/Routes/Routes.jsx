@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import AllUsers from '../../pages/Dashboard/AllUsers';
-import Dashboard from '../../pages/Dashboard/Dashboard';
+import Dashboard from '../../pages/Dashboard/UserHome';
 import Reservation from '../../pages/Dashboard/Reservation';
 import DashboardLayout from '../../layout/DashboardLayout';
 import Main from '../../layout/Main';
@@ -21,6 +21,8 @@ import UpdateItem from '../../pages/Dashboard/UpdateItem';
 import ManageBookings from '../../pages/Dashboard/ManageBookings';
 import MyBookings from '../../pages/Dashboard/MyBookings';
 import PaymentHistory from '../../pages/Dashboard/PaymentHistory';
+import UserHome from '../../pages/Dashboard/UserHome';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 
 const routes = createBrowserRouter([
@@ -42,7 +44,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/shop",
-        element: <Shop />,
+        element: <PrivateRoute><Shop /></PrivateRoute>,
       },
       {
         path: "/contact",
@@ -64,7 +66,7 @@ const routes = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <DashboardLayout></DashboardLayout>,
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
       {
         path: "/dashboard",
@@ -72,7 +74,7 @@ const routes = createBrowserRouter([
       },
       {
         path: "/dashboard/user-home",
-        element: <Dashboard />,
+        element: <UserHome />,
       },
       {
         path: "/dashboard/admin-home",

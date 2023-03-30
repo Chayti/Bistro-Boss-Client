@@ -14,7 +14,7 @@ const ChefRecommends = () => {
     return (
         <div>
 
-            <Title type={{ smallHeading: 'Should Try', title: 'Chef Recommends', border: 'black' }}></Title>
+            <Title type={{ smallHeading: 'Should Try', title: 'Chef Recommends' }}></Title>
 
 
             <div className="grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center md:w-10/12 md:mx-auto">

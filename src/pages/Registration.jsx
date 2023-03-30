@@ -1,14 +1,19 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import illustration from "../assets/others/authentication2.png";
 import SocialAuth from "../components/SocialAuth";
 import { AuthContext } from "../contexts/AuthProvider";
 
 const Registration = () => {
   const [error, setError] = useState("");
-  const { createUser, updateUserProfile, verifyEmail } =
+  const { user, createUser, updateUserProfile, verifyEmail } =
     useContext(AuthContext);
 
+    const navigate = useNavigate();
+    if(user){
+      navigate('/')
+    }
+    
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
