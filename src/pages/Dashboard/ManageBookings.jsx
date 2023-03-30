@@ -42,7 +42,7 @@ const ManageBookings = () => {
     return (
         <>
             <div className="w-full">
-                <Title type={{ smallHeading: "At a Glance!", title: "Payment history" }}></Title>
+                <Title type={{ smallHeading: "At a Glance!", title: "Manage all bookings" }}></Title>
             </div>
 
             <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
