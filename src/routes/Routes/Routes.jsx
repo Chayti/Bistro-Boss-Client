@@ -17,6 +17,7 @@ import AddFood from '../../pages/Dashboard/AddFood';
 import AddReview from '../../pages/Dashboard/AddReview';
 import UpdateFood from '../../pages/Dashboard/UpdateFood';
 import AdminHome from '../../pages/Dashboard/AdminHome';
+import Payment from '../../pages/Dashboard/Payment';
 
 
 const routes = createBrowserRouter([
@@ -52,6 +53,8 @@ const routes = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       }
+      
+      
 
     ],
 
@@ -99,6 +102,10 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard/mycart",
         element: <MyCart />,
+      },
+      {
+        path: "/dashboard/payment",
+        element: <Payment />,
       }
 
     ]

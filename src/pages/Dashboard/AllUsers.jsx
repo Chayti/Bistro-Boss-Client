@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaRegTrashAlt, FaUserCog, } from 'react-icons/fa';
 
 const AllUsers = () => {
     // const [orders, setOrders] = useState([]);
@@ -57,7 +58,9 @@ const AllUsers = () => {
         },
     ]
     return (
-        <div className='my-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
+        <>
+        <h1 className='my-10 text-5xl text-animation text font-extrabold '>All Users</h1>
+        <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
             <h1 className='text-3xl text mb-4 font-bold'>Total users: {users.length}</h1>
            <div className="overflow-x-auto">
             <table className="table w-full">
@@ -77,14 +80,15 @@ const AllUsers = () => {
                 <th>{index+1}</th>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td><button className='btn bg-[#d1a054] text-white border-0'>Make Admin</button></td>
-                <td><button className='btn bg-red-700  text-white border-0'>Remove User</button></td>
+                <td><button className='btn tooltip bg-[#d1a054] text-white border-0' data-tip='make admin'><FaUserCog/></button></td>
+                <td><button className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt/></button></td>
               </tr>)
                }
                 </tbody>
             </table>
             </div>
         </div>
+        </>
     );
 };
 
