@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { useQuery } from '@tanstack/react-query';
 import { FaRegTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -54,6 +55,9 @@ const MyCart = () => {
     return (
 
         <>
+            <Helmet>
+                <title>CC Restaurant | My Cart</title>
+            </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "My Cart", title: "Wanna add more?" }}></Title>
             </div>

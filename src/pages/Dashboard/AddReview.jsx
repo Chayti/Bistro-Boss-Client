@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { FaRocket } from "react-icons/fa";
 import Rating from 'react-rating';
 import swal from 'sweetalert';
@@ -15,7 +16,10 @@ const AddReview = () => {
 
     return (
         <>
-            <div className="w-full mt-8">
+            <Helmet>
+                <title>CC Restaurant | Add Review</title>
+            </Helmet>
+            <div className="w-full">
                 <Title type={{ smallHeading: "Sharing is Caring!!!", title: "Give a review..." }}></Title>
             </div>
             <div className="bg-[#eceae380] mx-10 my-6 px-32 w-10/12 shadow-2xl">

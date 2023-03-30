@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaPlusCircle, FaUtensils } from "react-icons/fa";
+import { Helmet } from 'react-helmet';
+import { FaUtensils } from "react-icons/fa";
 import InputField from '../../components/shared/InputField';
 import Title from '../../components/shared/Title/Title';
 
@@ -14,6 +15,9 @@ const AddItem = () => {
 
     return (
         <>
+            <Helmet>
+                <title>CC Restaurant | Add Item</title>
+            </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "What's new?", title: "Add an item" }}></Title>
             </div>

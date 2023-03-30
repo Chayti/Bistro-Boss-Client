@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from 'react-helmet';
 import Chart from "../../components/Charts/Chart";
 import Chart1 from "../../components/Charts/Chart1";
 import Card4 from "../../components/shared/Card/Card4";
@@ -8,6 +9,9 @@ import { GiCook } from "react-icons/gi";
 const AdminHome = () => {
     return (
         <div className="mt-8">
+            <Helmet>
+                <title>CC Restaurant | Admin Home</title>
+            </Helmet>
             <h2 className="text text-animation p-4 text-3xl normal-case">Hi, Welcome Back!</h2>
             <div class="flex flex-wrap justify-center">
                 <Card4 icon={<FaWallet size={32} />}>{{ title: "Revenue", data: 1000, color1: 'from-[#b82bf6]', color2: 'to-[#f0c0ee]' }}</Card4>

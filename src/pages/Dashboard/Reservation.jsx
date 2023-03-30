@@ -1,14 +1,18 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import ContactLocation from '../../components/Contact/ContactLocation';
+import ReservationForm from '../../components/ReservationForm';
 import Title from '../../components/shared/Title/Title';
-import ReservationForm from './ReservationForm';
 
 const Reservation = () => {
     const navigate = useNavigate();
     return (
         <div className='bg-white'>
-            <div className='h-48'>
+            <Helmet>
+                <title>CC Restaurant | Reservation</title>
+            </Helmet>
+            <div className='h-52'>
 
             </div>
             <div className=" p-6">

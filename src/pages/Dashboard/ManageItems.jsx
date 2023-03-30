@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Title from '../../components/shared/Title/Title';
@@ -41,6 +42,9 @@ const ManageItems = () => {
     ]
     return (
         <>
+            <Helmet>
+                <title>CC Restaurant | Manage Items</title>
+            </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "Hurry Up!", title: "Manage all Items" }}></Title>
             </div>
