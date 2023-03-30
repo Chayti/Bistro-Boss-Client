@@ -13,68 +13,68 @@ const AddReview = () => {
     }
 
     return (
-       <>
-       
-       <p className="text text-3xl mt-5 text-center text-animation text font-extrabold">Sharing is Caring!!! <br />Would you like to give a review?</p><hr />
-        <div className="bg-[#eceae380] mx-10 my-6 px-32 w-10/12">
-            
-            <p className="text text-animation text-lg my-4 text-center">Rate US!</p>
-            <div className="text-center">
-                <Rating
-                    onChange={(rate) => swal({
-                        title: "Thank you!💐",
-                        text: `You have given ${rate} ratings!!! ❤️😍`,
-                    })}
-                />
-            </div>
-            <form className="rounded-lg p-8" onSubmit={sendEmail}>
-                <div className="mb-4">
-                    <label className="text-gray-700 font-semibold mb-1 block">
-                        Which recipe you liked most?
-                    </label>
-                    <input
-                        className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
-                        id="recipe"
-                        name="recipe"
-                        type="text"
-                        placeholder="recipe you liked most"
-                    />
-                </div>
-                <div className="mb-4">
-                    <label className="text-gray-700 font-semibold mb-1 block">
-                        Do you have any suggestion for us?
-                    </label>
-                    <input
-                        className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
-                        id="suggestion"
-                        name="suggestion"
-                        type="text"
-                        placeholder="suggestion"
-                    />
-                </div>
-                <div className="mb-4">
-                    <label className="text-gray-700 font-semibold mb-1 block">
-                        Kindly express your care in a short way.
-                    </label>
-                    <textarea
-                        className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
-                        id="details"
-                        name="details"
-                        type="text"
-                        rows="5"
-                        placeholder="review in detail"
-                    />
-                </div>
+        <>
 
-                <div className="text-center mt-8">
-                    <button className='btn4 flex justify-center items-center'>
-                        Send Review
-                        <FaRocket className="ml-2" />
-                    </button>
-                </div>
-            </form >
+            <p className="text text-3xl mt-5 text-center text-animation text font-extrabold">Sharing is Caring!!! <br />Would you like to give a review?</p><hr />
+            <div className="bg-[#eceae380] mx-10 my-6 px-32 w-10/12 shadow-2xl">
 
-        </div >
+                <p className="text text-animation text-lg my-4 text-center">Rate US!</p>
+                <div className="text-center">
+                    <Rating
+                        onChange={(rate) => swal({
+                            title: "Thank you!💐",
+                            text: `You have given ${rate} ratings!!! ❤️😍`,
+                        })}
+                    />
+                </div>
+                <form className="rounded-lg p-8" onSubmit={sendEmail}>
+                    <div className="mb-4">
+                        <label className="text-gray-700 font-semibold mb-1 block">
+                            Which recipe you liked most?
+                        </label>
+                        <input
+                            className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
+                            id="recipe"
+                            name="recipe"
+                            type="text"
+                            placeholder="recipe you liked most"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label className="text-gray-700 font-semibold mb-1 block">
+                            Do you have any suggestion for us?
+                        </label>
+                        <input
+                            className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
+                            id="suggestion"
+                            name="suggestion"
+                            type="text"
+                            placeholder="suggestion"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label className="text-gray-700 font-semibold mb-1 block">
+                            Kindly express your care in a short way.
+                        </label>
+                        <textarea
+                            className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
+                            id="details"
+                            name="details"
+                            type="text"
+                            rows="5"
+                            placeholder="review in detail"
+                        />
+                    </div>
+
+                    <div className="text-center mt-8">
+                        <button className='btn4 flex justify-center items-center'>
+                            Send Review
+                            <FaRocket className="ml-2" />
+                        </button>
+                    </div>
+                </form >
+
+            </div >
         </>
     )
 }

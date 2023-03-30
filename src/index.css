@@ -38,8 +38,7 @@
 }
 
 .bg-authentication{
-  background-image: url('../src/assets/others/authentication.png');
-  
+  background-image: url('../src/assets/others/authentication.png');  
 }
 
 input:focus, textarea:focus {
@@ -48,7 +47,7 @@ input:focus, textarea:focus {
   box-shadow: 0 0 10px #719ECE;
 }
 .btn4{
-  padding: .8em 2.5em; 
+  padding: .7em 2.5em; 
   font-size: 1em;
   font-weight: bold;
   color: #fff;   

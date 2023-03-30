@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import Header from '../components/shared/Header/Header';
+import { FaBars, FaBook, FaCalendarAlt, FaCreditCard, FaEnvelope, FaHome, FaRocket, FaShoppingBag, FaShoppingCart, FaTasks, FaUsers, FaUtensils } from 'react-icons/fa';
 
 const DashboardLayout = () => {
   return (
     <div>
-      {/* <Header></Header> */}
       <div className="drawer drawer-mobile bg-white">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
 
@@ -25,24 +24,24 @@ const DashboardLayout = () => {
               <small className='block text-xs font-thin' style={{ letterSpacing: '8px' }}>Restaurant</small>
             </div>
 
-            <li><NavLink to='/dashboard/admin-home'>Admin Home</NavLink></li>
-            <li><NavLink to='/dashboard/addItem'>Add Item</NavLink></li>
-            <li><NavLink to='/dashboard/manageItems'>Manage Items</NavLink></li>
-            <li><NavLink to='/dashboard/manageBookings'>Manage Bookings</NavLink></li>
-            <li><NavLink to='/dashboard/allUsers'>All Users</NavLink></li>
-            
-            <hr />
-            <li><NavLink to='/dashboard/user-home'>User Home</NavLink></li>
-            <li><NavLink to='/dashboard/reservation'>Reservation</NavLink></li>
-            <li><NavLink to='/dashboard/paymentHistory'>Payment History</NavLink></li>
-            <li><NavLink to='/dashboard/mycart'>My Cart</NavLink></li>
-            <li><NavLink to='/dashboard/addReview'>Add Review</NavLink></li>
+            <li><NavLink to='/dashboard/admin-home'><FaHome size={20} />Admin Home</NavLink></li>
+            <li><NavLink to='/dashboard/addItem'><FaUtensils size={20} />Add Item</NavLink></li>
+            <li><NavLink to='/dashboard/manageItems'><FaTasks size={20} />Manage Items</NavLink></li>
+            <li><NavLink to='/dashboard/manageBookings'><FaBook size={20} />Manage Bookings</NavLink></li>
+            <li><NavLink to='/dashboard/allUsers'><FaUsers size={20} />All Users</NavLink></li>
 
             <hr />
-            <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/menu'>Menu</NavLink></li>
-            <li><NavLink to='/shop'>Shop</NavLink></li>
-            <li><NavLink to='/contact'>Contact</NavLink></li>
+            <li><NavLink to='/dashboard/user-home'><FaHome size={20} />User Home</NavLink></li>
+            <li><NavLink to='/dashboard/reservation'><FaCalendarAlt size={20} />Reservation</NavLink></li>
+            <li><NavLink to='/dashboard/paymentHistory'><FaCreditCard size={20} />Payment History</NavLink></li>
+            <li><NavLink to='/dashboard/mycart'><FaShoppingCart size={20} />My Cart</NavLink></li>
+            <li><NavLink to='/dashboard/addReview'><FaRocket size={20} />Add Review</NavLink></li>
+
+            <hr />
+            <li><NavLink to='/'><FaHome size={20} />Home</NavLink></li>
+            <li><NavLink to='/menu'><FaBars size={20} />Menu</NavLink></li>
+            <li><NavLink to='/shop'><FaShoppingBag size={20} />Shop</NavLink></li>
+            <li><NavLink to='/contact'><FaEnvelope size={20} />Contact</NavLink></li>
 
           </ul>
 
