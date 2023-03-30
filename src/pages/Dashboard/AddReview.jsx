@@ -15,7 +15,7 @@ const AddReview = () => {
 
     return (
         <>
-            <div className="w-full">
+            <div className="w-full mt-8">
                 <Title type={{ smallHeading: "Sharing is Caring!!!", title: "Give a review..." }}></Title>
             </div>
             <div className="bg-[#eceae380] mx-10 my-6 px-32 w-10/12 shadow-2xl">

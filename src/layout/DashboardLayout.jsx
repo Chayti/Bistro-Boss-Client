@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { FaBars, FaBook, FaCalendarAlt, FaCreditCard, FaEnvelope, FaHome, FaRocket, FaShoppingBag, FaShoppingCart, FaTasks, FaUsers, FaUtensils } from 'react-icons/fa';
+import { FaBars, FaBook, FaCalendarAlt, FaCcAmazonPay, FaCreditCard, FaEnvelope, FaHome, FaRocket, FaShoppingBag, FaShoppingCart, FaTasks, FaUsers, FaUtensils } from 'react-icons/fa';
 
 const DashboardLayout = () => {
   return (
@@ -33,7 +33,7 @@ const DashboardLayout = () => {
             <hr />
             <li><NavLink to='/dashboard/user-home'><FaHome size={20} />User Home</NavLink></li>
             <li><NavLink to='/dashboard/reservation'><FaCalendarAlt size={20} />Reservation</NavLink></li>
-            <li><NavLink to='/dashboard/paymentHistory'><FaCreditCard size={20} />Payment History</NavLink></li>
+            <li><NavLink to='/dashboard/paymentHistory'><FaCcAmazonPay size={20} />Payment History</NavLink></li>
             <li><NavLink to='/dashboard/mycart'><FaShoppingCart size={20} />My Cart</NavLink></li>
             <li><NavLink to='/dashboard/addReview'><FaRocket size={20} />Add Review</NavLink></li>
 
