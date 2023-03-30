@@ -15,7 +15,7 @@ const UserHome = () => {
 
                 
                 <Card4  icon={<FaRegListAlt size={32} />}>{{ title: "MENU", data: 205, color1: 'from-[#b82bf6]', color2: 'to-[#f0c0ee]',page:'/menu', cursor:'cursor-pointer' }}</Card4>   
-                    
+
                 <Card4 icon={<FaStoreAlt size={32} />}>{{ title: "SHOP", data: 103, color1: 'from-[#d1a054]', color2: 'to-[#ffe1a4]',page:'/shop',cursor:'cursor-pointer' }}</Card4>
 
                 <Card4  icon={<FaPhone size={32} />}>{{ title: "CONTACT", data: '03', color1: 'from-[#ff4079]', color2: 'to-[#f6b7e0]',page:'/contact',cursor:'cursor-pointer' }}</Card4>
@@ -23,9 +23,9 @@ const UserHome = () => {
 
             </div>
             <div className="flex w-9/12 mx-auto flex-wrap h-96 justify-center mt-12  shadow-2xl">
-                <div class=" bg-orange-100 w-full flex items-center justify-center sm:w-1/2 md:w-1/2 pr-4 mb-4 ">
+                <div class="border-r-2 border-[#d1a054] bg-orange-100 w-full flex items-center justify-center sm:w-1/2 md:w-1/2 pr-4 mb-4 ">
                    <div>
-                   <img className='rounded-full mb-8 mx-auto w-52' src={user.photoURL || profile} alt="user-profile" />
+                   <img className='border-[#d1a054] border-4 rounded-full mb-8 mx-auto w-52' src={user.photoURL || profile} alt="user-profile" />
                    <h3 className='text-center text font-extrabold text-animation text-xl'>{user.displayName || ''}</h3>
                    </div>
                 </div>
