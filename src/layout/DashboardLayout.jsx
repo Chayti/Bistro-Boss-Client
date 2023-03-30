@@ -26,17 +26,16 @@ const DashboardLayout = () => {
             </div>
 
             <li><NavLink to='/dashboard/admin-home'>Admin Home</NavLink></li>
-            <li><NavLink to='/dashboard/addRecipe'>Add Recipe</NavLink></li>
-            <li><NavLink to='/dashboard/updateRecipe'>Update Recipe</NavLink></li>
+            <li><NavLink to='/dashboard/addItem'>Add Item</NavLink></li>
+            <li><NavLink to='/dashboard/manageItems'>Manage Items</NavLink></li>
             <li><NavLink to='/dashboard/manageBookings'>Manage Bookings</NavLink></li>
-            <li><NavLink to='/dashboard/all-users'>All Users</NavLink></li>
-
+            <li><NavLink to='/dashboard/allUsers'>All Users</NavLink></li>
+            
             <hr />
             <li><NavLink to='/dashboard/user-home'>User Home</NavLink></li>
             <li><NavLink to='/dashboard/reservation'>Reservation</NavLink></li>
-            <li><NavLink to='/dashboard/myBookings'>My Bookings</NavLink></li>
-            <li><NavLink to='/dashboard/my-orders'>My Orders</NavLink></li>
             <li><NavLink to='/dashboard/paymentHistory'>Payment History</NavLink></li>
+            <li><NavLink to='/dashboard/mycart'>My Cart</NavLink></li>
             <li><NavLink to='/dashboard/addReview'>Add Review</NavLink></li>
 
             <hr />

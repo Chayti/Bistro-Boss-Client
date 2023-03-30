@@ -1,6 +1,9 @@
 import React from 'react';
+import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const ManageItems = () => {
+    const navigate = useNavigate();
     const items = [
         {
             "image":"https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
@@ -36,11 +39,12 @@ const ManageItems = () => {
         
     ]
     return (
-        
-        
-        <div className='my-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
+       <>
+        <h1 className='my-10 text-5xl text-animation text font-extrabold '>Manage Items</h1>
+      
+        <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
            
-            <h1 className='text-3xl text mb-4 font-bold'>Total users: {items.length}</h1>
+            <h1 className='text-3xl text mb-4 font-bold'>Total items: {items.length}</h1>
            <div className="overflow-x-auto">
             <table className="table w-full">
                 {/* head */}
@@ -61,15 +65,15 @@ const ManageItems = () => {
                 <td><img className='h-14' src={item.image} alt="" /></td>
                 <td>{item.name}</td>
                 <td>${item.price}</td>
-                <td><button className='btn bg-[#d1a054] text-white border-0'>Update Item</button></td>
-                <td><button className='btn bg-red-700  text-white border-0'>Remove Item</button></td>
+                <td><button onClick={()=>navigate('/dashboard/updateItem')} className='btn bg-[#d1a054] tooltip text-white border-0' data-tip='edit'><FaRegEdit/></button></td>
+                <td><button className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt/></button></td>
               </tr>)
                }
                 </tbody>
             </table>
             </div>
         </div>
-       
+        </> 
     );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState }  from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import InputField from '../../components/shared/InputField';
 import Title from '../../components/shared/Title/Title';
@@ -23,7 +24,7 @@ const ReservationForm = () => {
     const [phone, setPhone] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
-
+    const navigate = useNavigate();
     console.log(selectedTime)
     return (
         <div className=''>
@@ -97,7 +98,9 @@ const ReservationForm = () => {
                 </div>
               
                 <div className="text-center mt-8">
-                    <button className={"btn4 py-2 px-8 "}>
+                    <button onClick={(e)=>
+                        {e.preventDefault() 
+                        navigate('/dashboard/payment')}} className={"btn4 py-2 px-8 "}>
                         Book A Table
                     </button>
                 </div>

@@ -13,10 +13,11 @@ const AddReview = () => {
     }
 
     return (
-
-        <div className="bg-[#eceae380] mt-20 mx-10 my-6 px-32 overflow-y-scroll">
-            <p className="text-animation text-2xl my-4">Use react rating at home page testimonial</p><hr />
-            <p className="text text-xl my-4 text-center">Sharing is Caring!!! <br />Would you like to give a review?</p><hr />
+       <>
+       
+       <p className="text text-3xl mt-5 text-center text-animation text font-extrabold">Sharing is Caring!!! <br />Would you like to give a review?</p><hr />
+        <div className="bg-[#eceae380] mx-10 my-6 px-32 w-10/12">
+            
             <p className="text text-animation text-lg my-4 text-center">Rate US!</p>
             <div className="text-center">
                 <Rating
@@ -74,6 +75,7 @@ const AddReview = () => {
             </form >
 
         </div >
+        </>
     )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import InputField from '../../components/shared/InputField';
 
-const UpdateRecipe = () => {
+const UpdateItem = () => {
 
     const [name, setName] = useState('');
 
@@ -11,8 +11,9 @@ const UpdateRecipe = () => {
     }
 
     return (
-
-        <div className="bg-[#eceae380] mt-20 mx-20 p-6">
+        <>
+          <h1 className='my-14 text-center text-5xl text-animation text font-extrabold '>Update Item</h1>
+        <div className="bg-[#eceae380] mx-20 p-6">
             <form className="rounded-lg p-8" onSubmit={sendEmail}>
                 <div className="flex flex-wrap -mx-4 mb-4">
                     <div className="w-full px-4 mb-4 md:mb-0">
@@ -75,7 +76,8 @@ const UpdateRecipe = () => {
             </form >
 
         </div >
+        </>
     )
 }
 
-export default UpdateRecipe;
+export default UpdateItem;
