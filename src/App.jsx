@@ -11,7 +11,7 @@ function App() {
     // Simulate loading time
     setTimeout(() => {
       setIsLoading(false);
-    }, 7000);
+    }, 5000);
   }, []);
 
   return (
@@ -21,7 +21,6 @@ function App() {
 
         ? <div>
           <Spinner />
-         
         </div>
 
         : <RouterProvider router={routes}></RouterProvider>

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import './ContactForm.css';
 import swal from 'sweetalert';
 import ReCAPTCHA from "react-google-recaptcha";
 import InputField from '../shared/InputField';
