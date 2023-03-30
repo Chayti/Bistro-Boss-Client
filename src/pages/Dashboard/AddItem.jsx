@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaPlusCircle, FaUtensils } from "react-icons/fa";
 import InputField from '../../components/shared/InputField';
+import Title from '../../components/shared/Title/Title';
 
 const AddItem = () => {
 
@@ -13,7 +14,9 @@ const AddItem = () => {
 
     return (
         <>
-            <h1 className='my-14 text-center text-5xl text-animation text font-extrabold '>Add Item</h1>
+            <div className="w-full">
+                <Title type={{ smallHeading: "What's new?", title: "Add an item" }}></Title>
+            </div>
             <div className="bg-[#eceae380] mx-20 p-6 shadow-2xl w-10/12">
 
                 <form className="rounded-lg p-8" onSubmit={sendEmail}>
