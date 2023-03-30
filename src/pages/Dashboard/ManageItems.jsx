@@ -73,7 +73,11 @@ const ManageItems = () => {
                                     <td>{item.name}</td>
                                     <td>${item.price}</td>
                                     <td><button onClick={() => navigate('/dashboard/updateItem')} className='btn bg-[#d1a054] tooltip text-white border-0' data-tip='edit'><FaRegEdit /></button></td>
-                                    <td><button className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
+                                    <td><button onClick={() => swal({
+                                        title: "Are you sure?",
+                                        text: "Message sent",
+                                        icon: "error",
+                                    })}  className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
                                 </tr>)
                             }
                         </tbody>
