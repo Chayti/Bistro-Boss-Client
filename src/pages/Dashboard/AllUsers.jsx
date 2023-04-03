@@ -62,7 +62,7 @@ const AllUsers = () => {
     return (
         <>
             <Helmet>
-                <title>CC Restaurant | All Users</title>
+                <title>BB Restaurant |  All Users</title>
             </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "How many??", title: "Manage all users" }}></Title>
@@ -91,7 +91,7 @@ const AllUsers = () => {
                                         title: "Are you sure?",
                                         text: "Message sent",
                                         icon: "error",
-                                    })}  className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
+                                    })} className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
                                 </tr>)
                             }
                         </tbody>

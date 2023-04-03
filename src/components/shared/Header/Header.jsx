@@ -26,9 +26,9 @@ const Header = () => {
                     </div>
                     <a className="btn btn-ghost  uppercase text-xl font-serif ">
                         <div>
-                            Culinary Cloud
+                            Bistro Boss
 
-                            <small className='block text-xs font-thin' style={{ letterSpacing: '8px' }}>Restaurant</small>
+                            <small className='block text-xs font-thin ml-2' style={{ letterSpacing: '8px' }}>Restaurant</small>
                         </div>
                     </a>
                 </div>

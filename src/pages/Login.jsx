@@ -45,7 +45,7 @@ const Login = () => {
         <div className="grid md:grid-cols-2">
           <div className="">
             <Helmet>
-              <title>CC Restaurant | Login</title>
+              <title>BB Restaurant |  Login</title>
             </Helmet>
             <img
               src={illustration}

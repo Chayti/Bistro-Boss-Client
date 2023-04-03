@@ -10,7 +10,7 @@ const Contact = () => {
     return (
         <div>
             <Helmet>
-                <title>CC Restaurant | Contact Us</title>
+                <title>BB Restaurant |  Contact Us</title>
             </Helmet>
 
             <Banner2 banner={{ title: 'CONTACT US', description: `Do you wanna connect with us?`, image: 'bg-contact-banner' }}></Banner2>

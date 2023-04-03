@@ -10,7 +10,7 @@ const AdminHome = () => {
     return (
         <div className="mt-8">
             <Helmet>
-                <title>CC Restaurant | Admin Home</title>
+                <title>BB Restaurant |  Admin Home</title>
             </Helmet>
             <h2 className="text text-animation p-4 text-3xl normal-case">Hi, Welcome Back!</h2>
             <div class="flex flex-wrap justify-center">

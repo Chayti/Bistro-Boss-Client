@@ -13,17 +13,17 @@ const UserHome = () => {
 
     <div className='h-screen  pt-10 w-full'>
       <Helmet>
-        <title>CC Restaurant | User Home</title>
+        <title>BB Restaurant |  User Home</title>
       </Helmet>
       <h2 className="text-center text text-animation p-4 text-3xl normal-case">Hi, Welcome Back!</h2>
       <div class="flex flex-wrap justify-center">
-      <Card4  icon={<FaRegListAlt size={32} />}>{{ title: "MENU", data: 205, color1: 'from-[#b82bf6]', color2: 'to-[#f0c0ee]',page:'/menu', cursor:'cursor-pointer' }}</Card4>   
-                    
-        <Card4 icon={<FaStoreAlt size={32} />}>{{ title: "SHOP", data: 103, color1: 'from-[#d1a054]', color2: 'to-[#ffe1a4]',page:'/shop',cursor:'cursor-pointer' }}</Card4>
-    
-         <Card4  icon={<FaPhone size={32} />}>{{ title: "CONTACT", data: '03', color1: 'from-[#ff4079]', color2: 'to-[#f6b7e0]',page:'/contact',cursor:'cursor-pointer' }}</Card4>
-    
-    
+        <Card4 icon={<FaRegListAlt size={32} />}>{{ title: "MENU", data: 205, color1: 'from-[#b82bf6]', color2: 'to-[#f0c0ee]', page: '/menu', cursor: 'cursor-pointer' }}</Card4>
+
+        <Card4 icon={<FaStoreAlt size={32} />}>{{ title: "SHOP", data: 103, color1: 'from-[#d1a054]', color2: 'to-[#ffe1a4]', page: '/shop', cursor: 'cursor-pointer' }}</Card4>
+
+        <Card4 icon={<FaPhone size={32} />}>{{ title: "CONTACT", data: '03', color1: 'from-[#ff4079]', color2: 'to-[#f6b7e0]', page: '/contact', cursor: 'cursor-pointer' }}</Card4>
+
+
 
 
       </div>

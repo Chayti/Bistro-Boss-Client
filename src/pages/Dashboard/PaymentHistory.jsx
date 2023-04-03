@@ -43,7 +43,7 @@ const PaymentHistory = () => {
     return (
         <>
             <Helmet>
-                <title>CC Restaurant | Payment History</title>
+                <title>BB Restaurant |  Payment History</title>
             </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "At a Glance!", title: "Payment history" }}></Title>

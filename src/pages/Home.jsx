@@ -14,10 +14,10 @@ const Home = () => {
         <div >
 
             <Helmet>
-                <title>Culinary Cloud Restaurant </title>
+                <title>Bistro Boss Restaurant </title>
             </Helmet>
 
-            <Banner banner={{ title: 'Culinary Cloud', description: 'ABC Main Street, Uni 21, Bangladesh' }}></Banner>
+            <Banner banner={{ title: 'Bistro Boss', description: 'ABC Main Street, Uni 21, Bangladesh' }}></Banner>
             <Category></Category>
             <About></About>
             <Menu></Menu>

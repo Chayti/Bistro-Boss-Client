@@ -56,7 +56,7 @@ const MyCart = () => {
 
         <>
             <Helmet>
-                <title>CC Restaurant | My Cart</title>
+                <title>BB Restaurant |  My Cart</title>
             </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "My Cart", title: "Wanna add more?" }}></Title>
