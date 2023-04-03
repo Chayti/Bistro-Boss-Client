@@ -47,7 +47,7 @@ const MyHistory = () => {
     return (
         <div className='w-11/12'>
             <Helmet>
-                <title>CC Restaurant | My History</title>
+                <title>BB Restaurant |  My History</title>
             </Helmet>
             <div className="overflow-x-auto">
                 <table className="table w-full ">

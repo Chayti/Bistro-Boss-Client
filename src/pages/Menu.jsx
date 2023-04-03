@@ -20,7 +20,7 @@ const Menu = () => {
     return (
         <div>
             <Helmet>
-                <title>CC Restaurant | Menu</title>
+                <title>BB Restaurant |  Menu</title>
             </Helmet>
             <Banner2 banner={{ title: 'Our Menu', description: 'Would you like to try a dish?', image: 'bg-menu-banner' }}></Banner2>
             <div>

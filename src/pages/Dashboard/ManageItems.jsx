@@ -43,7 +43,7 @@ const ManageItems = () => {
     return (
         <>
             <Helmet>
-                <title>CC Restaurant | Manage Items</title>
+                <title>BB Restaurant |  Manage Items</title>
             </Helmet>
             <div className="w-full">
                 <Title type={{ smallHeading: "Hurry Up!", title: "Manage all Items" }}></Title>
@@ -77,7 +77,7 @@ const ManageItems = () => {
                                         title: "Are you sure?",
                                         text: "Message sent",
                                         icon: "error",
-                                    })}  className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
+                                    })} className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
                                 </tr>)
                             }
                         </tbody>

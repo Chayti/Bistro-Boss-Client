@@ -104,7 +104,7 @@ const CheckoutForm = () => {
     return (
         <>
             <Helmet>
-                <title>CC Restaurant | Checkout</title>
+                <title>BB Restaurant |  Checkout</title>
             </Helmet>
             <form>
                 <CardElement

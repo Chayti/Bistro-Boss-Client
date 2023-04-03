@@ -61,7 +61,7 @@ const Registration = () => {
         <div className="grid md:grid-cols-2">
           <div className="">
             <Helmet>
-              <title>CC Restaurant | Registration</title>
+              <title>BB Restaurant |  Registration</title>
             </Helmet>
             <h1 className="font-bold text-center text-3xl">Sign Up</h1>
             <form onSubmit={handleSubmit} className="md:w-1/2 mx-auto">

@@ -16,7 +16,7 @@ const Payment = () => {
     return (
         <>
             <Helmet>
-                <title>CC Restaurant | Payment</title>
+                <title>BB Restaurant |  Payment</title>
             </Helmet>
             <h3 className="text-7xl mt-18 text-center text-animation text">Payment</h3>
             <div className='w-9/12 rounded-xl  mt-14'>

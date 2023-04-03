@@ -11,14 +11,14 @@ const Shop = () => {
     return (
         <div>
             <Helmet>
-                <title>CC Restaurant | Shop</title>
+                <title>BB Restaurant |  Shop</title>
             </Helmet>
             <Banner2 banner={{ title: 'Our Shop', description: 'Would you like to try a dish?', image: 'bg-shop-banner' }}></Banner2>
             <Tabs shopData={shopData}></Tabs>
             <div className='flex justify-center mt-8'>
-            <Pagination></Pagination>
+                <Pagination></Pagination>
             </div>
-           
+
         </div>
     );
 };
