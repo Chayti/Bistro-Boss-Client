@@ -19,10 +19,10 @@ import Payment from '../../pages/Dashboard/Payment';
 import AddItem from '../../pages/Dashboard/AddItem';
 import UpdateItem from '../../pages/Dashboard/UpdateItem';
 import ManageBookings from '../../pages/Dashboard/ManageBookings';
-// import MyBookings from '../../pages/Dashboard/MyBookings';
 import PaymentHistory from '../../pages/Dashboard/PaymentHistory';
 import UserHome from '../../pages/Dashboard/UserHome';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import NotFound from '../../pages/NotFound';
 
 
 const routes = createBrowserRouter([
@@ -58,9 +58,6 @@ const routes = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       }
-
-
-
     ],
 
   },
@@ -92,10 +89,6 @@ const routes = createBrowserRouter([
         path: "/dashboard/manageBookings",
         element: <ManageBookings />,
       },
-      // {
-      //   path: "/dashboard/myBookings",
-      //   element: <MyBookings />,
-      // },
       {
         path: "/dashboard/paymentHistory",
         element: <PaymentHistory />,
@@ -127,7 +120,11 @@ const routes = createBrowserRouter([
 
     ]
 
-  }
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 
 
 ]);

@@ -115,7 +115,7 @@ const ContactForm = () => {
                 />
 
                 <div className="text-center mt-8">
-                    <button className={`btn4 inline-flex items-center py-2 inline px-8 ${verified == false ? "opacity-50 cursor-not-allowed" : ""}`}>
+                    <button className={`btn4 inline-flex items-center py-2 px-8 ${verified == false ? "opacity-50 cursor-not-allowed" : ""}`}>
                         Send Message
                         <FaPaperPlane className="ml-2" style={{ verticalAlign: 'middle' }} />
                     </button>

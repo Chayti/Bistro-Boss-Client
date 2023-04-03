@@ -6,6 +6,7 @@ import Header from '../components/shared/Header/Header';
 const Main = () => {
 
     const location = useLocation();
+    console.log(location)
     const isLoginPage = location.pathname === '/login';
     const isRegisterPage = location.pathname === '/register';
 
