@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { FaRocket } from "react-icons/fa";
+import { FaRocket, FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
 import swal from 'sweetalert';
 import Title from '../../components/shared/Title/Title';
@@ -27,6 +27,8 @@ const AddReview = () => {
                 <p className="text text-animation text-lg my-4 text-center">Rate US!</p>
                 <div className="text-center">
                     <Rating
+                        emptySymbol={<FaStar color="#ccc" size="2em" />} // Set the empty star icon and color
+                        fullSymbol={<FaStar color="#d1a054" size="2em" />} // Set the full star icon and color
                         onChange={(rate) => swal({
                             title: "Thank you!💐",
                             text: `You have given ${rate} ratings!!! ❤️😍`,
