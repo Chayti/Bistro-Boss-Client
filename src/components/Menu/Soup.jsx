@@ -4,6 +4,8 @@ import './Menu.css'
 const Soup = ({ items }) => {
     // console.log(items)
 
+    const soup = items.filter(item => item.category.includes('soup'));
+
     return (
         <>
             <div className="container-lg my-20">
@@ -20,7 +22,7 @@ const Soup = ({ items }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-10">
                 {
-                    items?.map((item, index) =>
+                    soup?.map((item, index) =>
                         <div className="flex space-x-4" key={index}>
                             <Card>
                                 {item}
