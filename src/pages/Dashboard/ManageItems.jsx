@@ -2,44 +2,16 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FaRegEdit, FaRegTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import Spinner2 from '../../components/shared/Spinner/Spinner2';
 import Title from '../../components/shared/Title/Title';
+import useItems from '../../Hooks/useItems';
 
 const ManageItems = () => {
     const navigate = useNavigate();
-    const items = [
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Roast Duck Breast",
-            "price": 14.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Tuna Niçoise",
-            "price": 14.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Escalope de Veau",
-            "price": 14.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Chicken and Walnut Salad",
-            "price": 14.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Fish Parmentier",
-            "price": 14.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Roasted Pork Belly",
-            "price": 14.50
-        },
-
-
-    ]
+    const [items, loading] = useItems();
+    if (loading) {
+        return <Spinner2></Spinner2>
+    }
     return (
         <>
             <Helmet>
@@ -60,6 +32,7 @@ const ManageItems = () => {
                                 <th className='bg-[#d1a054] text-white'></th>
                                 <th className='bg-[#d1a054] text-white'>Item Image</th>
                                 <th className='bg-[#d1a054] text-white'>Item Name</th>
+                                <th className='bg-[#d1a054] text-white'>Category</th>
                                 <th className='bg-[#d1a054] text-white'>Price</th>
                                 <th className='bg-[#d1a054] text-white'>Action</th>
                                 <th className='bg-[#d1a054] text-white'>Action</th>
@@ -71,6 +44,7 @@ const ManageItems = () => {
                                     <th>{index + 1}</th>
                                     <td><img className='h-14' src={item.image} alt="" /></td>
                                     <td>{item.name}</td>
+                                    <td>{item.category}</td>
                                     <td>${item.price}</td>
                                     <td><button onClick={() => navigate('/dashboard/updateItem')} className='btn bg-[#d1a054] tooltip text-white border-0' data-tip='edit'><FaRegEdit /></button></td>
                                     <td><button onClick={() => swal({
