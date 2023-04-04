@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Title from '../shared/Title/Title';
 import Chef from './Chef';
+import useItems from '../../Hooks/useItems';
+import Spinner2 from '../shared/Spinner/Spinner2';
 
 const ChefRecommends = () => {
-    const [specials, setSpecial] = useState([]);
+    // const [specials, setSpecial] = useState([]);
 
-    useEffect(() => {
-        fetch('chef.json')
-            .then(res => res.json())
-            .then(data => setSpecial(data))
-    }, [])
+    // useEffect(() => {
+    //     fetch('chef.json')
+    //         .then(res => res.json())
+    //         .then(data => setSpecial(data))
+    // }, [])
+    const [items, loading] = useItems();
+    if (loading) {
+        return <Spinner2></Spinner2>
+    }
+    const specials = items.filter(item => item.category.includes('popular'));
     // console.log(specials)
     return (
         <div>
@@ -20,7 +27,7 @@ const ChefRecommends = () => {
             <div className="grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center md:w-10/12 md:mx-auto">
 
                 {
-                    specials.map((special, index) => <Chef
+                    specials.slice(0,3).map((special, index) => <Chef
                         key={index}
                         special={special}
                     ></Chef>)
