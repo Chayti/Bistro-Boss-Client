@@ -8,49 +8,16 @@ import Title from '../../components/shared/Title/Title';
 const MyCart = () => {
     const navigate = useNavigate();
 
-    // const {data: orders = [], refetch} = useQuery({
-    //     queryKey: ['orders'],
-    //     queryFn: async() =>{
-    //         const res = await fetch("orders.json");
-    //         const data = await res.json();
-    //         return data;
-    //     }
-    // });
-    const orders = [
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Roast Duck Breast",
-            "price": 14.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Tuna Niçoise",
-            "price": 15.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Escalope de Veau",
-            "price": 14.50
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Chicken and Walnut Salad",
-            "price": 14.90
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Fish Parmentier",
-            "price": 14.30
-        },
-        {
-            "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-105x105.jpg",
-            "name": "Roasted Pork Belly",
-            "price": 14.50
-        },
-
-
-    ]
-    const total = orders.reduce((acc, order) => acc + order.price, 0);
+    const {data: carts = [], refetch} = useQuery({
+        queryKey: ['carts'],
+        queryFn: async() =>{
+            const res = await fetch("http://localhost:5000/carts");
+            const data = await res.json();
+            return data;
+        }
+    });
+    
+    const total = carts.reduce((acc, order) => acc + order.price, 0);
     console.log(total)
     return (
 
@@ -65,7 +32,7 @@ const MyCart = () => {
 
                 <div className='flex justify-between items-center text-3xl text mb-4 font-bold'>
 
-                    <h1 >Total orders: {orders.length}</h1><h1>Total Price: ${total}</h1> <button onClick={() => navigate('/dashboard/payment')} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
+                    <h1 >Total orders: {carts.length}</h1><h1>Total Price: ${total}</h1> <button onClick={() => navigate('/dashboard/payment')} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
@@ -81,11 +48,11 @@ const MyCart = () => {
                         </thead>
                         <tbody>
                             {
-                                orders.map((order, index) => <tr key={index}>
+                                carts.map((cart, index) => <tr key={index}>
                                     <th>{index + 1}</th>
-                                    <td><img className='h-14' src={order.image} alt="" /></td>
-                                    <td>{order.name}</td>
-                                    <td>${parseFloat(order.price).toFixed(2)}</td>
+                                    <td><img className='h-14' src={cart.image} alt="" /></td>
+                                    <td>{cart.name}</td>
+                                    <td>${parseFloat(cart.price).toFixed(2)}</td>
 
                                     <td><button onClick={() => swal({
                                         title: "Are you sure?",

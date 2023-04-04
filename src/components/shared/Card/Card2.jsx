@@ -1,7 +1,25 @@
 import React from 'react';
+import useAuth from '../../../Hooks/useAuth';
 
 const Cards = ({children}) => {
     const { image, name, recipe, price } = children;
+    const {user} = useAuth()
+    // console.log(children)
+    const addToCart = (data) =>{
+        data.email = user.email;
+        console.log(data)
+        fetch('http://localhost:5000/carts', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res=> res.json())
+        .then(result =>{
+            console.log(result);
+        } )
+    }
     return (
     
             <div>
@@ -12,7 +30,7 @@ const Cards = ({children}) => {
                         <h2 className="card-title">{name}</h2>
                         <p>{recipe}</p>
                         <div className="card-actions justify-center">
-                        <button className="btn  uppercase bg-gray-300 border-b-2 border-0 border-yellow-700 text-yellow-700 ">Add to cart</button>
+                        <button onClick={()=>addToCart(children)} className="btn  uppercase bg-gray-300 border-b-2 border-0 border-yellow-700 text-yellow-700 ">Add to cart</button>
                     </div>
                 </div>
                 </div>

@@ -21,10 +21,10 @@ const ManageItems = () => {
                 <Title type={{ smallHeading: "Hurry Up!", title: "Manage all Items" }}></Title>
             </div>
 
-            <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
+            <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll scroll-smooth bg-white rounded-2xl'>
 
                 <h1 className='text-3xl text mb-4 font-bold'>Total items: {items.length}</h1>
-                <div className="overflow-x-auto">
+                <div className="">
                     <table className="table w-full">
                         {/* head */}
                         <thead>

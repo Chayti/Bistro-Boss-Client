@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { RouterProvider } from 'react-router-dom'
 import Spinner from './components/shared/Spinner/Spinner';
-import routes from './routes/Routes/routes'
+import routes from './routes/Routes/Routes';
+
 
 function App() {
 

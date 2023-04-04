@@ -13,6 +13,8 @@ const Payment = () => {
     // if(navigation.state === "loading"){
     //     return <Loading></Loading>
     // }
+
+    const order = {id:101,email:"test@gmail.com",name:'test', price:88.20}
     return (
         <>
             <Helmet>
@@ -21,11 +23,11 @@ const Payment = () => {
             <h3 className="text-7xl mt-18 text-center text-animation text">Payment</h3>
             <div className='w-9/12 rounded-xl  mt-14'>
 
-                {/* <p className="text-xl">Please pay <strong>$14.50</strong> for your appointment on {appointmentDate} at {slot}</p> */}
+                <p className="text-xl text-center mb-10">Please pay <strong>$14.50</strong> for your order</p>
                 <div className='w-6/12 mt-5 mx-auto '>
                     <Elements stripe={stripePromise}>
                         <CheckoutForm
-
+                        order={order}
                         />
                     </Elements>
                 </div>
