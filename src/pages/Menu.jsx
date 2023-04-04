@@ -6,7 +6,7 @@ import Pizza from '../components/Menu/Pizza';
 import Salad from '../components/Menu/Salad';
 import Soup from '../components/Menu/Soup';
 import Banner2 from '../components/shared/Banner2/Banner2';
-import Spinner from '../components/shared/Spinner/Spinner';
+import Spinner2 from '../components/shared/Spinner/Spinner2';
 import useItems from '../Hooks/useItems';
 
 
@@ -14,7 +14,7 @@ const Menu = () => {
 
     const [items, loading] = useItems();
     if (loading) {
-        return <Spinner></Spinner>
+        return <Spinner2></Spinner2>
     }
 
     return (
@@ -24,11 +24,11 @@ const Menu = () => {
             </Helmet>
             <Banner2 banner={{ title: 'Our Menu', description: 'Would you like to try a dish?', image: 'bg-menu-banner' }}></Banner2>
             <div>
-                {items && <Offer items={items.offer}></Offer>}
-                {items && <Dessert items={items.dessert}></Dessert>}
-                {items && <Pizza items={items.pizza}></Pizza>}
-                {items && <Salad items={items.salad}></Salad>}
-                {items && <Soup items={items.soup}></Soup>}
+                {items && <Offer items={items}></Offer>}
+                {items && <Dessert items={items}></Dessert>}
+                {items && <Pizza items={items}></Pizza>}
+                {items && <Salad items={items}></Salad>}
+                {items && <Soup items={items}></Soup>}
             </div>
         </div>
     );
