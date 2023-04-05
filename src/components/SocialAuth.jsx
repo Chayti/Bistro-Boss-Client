@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { FaFacebookF, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../contexts/AuthProvider";
 
-const SocialAuth = ({ navigate, from }) => {
+const SocialAuth = ({ navigate, from, saveUser }) => {
   const { setLoading, providerLogin } = useContext(AuthContext);
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -12,7 +12,8 @@ const SocialAuth = ({ navigate, from }) => {
   const handleProviderAuth = (provider) => {
     providerLogin(provider)
       .then((result) => {
-        console.log("user", result?.user);
+        console.log("user", result);
+        saveUser(result.user.displayName, result.user.email)
         navigate(from, { replace: true });
       })
       .catch((err) => {

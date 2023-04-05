@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigation } from 'react-router';
-import useItems from '../../Hooks/useItems';
+import Pagination from '../shared/Pagination/Pagination';
 import Cards from '../shared/Card/Card2';
 import Spinner2 from '../shared/Spinner/Spinner2';
-const Soups = () => {
-    const [items, loading] = useItems();
+import usePagination from '../../Hooks/usePagination';
 
+const Soups = () => {
+    const [items, count, page, size, setPage,loading] = usePagination('soup');
+    const pages = Math.ceil(count / size);
     if (loading) {
         return <Spinner2></Spinner2>
     }
@@ -14,7 +15,7 @@ const Soups = () => {
         <div>
             <div className="grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center">
                 {
-                    items?.filter(item => item.category.includes('soup'))?.map((item, index) =>
+                    items?.map((item, index) =>
                         <Cards keys={index}>
                             {item}
                         </Cards>
@@ -22,6 +23,18 @@ const Soups = () => {
                 }
 
             </div>
+            <div className='flex justify-center mt-8'>
+            {
+                     <Pagination
+                        
+                        pages={pages}
+                        page={page}
+                        count={count}
+                        setPage={setPage}
+                    ></Pagination>
+                }
+            </div>
+
         </div>
     );
 };

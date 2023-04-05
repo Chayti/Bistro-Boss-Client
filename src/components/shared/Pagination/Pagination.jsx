@@ -1,20 +1,20 @@
 import React from 'react';
-const Pagination = () => {
+const Pagination = ({pages,page, count,setPage}) => {
+ 
     return (
-       
-            
-          
-        <div className="flex justify-between w-3/12">
-        <button className='btn rounded-full hover:bg-[#d1a054]'>&laquo;</button>
-        <button className="btn rounded-full hover:bg-[#d1a054] bg-transparent text-black">1</button>
-        <button className="btn rounded-full hover:bg-[#d1a054] bg-transparent text-black">2</button>
-        <button className="btn rounded-full hover:bg-[#d1a054] bg-transparent text-black">3</button>
-        <button className="btn rounded-full hover:bg-[#d1a054] bg-transparent text-black">4</button>
-        <button className="btn rounded-full hover:bg-[#d1a054] bg-transparent text-black">5</button>
-        <button className='btn rounded-full hover:bg-[#d1a054]'>&raquo;</button>
-        </div>
-            
+       <>
         
+        {count<7?'':
+            [...Array(pages).keys()].map(number => <button
+                key={number}
+                className={page === number ? 'btn rounded-full hover:bg-[#d1a054] mr-3' : 'btn rounded-full hover:bg-[#d1a054] bg-transparent text-black mr-3'}
+                onClick={() => setPage(number)}
+            >
+                {number + 1}
+            </button>)
+        }
+         </> 
+       
     );
 };
 

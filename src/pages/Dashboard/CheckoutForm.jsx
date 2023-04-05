@@ -12,22 +12,24 @@ const CheckoutForm = ({order}) => {
     const stripe = useStripe();
    
     const elements = useElements();
-    const {id,email,name, price } = order;
-
+    const {formattedDate,email,name, total } = order;
+    console.log(total)
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        if(total){
+            fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 
             },
-            body: JSON.stringify({ price }),
+            body: JSON.stringify({ total }),
         })
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
-    }, [price]);
-
+        }
+    }, [total]);
+console.log(clientSecret, stripe, processing)
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -75,27 +77,27 @@ const CheckoutForm = ({order}) => {
             console.log('card info', card);
             // store payment info in the database
             const payment = {
-                price,
+                total,
                 transactionId: paymentIntent.id,
                 email,
-                orderId: id
+                date: formattedDate
             }
-            // fetch('http://localhost:5000/payments', {
-            //     method: 'POST',
-            //     headers: {
-            //         'content-type': 'application/json',
+            fetch('http://localhost:5000/payments', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
                   
-            //     },
-            //     body: JSON.stringify(payment)
-            // })
-            //     .then(res => res.json())
-            //     .then(data => {
-            //         console.log(data);
-            //         if (data.insertedId) {
-            //             setSuccess('Congrats! your payment completed');
-            //             setTransactionId(paymentIntent.id);
-            //         }
-            //     })
+                },
+                body: JSON.stringify(payment)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.insertedId) {
+                        setSuccess('Congrats! your payment completed');
+                        setTransactionId(paymentIntent.id);
+                    }
+                })
         }
         setProcessing(false);
 
