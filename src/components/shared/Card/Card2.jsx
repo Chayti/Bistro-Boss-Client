@@ -4,20 +4,25 @@ import useAuth from '../../../Hooks/useAuth';
 const Cards = ({children}) => {
     const { image, name, recipe, price } = children;
     const {user} = useAuth()
-    // console.log(children)
+  
     const addToCart = (data) =>{
         data.email = user.email;
-        console.log(data)
+        const {image, name,category, price, email} = data;
         fetch('http://localhost:5000/carts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({image, name, category, price, email} )
         })
         .then(res=> res.json())
         .then(result =>{
-            console.log(result);
+            swal({
+                title: "Yay!",
+                text: `${name} has been added to your cart!`,
+                icon: "success",
+                button: "Aww yiss!",
+              });
         } )
     }
     return (

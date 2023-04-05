@@ -9,7 +9,7 @@ const Registration = () => {
   const [error, setError] = useState("");
   const { user, createUser, updateUserProfile, verifyEmail } =
     useContext(AuthContext);
-
+  
   const navigate = useNavigate();
   if (user) {
     navigate('/')
@@ -28,6 +28,7 @@ const Registration = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        saveUser(name, email);
         setError("");
         form.reset();
         handleUpdateUserProfile(name, photoURL);
@@ -39,14 +40,16 @@ const Registration = () => {
       });
   };
 
-  const handleUpdateUserProfile = (name, photoURL) => {
+  const handleUpdateUserProfile = (name, photoURL, email) => {
     const profile = {
       displayName: name,
       photoURL: photoURL,
     };
 
     updateUserProfile(profile)
-      .then(() => { })
+      .then(() => {
+        
+       })
       .catch((error) => console.error(error));
   };
 
@@ -55,6 +58,21 @@ const Registration = () => {
       .then(() => { })
       .catch((error) => console.error(error));
   };
+
+  const saveUser = (name, email) =>{
+    const user ={name, email};
+    fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data =>{
+        setCreatedUserEmail(email);
+    })
+}
   return (
     <div className="bg-authentication min-h-screen flex items-center">
       <section className="mx-auto p-12 h-full">
@@ -115,7 +133,7 @@ const Registration = () => {
             <div className="md:w-1/2 mx-auto">
               <p className="font-semibold text-center my-6">Or sign up with</p>
               {/* Separate component for Social login  */}
-              <SocialAuth />
+              <SocialAuth saveUser= {saveUser} />
             </div>
           </div>
 

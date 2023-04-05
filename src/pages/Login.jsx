@@ -8,6 +8,7 @@ import { AuthContext } from "../contexts/AuthProvider";
 const Login = () => {
   const [error, setError] = useState("");
   const { user, signIn, setLoading } = useContext(AuthContext);
+  const [loginUserEmail, setLoginUserEmail] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -22,6 +23,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        
         form.reset();
         setError("");
 
@@ -34,7 +36,20 @@ const Login = () => {
         setLoading(false);
       });
   };
-
+  const saveUser = (name, email) =>{
+    const user ={name, email};
+    fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data =>{
+      setLoginUserEmail(email);
+    })
+}
 
   return (
     <div className="bg-authentication min-h-screen flex items-center">
@@ -97,7 +112,7 @@ const Login = () => {
             <div className="md:w-1/2 mx-auto">
               <p className="font-semibold text-center my-6">Or sign in with</p>
               {/* Separate component for Social login  */}
-              <SocialAuth navigate={navigate} from={from} />
+              <SocialAuth saveUser={saveUser} navigate={navigate} from={from} />
             </div>
           </div>
         </div>
