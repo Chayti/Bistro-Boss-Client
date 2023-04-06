@@ -5,9 +5,13 @@ import profile from '../../assets/others/profile.png'
 import { useNavigate } from "react-router-dom";
 import { FaCalendarAlt, FaCartPlus, FaCcAmazonPay, FaPhone, FaRegListAlt, FaRegStar, FaStoreAlt } from 'react-icons/fa';
 import Card4 from '../../components/shared/Card/Card4';
-const UserHome = () => {
+import useBookings from '../../Hooks/useBookings';
+import useCarts from '../../Hooks/useCarts';
+  const UserHome = () => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const [bookings] = useBookings();
+  const [carts] = useCarts();
   console.log(user)
   return (
 
@@ -38,9 +42,9 @@ const UserHome = () => {
           <div>
             <h3 className='text-animation text-3xl mb-5 '>---Your Activities---</h3>
             <ul className='w-full text-2xl'>
-              <li className='flex items-center text-[#0088FE]'><FaCartPlus className=' mr-2' /> Orders: 6</li>
+              <li className='flex items-center text-[#0088FE]'><FaCartPlus className=' mr-2' /> Orders:{carts.length} </li>
               <li className='flex items-center text-[#00C49F]'><FaRegStar className=' mr-2' /> Reviews: 2</li>
-              <li className='flex items-center text-[#FFBB28]'><FaCalendarAlt className=' mr-2' /> Bookings: 1</li>
+              <li className='flex items-center text-[#FFBB28]'><FaCalendarAlt className=' mr-2' /> Bookings: {bookings.length} </li>
               <li className='flex items-center text-[#FF8042] '><FaCcAmazonPay className='mr-2' /> Payment: 3</li>
             </ul>
           </div>

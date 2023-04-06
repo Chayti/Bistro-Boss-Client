@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaTable } from "react-icons/fa";
 import InputField from './shared/InputField';
+import useAuth from '../Hooks/useAuth';
 
 
 const ReservationForm = () => {
+    const {user} = useAuth();
+    const {email} = user;
 
     const options = [
         '1 person',
@@ -18,18 +21,61 @@ const ReservationForm = () => {
         '9 person',
         '10 person'
     ]
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+   
     const [phone, setPhone] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
+    const [person, setPerson] = useState('');
     const navigate = useNavigate();
-    console.log(selectedTime)
+   
+    
+    const handleBooking = event => {
+        event.preventDefault();
+        
+        // [3, 4, 5].map((value, i) => console.log(value))
+        const booking = {
+            image:'https://spotonwifi.com/wp-content/uploads/2020/08/WordPress-Table-Reservation-plugin-1000x562-1.jpg',
+            bookingDate: selectedDate,
+            category:'reservation',
+            selectedTime,
+            name:`${person} guest`,
+            email,
+            phone,
+            price:89
+            
+        }
 
+        // TODO: send data to the server
+        // and once data is saved then close the modal 
+        // and display success toast
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.acknowledged) {
+                    swal({
+                        title: "YAY!",
+                        text: "Bookin Successful!",
+                        icon: "success",
+                      });
+                }
+                else{
+                    console.log('not nice!')
+                }
+            })
+
+
+    }
     return (
 
         <div className=''>
-            <form className="rounded-lg" >
+            <form onSubmit={handleBooking} className="rounded-lg" >
                 <div className="flex flex-wrap mb-4">
                     <div className="w-full md:w-1/3 px-4 mb-4 md:mb-0 ">
 
@@ -45,7 +91,7 @@ const ReservationForm = () => {
 
                         <InputField
                             label="time"
-                            name="time"
+                            name = 'time'
                             type="time"
                             onChange={(e) => setSelectedTime(e.target.value)}
                         />
@@ -53,7 +99,7 @@ const ReservationForm = () => {
                     </div>
                     <div className="w-full md:w-1/3 px-4 mb-4 md:mb-0 ">
                         <label htmlFor='guests'>Guests</label>
-                        <select name='guests' id='guests' className="form-control border-2 border-gray-200 block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400">
+                        <select onChange={(e) => setPerson(e.target.value)} name='guests' id='guests' className="form-control border-2 border-gray-200 block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400">
                             <option value='' />
                             {options.map((option, index) => (
                                 (index === 0)
@@ -66,10 +112,10 @@ const ReservationForm = () => {
                     <div className="w-full md:w-1/3 px-4 mb-4 md:mb-0 ">
                         <InputField
                             label="Name"
-                            name="name"
+                            value={user.displayName}
                             type="text"
                             placeholder="Your Name"
-                            value={name}
+                            disabled='true'
 
                             onChange={(e) => setName(e.target.value)}
                         />
@@ -87,10 +133,11 @@ const ReservationForm = () => {
                     <div className="w-full md:w-1/3 px-4">
                         <InputField
                             label="Email"
-                            name="email"
+                            name='email'
                             type="email"
                             placeholder="Email"
-                            value={email}
+                            value={user.email}
+                            disabled='true'
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
@@ -98,10 +145,7 @@ const ReservationForm = () => {
                 </div>
 
                 <div className="text-center mt-8 ">
-                    <button onClick={(e) => {
-                        e.preventDefault()
-                        navigate('/dashboard/payment')
-                    }} className={"btn4 py-2 px-8 inline-flex items-center"}>
+                    <button type='submit' className={"btn4 py-2 px-8 inline-flex items-center"}>
                         Book A Table
                         <FaTable className="ml-2" style={{ verticalAlign: 'middle' }} />
                     </button>

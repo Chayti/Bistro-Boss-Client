@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputField = ({ label, name, type, placeholder, value, onChange }) => {
+const InputField = ({ label, name, type, placeholder, value, onChange, disabled }) => {
     return (
         <div className="mb-4">
             <label className="text-gray-700 font-semibold mb-1 block" htmlFor={name}>
@@ -15,6 +15,7 @@ const InputField = ({ label, name, type, placeholder, value, onChange }) => {
                 required
                 value={value}
                 onChange={onChange}
+                disabled={disabled}
             />
         </div>
     );

@@ -23,6 +23,7 @@ import PaymentHistory from '../../pages/Dashboard/PaymentHistory';
 import UserHome from '../../pages/Dashboard/UserHome';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import NotFound from '../../pages/NotFound';
+import MyBookings from '../../pages/Dashboard/MyBookings';
 
 
 const routes = createBrowserRouter([
@@ -112,6 +113,10 @@ const routes = createBrowserRouter([
       {
         path: "/dashboard/mycart",
         element: <MyCart />,
+      },
+      {
+        path: "/dashboard/mybookings",
+        element: <MyBookings />,
       },
       {
         path: "/dashboard/payment",

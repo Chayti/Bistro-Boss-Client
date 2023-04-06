@@ -35,7 +35,9 @@ const DashboardLayout = () => {
             <li><NavLink to='/dashboard/reservation'><FaCalendarAlt size={20} />Reservation</NavLink></li>
             <li><NavLink to='/dashboard/paymentHistory'><FaCcAmazonPay size={20} />Payment History</NavLink></li>
             <li><NavLink to='/dashboard/mycart'><FaShoppingCart size={20} />My Cart</NavLink></li>
+            <li><NavLink to='/dashboard/mybookings'><FaUsers size={20} />My Bookings</NavLink></li>
             <li><NavLink to='/dashboard/addReview'><FaRocket size={20} />Add Review</NavLink></li>
+            
 
             <hr />
             <li><NavLink to='/'><FaHome size={20} />Home</NavLink></li>

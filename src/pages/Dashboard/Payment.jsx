@@ -23,12 +23,9 @@ const Payment = () => {
     const formattedDate = now.toLocaleDateString('en-US', options);
 
 
-    console.log(date)
     const location = useLocation();
     const {user} = useAuth();
-    console.log(user)
-    const order = {total:location.state.total,name:user.displayName, email:user.email, formattedDate:formattedDate}
- 
+    const order = {total:location.state.total,name:user.displayName, email:user.email, formattedDate:formattedDate,category:location.state.category}
     return (
         <>
             <Helmet>
