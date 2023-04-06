@@ -1,12 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useNavigate } from 'react-router-dom';
 import ContactLocation from '../../components/Contact/ContactLocation';
 import ReservationForm from '../../components/ReservationForm';
 import Title from '../../components/shared/Title/Title';
 
 const Reservation = () => {
-    const navigate = useNavigate();
+  
     return (
         <div className='bg-white'>
             <Helmet>

@@ -5,18 +5,25 @@ import { FaRegTrashAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Title from '../../components/shared/Title/Title';
 import useAuth from '../../Hooks/useAuth';
+import useCarts from '../../Hooks/useCarts';
+import Spinner2 from '../../components/shared/Spinner/Spinner2';
 
 const MyCart = () => {
     const navigate = useNavigate();
-    const {user} = useAuth();
-    const {data: carts = [], refetch} = useQuery({
-        queryKey: ['carts'],
-        queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/carts?email=${user.email}`);
-            const data = await res.json();
-            return data;
-        }
-    });
+    // const {user} = useAuth();
+    // const {data: carts = [], refetch} = useQuery({
+    //     queryKey: ['carts'],
+    //     queryFn: async() =>{
+    //         const res = await fetch(`http://localhost:5000/carts?email=${user.email}`);
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // });
+    const [carts,loading] = useCarts();
+
+    if(loading){
+        return <Spinner2></Spinner2>
+    }
     
     const handleDeleteItem = item => {
        
@@ -67,7 +74,7 @@ const MyCart = () => {
 
                 <div className='flex justify-between items-center text-3xl text mb-4 font-bold'>
 
-                    <h1 >Total orders: {carts.length}</h1><h1>Total Price: ${total}</h1> <button onClick={() => navigate('/dashboard/payment',{state:{total:total}})} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
+                    <h1 >Total orders: {carts.length}</h1><h1>Total Price: ${total}</h1> <button onClick={() => navigate('/dashboard/payment',{state:{total:total, category:'Food Order'}})} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">

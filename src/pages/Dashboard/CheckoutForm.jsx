@@ -12,7 +12,7 @@ const CheckoutForm = ({order}) => {
     const stripe = useStripe();
    
     const elements = useElements();
-    const {formattedDate,email,name, total } = order;
+    const {formattedDate,email,name, total, category } = order;
     console.log(total)
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
@@ -29,7 +29,7 @@ const CheckoutForm = ({order}) => {
             .then((data) => setClientSecret(data.clientSecret));
         }
     }, [total]);
-console.log(clientSecret, stripe, processing)
+    
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -80,6 +80,7 @@ console.log(clientSecret, stripe, processing)
                 total,
                 transactionId: paymentIntent.id,
                 email,
+                category,
                 date: formattedDate
             }
             fetch('http://localhost:5000/payments', {
