@@ -17,11 +17,8 @@ const useCarts = () => {
                 }
                 )
         }, [])
-       
-   
-
-  
-    return [carts, loading];
+    
+    return [carts, loading,setCarts];
 };
 
 export default useCarts;
