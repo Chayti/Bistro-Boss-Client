@@ -8,7 +8,7 @@ const usePagination = (category) => {
     const size = 6;
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        const url = `http://localhost:5000/shopitem?page=${page}&size=${size}&category=${category}`;
+        const url = `http://localhost:5000/items?page=${page}&size=${size}&category=${category}`;
         
         fetch(url)
             .then(res => res.json())

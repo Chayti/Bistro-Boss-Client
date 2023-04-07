@@ -2,63 +2,56 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { FaRegTrashAlt, FaUserCog, } from 'react-icons/fa';
 import Title from '../../components/shared/Title/Title';
+import { useQuery } from '@tanstack/react-query';
 
 const AllUsers = () => {
-    // const [orders, setOrders] = useState([]);
+   const {data: users = [], refetch} = useQuery({
+        queryKey: ['users'],
+        queryFn: async() =>{
+            const res = await fetch('http://localhost:5000/users');
+            const data = await res.json();
+            return data;
+        }
+    });
 
-    // useEffect(() => {
-    //     fetch('orders.json')
-    //         .then(res => res.json())
-    //         .then(data => setOrders(data))
-    // }, [orders])
-    // console.log(orders)
-    const users = [
-        {
-            "email": "john@gmail.com",
-            "name": "John",
-            "role": 'user'
-        },
-        {
-            "email": "jane@gmail.com",
-            "name": "Jane",
-            "role": 'user'
-        },
-        {
-            "email": "john@gmail.com",
-            "name": "John",
-            "role": 'user'
-        },
-        {
-            "email": "jane@gmail.com",
-            "name": "Jane",
-            "role": 'user'
-        },
-        {
-            "email": "john@gmail.com",
-            "name": "John",
-            "role": 'user'
-        },
-        {
-            "email": "john@gmail.com",
-            "name": "John",
-            "role": 'user'
-        },
-        {
-            "email": "jane@gmail.com",
-            "name": "Jane",
-            "role": 'user'
-        },
-        {
-            "email": "john@gmail.com",
-            "name": "John",
-            "role": 'user'
-        },
-        {
-            "email": "john@gmail.com",
-            "name": "John",
-            "role": 'user'
-        },
-    ]
+    const handleMakeAdmin = id => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
+            method: 'PUT', 
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.modifiedCount > 0){
+                swal({
+                    title: "YAY!",
+                    text: "Made admin successfully!",
+                    icon: "success",
+                  });
+                
+            }
+        })
+    }
+
+    const handleDeleteItem = id => {
+        
+            fetch(`http://localhost:5000/users/${id}`, {
+             method: 'DELETE', 
+               // headers: {
+              //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+                // }
+              })
+              .then(res => res.json())
+             .then(data => {
+              if (data.deletedCount > 0) {
+                swal(`Poof! Your item has been deleted!`, {
+                icon: "success",
+               });
+             }
+             refetch()
+     });
+  }
     return (
         <>
             <Helmet>
@@ -86,12 +79,12 @@ const AllUsers = () => {
                                     <th>{index + 1}</th>
                                     <td>{user.name}</td>
                                     <td>{user.email}</td>
-                                    <td><button className='btn tooltip bg-[#d1a054] text-white border-0' data-tip='make admin'><FaUserCog /></button></td>
-                                    <td><button onClick={() => swal({
-                                        title: "Are you sure?",
-                                        text: "Message sent",
-                                        icon: "error",
-                                    })} className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
+                                    <td>{
+                                        user.role? 'Admin' 
+                                        :
+                                        <button onClick={()=>handleMakeAdmin(user._id)} className='btn tooltip bg-[#d1a054] text-white border-0' data-tip='make admin'><FaUserCog /></button>
+                                        }</td>
+                                    <td><button onClick={() => handleDeleteItem(user._id)} className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'><FaRegTrashAlt /></button></td>
                                 </tr>)
                             }
                         </tbody>

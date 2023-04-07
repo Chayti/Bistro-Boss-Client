@@ -47,7 +47,7 @@ const MyBookings = () => {
                         <thead>
                             <tr>
                                 <th className='bg-[#d1a054] text-white'></th>
-                                <th className='bg-[#d1a054] text-white'>Item Image</th>
+                                <th className='bg-[#d1a054] text-white'> Image</th>
                                 <th className='bg-[#d1a054] text-white'>Guests Number</th>
                                 <th className='bg-[#d1a054] text-white'>Category</th>
                                 <th className='bg-[#d1a054] text-white'>Price</th>

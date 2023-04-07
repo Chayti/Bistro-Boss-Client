@@ -1,14 +1,90 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import InputField from '../../components/shared/InputField';
+import { useLocation, useParams } from 'react-router-dom';
 
 const UpdateItem = () => {
 
-    const [name, setName] = useState('');
+    const imageHostKey = '40f387f08ab881d665744d10287c41b8';
+    const {id} = useParams();
+    const location = useLocation()
+    console.log(location.state.item)
+    const [formData, setFormData] = useState({
+        name: '',
+        category: '',
+        price: '',
+        recipe: '',
+        image: null
+    });
 
-    function sendEmail(e) {
-        e.preventDefault();
+    const handleChange = (event) => {
+        console.log(event)
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value,
+        });
+    };
 
+    const handleReset = () => {
+        setFormData({
+            name: '',
+            category: '',
+            price: '',
+            recipe: '',
+            image: null
+        });
+    };
+    const [imageFile, setImageFile] = useState(null);
+
+    const handleImageChange = (event) => {
+        setImageFile(event.target.files[0]);
+        const image = imageFile;
+        const imageData = new FormData();
+        imageData.append('image', image);
+
+        const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
+        fetch(url, {
+            method: 'POST',
+            body: imageData
+        })
+            .then(res => res.json())
+            .then(imgData => {
+                if (imgData.success) {
+                    console.log(imgData.data.url);
+
+                    formData.image = imgData.data.url;
+                    console.log(formData);
+
+                  
+                }
+            })
+
+    };
+    
+
+   
+
+    const handleUpdate = (e)=> {
+        e.preventDefault()
+        fetch(`http://localhost:5000/items/${id}`, {
+            method: 'PATCH', 
+            headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            'content-type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.modifiedCount > 0){
+                swal({
+                    title: "Yahhh!!! ❤️😍",
+                    text: "Item Updated",
+                    icon: "success",
+                })
+               handleReset() 
+            }
+        })
     }
 
     return (
@@ -18,16 +94,16 @@ const UpdateItem = () => {
             </Helmet>
             <h1 className='my-14 text-center text-5xl text-animation text font-extrabold '>Update Item</h1>
             <div className="bg-[#eceae380] mx-20 p-6">
-                <form className="rounded-lg p-8" onSubmit={sendEmail}>
+                <form className="rounded-lg p-8" onSubmit={handleUpdate}>
                     <div className="flex flex-wrap -mx-4 mb-4">
                         <div className="w-full px-4 mb-4 md:mb-0">
                             <InputField
                                 label="Recipe name"
                                 name="name"
                                 type="text"
-                                placeholder="recipe Name"
-                            // value={name}
-                            // onChange={(e) => setName(e.target.value)}
+                                value={location.state.item.name}
+                                onChange={handleChange}
+                                
                             />
                         </div>
                         <div className="w-full md:w-1/2 px-4">
@@ -35,9 +111,8 @@ const UpdateItem = () => {
                                 label="Category"
                                 name="category"
                                 type="text"
-                                placeholder="category"
-                            // value={name}
-                            // onChange={(e) => setName(e.target.value)}
+                                placeholder={location.state.item.category}
+                            onChange={handleChange}
                             />
                         </div>
                         <div className="w-full md:w-1/2 px-4">
@@ -45,9 +120,9 @@ const UpdateItem = () => {
                                 label="Price"
                                 name="price"
                                 type="number"
-                                placeholder="price"
-                            // value={name}
-                            // onChange={(e) => setName(e.target.value)}
+                               
+                                placeholder={location.state.item.price}
+                            onChange={handleChange}
                             />
                         </div>
 
@@ -62,13 +137,16 @@ const UpdateItem = () => {
                             name="recipe"
                             type="text"
                             rows="5"
-                            placeholder="recipe details"
+                            
+                            placeholder={location.state.item.recipe}
                             required
+                            onChange={handleChange}
                         />
                     </div>
                     <div className="mb-4">
                         <input
                             type="file"
+                            onChange={handleImageChange}
                             required />
                     </div>
 

@@ -83,7 +83,7 @@ const routes = createBrowserRouter([
         element: <AddItem />,
       },
       {
-        path: "/dashboard/updateItem",
+        path: "/dashboard/updateItem/:id",
         element: <UpdateItem />,
       },
       {

@@ -19,25 +19,15 @@ const MyCart = () => {
     //         return data;
     //     }
     // });
-    const [carts,loading] = useCarts();
+    const [carts,loading, setCarts] = useCarts();
 
     if(loading){
         return <Spinner2></Spinner2>
     }
     
-    const handleDeleteItem = item => {
-       
-            swal({
-                title: "Are you sure?",
-                text: "Once deleted, you will not be able to recover this imaginary file!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-              })
-              .then((willDelete) => {
-               
-                if (willDelete) {
-                    fetch(`http://localhost:5000/carts/${item.email}`, {
+    const handleDeleteItem = cart => {
+      const id = cart._id
+                    fetch(`http://localhost:5000/carts/${cart.email}`, {
                         method: 'DELETE', 
                         // headers: {
                         //     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -50,15 +40,14 @@ const MyCart = () => {
                               icon: "success",
                             });
                           }
-                          refetch(); 
+                          const remaining = carts?.filter((cart)=> cart._id!==id);
+                          setCarts(remaining)
                     });
                 }
-                else {
-                    swal("Your item is safe!");
-                  }
-              });
+               
+               
      
-    }
+    
     const total = carts.reduce((acc, order) => acc + order.price, 0);
     console.log(carts)
     return (
@@ -109,7 +98,7 @@ const MyCart = () => {
 
         </>
     );
-};
+                        }
 
 export default MyCart;
 // className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'
