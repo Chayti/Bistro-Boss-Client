@@ -4,14 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 import illustration from "../assets/others/authentication2.png";
 import SocialAuth from "../components/SocialAuth";
 import { AuthContext } from "../contexts/AuthProvider";
+import useToken from "../Hooks/useToken";
 
 const Registration = () => {
   const [error, setError] = useState("");
   const { user, createUser, updateUserProfile, verifyEmail } =
     useContext(AuthContext);
-  
+
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [token] = useToken(createdUserEmail);
+
   const navigate = useNavigate();
-  if (user) {
+
+  if (token) {
     navigate('/')
   }
 

@@ -9,7 +9,11 @@ const useCarts = () => {
     const [carts, setCarts] = useState([]);
     console.log(carts)
         useEffect(() => {
-            fetch(`http://localhost:5000/carts?email=${user.email}`)
+            fetch(`http://localhost:5000/carts?email=${user.email}`,{
+                headers: {
+                        authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+        })
                 .then(res => res.json())
                 .then(data => {
                     setCarts(data)

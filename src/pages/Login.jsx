@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import illustration from "../assets/others/authentication2.png";
 import SocialAuth from "../components/SocialAuth";
 import { AuthContext } from "../contexts/AuthProvider";
+import useToken from "../Hooks/useToken";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -11,8 +12,15 @@ const Login = () => {
   const [loginUserEmail, setLoginUserEmail] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [token] = useToken(loginUserEmail);
   const from = location.state?.from?.pathname || "/";
-  console.log(location.state?.from?.pathname)
+  
+
+  if (token) {
+    navigate(from, { replace: true });
+  } 
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,7 +30,8 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        console.log(user.accessToken);
+        setLoginUserEmail(user.email);
         
         form.reset();
         setError("");
@@ -36,20 +45,7 @@ const Login = () => {
         setLoading(false);
       });
   };
-  const saveUser = (name, email) =>{
-    const user ={name, email};
-    fetch('http://localhost:5000/users', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(user)
-    })
-    .then(res => res.json())
-    .then(data =>{
-      setLoginUserEmail(email);
-    })
-}
+ 
 
   return (
     <div className="bg-authentication min-h-screen flex items-center">
@@ -112,7 +108,7 @@ const Login = () => {
             <div className="md:w-1/2 mx-auto">
               <p className="font-semibold text-center my-6">Or sign in with</p>
               {/* Separate component for Social login  */}
-              <SocialAuth saveUser={saveUser} navigate={navigate} from={from} />
+              <SocialAuth />
             </div>
           </div>
         </div>

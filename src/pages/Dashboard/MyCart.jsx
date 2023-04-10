@@ -10,15 +10,7 @@ import Spinner2 from '../../components/shared/Spinner/Spinner2';
 
 const MyCart = () => {
     const navigate = useNavigate();
-    // const {user} = useAuth();
-    // const {data: carts = [], refetch} = useQuery({
-    //     queryKey: ['carts'],
-    //     queryFn: async() =>{
-    //         const res = await fetch(`http://localhost:5000/carts?email=${user.email}`);
-    //         const data = await res.json();
-    //         return data;
-    //     }
-    // });
+   const {user} = useAuth();
     const [carts,loading, setCarts] = useCarts();
 
     if(loading){
@@ -29,9 +21,7 @@ const MyCart = () => {
       const id = cart._id
                     fetch(`http://localhost:5000/carts/${cart.email}`, {
                         method: 'DELETE', 
-                        // headers: {
-                        //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-                        // }
+                       
                     })
                     .then(res => res.json())
                     .then(data => {
@@ -46,8 +36,15 @@ const MyCart = () => {
                 }
                
                
+     const handlePayment = () =>{
+        
+        navigate('/dashboard/payment',{state:{total:total, category:'Food Order'}})
+
+       
+
+        
+    }
      
-    
     const total = carts.reduce((acc, order) => acc + order.price, 0);
     console.log(carts)
     return (
@@ -63,7 +60,7 @@ const MyCart = () => {
 
                 <div className='flex justify-between items-center text-3xl text mb-4 font-bold'>
 
-                    <h1 >Total orders: {carts.length}</h1><h1>Total Price: ${total}</h1> <button onClick={() => navigate('/dashboard/payment',{state:{total:total, category:'Food Order'}})} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
+                    <h1 >Total orders: {carts.length}</h1><h1>Total Price: ${total}</h1> <button onClick={handlePayment} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">

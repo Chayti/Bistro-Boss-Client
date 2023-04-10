@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Title from '../shared/Title/Title';
 import Chef from './Chef';
 import useItems from '../../Hooks/useItems';
 import Spinner2 from '../shared/Spinner/Spinner2';
+import { AuthContext } from '../../contexts/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const ChefRecommends = () => {
-    // const [specials, setSpecial] = useState([]);
-
-    // useEffect(() => {
-    //     fetch('chef.json')
-    //         .then(res => res.json())
-    //         .then(data => setSpecial(data))
-    // }, [])
     const [items, loading] = useItems();
     if (loading) {
         return <Spinner2></Spinner2>
@@ -31,6 +26,7 @@ const ChefRecommends = () => {
                         key={index}
                         special={special}
                     ></Chef>)
+                    
                 }
             </div>
         </div>

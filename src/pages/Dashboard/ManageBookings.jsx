@@ -10,7 +10,11 @@ const ManageBookings = () => {
      const {data: bookings = [], refetch} = useQuery({
         queryKey: ['bookings'],
         queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/bookings');
+            const res = await fetch('http://localhost:5000/bookings',  {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
             const data = await res.json();
             return data;
         }
@@ -21,14 +25,15 @@ const ManageBookings = () => {
         fetch(`http://localhost:5000/bookings/${id}`, {
             method: 'PATCH',
             headers: {
-                //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-                'content-type': 'application/json',
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                
                 }
             
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount > 0) {
+                console.log(data.result)
+                if (data.result.modifiedCount > 0) {
                     swal({
                         title: "Yahhh!!! ❤️😍",
                         text: "Item Updated",

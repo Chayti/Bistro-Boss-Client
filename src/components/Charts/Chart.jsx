@@ -9,22 +9,22 @@ const data = [
     {
         name: "Dessert",
         sold: 30,
-        items: 6
+       
     },
     {
         name: "Pizza",
         sold: 35,
-        items: 9
+       
     },
     {
         name: "Salad",
         sold: 20,
-        items: 8
+       
     },
     {
         name: "Soup",
         sold: 25,
-        items: 6
+     
     }
 ];
 
