@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaBars, FaBook, FaCalendarAlt, FaCcAmazonPay, FaCreditCard, FaEnvelope, FaHome, FaRocket, FaShoppingBag, FaShoppingCart, FaTasks, FaUsers, FaUtensils } from 'react-icons/fa';
+import useAdmin from '../Hooks/useAdmin';
+import { AuthContext } from '../contexts/AuthProvider';
 
 const DashboardLayout = () => {
+  const { user } = useContext(AuthContext);
+  const [isAdmin] = useAdmin(user?.email)
+  console.log(isAdmin)
   return (
     <div>
       <div className="drawer drawer-mobile bg-white">
@@ -24,22 +29,27 @@ const DashboardLayout = () => {
               <small className='block text-xs font-thin ml-1' style={{ letterSpacing: '8px' }}>Restaurant</small>
             </div>
 
-            <li><NavLink to='/dashboard/admin-home'><FaHome size={20} />Admin Home</NavLink></li>
+           {
+            isAdmin ? <div><li><NavLink index to='/dashboard/admin-home'><FaHome size={20} />Admin Home</NavLink></li>
             <li><NavLink to='/dashboard/addItem'><FaUtensils size={20} />Add Item</NavLink></li>
             <li><NavLink to='/dashboard/manageItems'><FaTasks size={20} />Manage Items</NavLink></li>
             <li><NavLink to='/dashboard/manageBookings'><FaBook size={20} />Manage Bookings</NavLink></li>
             <li><NavLink to='/dashboard/allUsers'><FaUsers size={20} />All Users</NavLink></li>
 
-            <hr />
-            <li><NavLink to='/dashboard/user-home'><FaHome size={20} />User Home</NavLink></li>
+            <hr /></div>
+            :
+            <div>
+              <li><NavLink to='/dashboard/user-home'><FaHome size={20} />User Home</NavLink></li>
             <li><NavLink to='/dashboard/reservation'><FaCalendarAlt size={20} />Reservation</NavLink></li>
             <li><NavLink to='/dashboard/paymentHistory'><FaCcAmazonPay size={20} />Payment History</NavLink></li>
             <li><NavLink to='/dashboard/mycart'><FaShoppingCart size={20} />My Cart</NavLink></li>
             <li><NavLink to='/dashboard/mybookings'><FaUsers size={20} />My Bookings</NavLink></li>
             <li><NavLink to='/dashboard/addReview'><FaRocket size={20} />Add Review</NavLink></li>
-            
-
             <hr />
+            </div>
+           }
+
+           
             <li><NavLink to='/'><FaHome size={20} />Home</NavLink></li>
             <li><NavLink to='/menu'><FaBars size={20} />Menu</NavLink></li>
             <li><NavLink to='/shop'><FaShoppingBag size={20} />Shop</NavLink></li>

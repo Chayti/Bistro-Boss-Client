@@ -19,11 +19,32 @@ const MyBookings = () => {
     //         return data;
     //     }
     // });
-    const [bookings,loading] = useBookings();
+    const [bookings,loading,setBookings] = useBookings();
+
 
     if(loading){
         return <Spinner2></Spinner2>
     }
+    const handleDeleteItem = booking => {
+        const id = booking._id
+                      fetch(`http://localhost:5000/bookings/${booking.email}`, {
+                          method: 'DELETE', 
+                          headers: {
+                              authorization: `bearer ${localStorage.getItem('accessToken')}`
+                          }
+                      })
+                      .then(res => res.json())
+                      .then(data => {
+                          if (data.deletedCount > 0) {
+                              swal(`Poof! Your item has been deleted!`, {
+                                icon: "success",
+                              });
+                            }
+                            const remaining = bookings?.filter((booking)=> booking._id!==id);
+                            setBookings(remaining)
+                      });
+                  }
+                 
     const total = bookings.reduce((acc, order) => acc + order.price, 0);
     console.log(bookings)
     return (
@@ -33,7 +54,7 @@ const MyBookings = () => {
                 <title>BB Restaurant |  My Bookings</title>
             </Helmet>
             <div className="w-full">
-                <Title type={{ smallHeading: "Excelent Ambience", title: "My Bookings" }}></Title>
+                <Title type={{ smallHeading: "Excellent Ambience", title: "My Bookings" }}></Title>
             </div>
             <div className='mb-14 w-11/12 p-10 shadow-2xl overflow-y-scroll bg-white rounded-2xl'>
 

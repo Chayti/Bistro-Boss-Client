@@ -17,9 +17,9 @@ const AllUsers = () => {
     const handleMakeAdmin = id => {
         fetch(`http://localhost:5000/users/admin/${id}`, {
             method: 'PUT', 
-            // headers: {
-            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-            // }
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
         })
         .then(res => res.json())
         .then(data => {
@@ -31,6 +31,7 @@ const AllUsers = () => {
                   });
                 
             }
+            refetch()
         })
     }
 
@@ -38,9 +39,9 @@ const AllUsers = () => {
         
             fetch(`http://localhost:5000/users/${id}`, {
              method: 'DELETE', 
-               // headers: {
-              //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-                // }
+               headers: {
+                  authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
               })
               .then(res => res.json())
              .then(data => {

@@ -1,28 +1,11 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import useItems from "../../Hooks/useItems";
+import Spinner2 from "../shared/Spinner/Spinner2";
 
-const data = [
-    {
-        name: "Dessert",
-        sold: 30,
-        items: 6
-    },
-    {
-        name: "Pizza",
-        sold: 35,
-        items: 9
-    },
-    {
-        name: "Salad",
-        sold: 20,
-        items: 8
-    },
-    {
-        name: "Soup",
-        sold: 25,
-        items: 6
-    }
-];
+
+
+
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -39,7 +22,7 @@ const renderCustomizedLabel = ({
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
+    
     return (
         <text
             x={x}
@@ -54,6 +37,7 @@ const renderCustomizedLabel = ({
 };
 
 const CustomTooltip = ({ active, payload, label }) => {
+    
     if (active && payload && payload.length) {
         return (
             <div>
@@ -68,6 +52,41 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const Chart1 = () => {
+    const [items,loading] = useItems();
+    
+    console.log(items)
+    if(loading){
+      return <Spinner2></Spinner2>
+    }
+   const dessert = items?.filter(item => item.category==='dessert') || '';
+   const salad = items?.filter(item => item.category==='salad') || '';
+   const pizza = items?.filter(item => item.category==='pizza') || '';
+   const soup = items?.filter(item => item.category==='soup') || '';
+  
+   
+    const data = [
+    
+        {
+            name: "Dessert",
+           
+            items: dessert.length
+        },
+        {
+            name: "Pizza",
+            
+            items: pizza.length
+        },
+        {
+            name: "Salad",
+            
+            items: salad.length
+        },
+        {
+            name: "Soup",
+            
+            items: soup.length
+        }
+    ];
     return (
         <div style={{ display: "flex", justifyContent: "center" }}>
             <PieChart width={400} height={380}>

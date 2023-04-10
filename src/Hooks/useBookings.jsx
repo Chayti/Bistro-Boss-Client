@@ -9,7 +9,11 @@ const useBookings = () => {
     const [bookings, setBookings] = useState([]);
 
         useEffect(() => {
-            fetch(`http://localhost:5000/bookings?email=${user.email}`)
+            fetch(`http://localhost:5000/bookings?email=${user.email}`,{
+                headers: {
+                        authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+        })
                 .then(res => res.json())
                 .then(data => {
                     setBookings(data)
@@ -21,7 +25,7 @@ const useBookings = () => {
    
 
   
-    return [bookings, loading];
+    return [bookings, loading, setBookings];
 };
 
 export default useBookings;

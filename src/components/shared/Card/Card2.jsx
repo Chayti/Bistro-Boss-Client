@@ -1,12 +1,14 @@
 import React from 'react';
 import useAuth from '../../../Hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const Cards = ({children}) => {
     const { image, name, recipe, price } = children;
     const {user} = useAuth()
-  
+    const navigate = useNavigate()
     const addToCart = (data) =>{
-        data.email = user.email;
+        if(user.email){
+            data.email = user.email;
         const {image, name,category, price, email} = data;
         fetch('http://localhost:5000/carts', {
             method: 'POST',
@@ -24,6 +26,11 @@ const Cards = ({children}) => {
                 button: "Aww yiss!",
               });
         } )
+        }
+        else{
+            navigate('/login')
+        }
+      
     }
     return (
     

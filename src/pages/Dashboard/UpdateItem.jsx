@@ -101,7 +101,7 @@ const UpdateItem = () => {
                                 label="Recipe name"
                                 name="name"
                                 type="text"
-                                value={location.state.item.name}
+                                defaultValue={location.state.item.name}
                                 onChange={handleChange}
                                 
                             />
@@ -111,8 +111,8 @@ const UpdateItem = () => {
                                 label="Category"
                                 name="category"
                                 type="text"
-                                placeholder={location.state.item.category}
-                            onChange={handleChange}
+                                defaultValue={location.state.item.category}
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="w-full md:w-1/2 px-4">
@@ -121,8 +121,8 @@ const UpdateItem = () => {
                                 name="price"
                                 type="number"
                                
-                                placeholder={location.state.item.price}
-                            onChange={handleChange}
+                                defaultValue={location.state.item.price}
+                                onChange={handleChange}
                             />
                         </div>
 
@@ -138,8 +138,8 @@ const UpdateItem = () => {
                             type="text"
                             rows="5"
                             
-                            placeholder={location.state.item.recipe}
-                            required
+                            defaultValue={location.state.item.recipe}
+                            
                             onChange={handleChange}
                         />
                     </div>
@@ -147,7 +147,7 @@ const UpdateItem = () => {
                         <input
                             type="file"
                             onChange={handleImageChange}
-                            required />
+                             />
                     </div>
 
                     <div className="text-center mt-8">
