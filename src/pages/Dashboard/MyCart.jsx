@@ -10,41 +10,41 @@ import Spinner2 from '../../components/shared/Spinner/Spinner2';
 
 const MyCart = () => {
     const navigate = useNavigate();
-   const {user} = useAuth();
-    const [carts,loading, setCarts] = useCarts();
+    const { user } = useAuth();
+    const [carts, loading, setCarts] = useCarts();
 
-    if(loading){
+    if (loading) {
         return <Spinner2></Spinner2>
     }
-    
+
     const handleDeleteItem = cart => {
-      const id = cart._id
-                    fetch(`http://localhost:5000/carts/${cart.email}`, {
-                        method: 'DELETE', 
-                       
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-                            swal(`Poof! Your item has been deleted!`, {
-                              icon: "success",
-                            });
-                          }
-                          const remaining = carts?.filter((cart)=> cart._id!==id);
-                          setCarts(remaining)
+        const id = cart._id
+        fetch(`http://localhost:5000/carts/${cart.email}`, {
+            method: 'DELETE',
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    swal(`Poof! Your item has been deleted!`, {
+                        icon: "success",
                     });
                 }
-               
-               
-     const handlePayment = () =>{
-        
-        navigate('/dashboard/payment',{state:{total:total, category:'Food Order'}})
-
-       
-
-        
+                const remaining = carts?.filter((cart) => cart._id !== id);
+                setCarts(remaining)
+            });
     }
-     
+
+
+    const handlePayment = () => {
+
+        navigate('/dashboard/payment', { state: { total: total, category: 'Food Order' } })
+
+
+
+
+    }
+
     const total = carts.reduce((acc, order) => acc + order.price, 0);
     console.log(carts)
     return (
@@ -95,7 +95,7 @@ const MyCart = () => {
 
         </>
     );
-                        }
+}
 
 export default MyCart;
 // className='btn bg-red-700 tooltip text-white border-0' data-tip='delete'
