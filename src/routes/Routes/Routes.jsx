@@ -23,6 +23,7 @@ import UserHome from '../../pages/Dashboard/UserHome';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import NotFound from '../../pages/NotFound';
 import MyBookings from '../../pages/Dashboard/MyBookings';
+import Dashboard from './Dashboard';
 
 
 const routes = createBrowserRouter([
@@ -65,13 +66,16 @@ const routes = createBrowserRouter([
     path: '/dashboard',
     element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
-
       {
-        path: "/dashboard/user-home",
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "user-home",
         element: <UserHome />,
       },
       {
-        path: "/dashboard/admin-home",
+        path: "admin-home",
         element: <AdminHome />,
       },
       {
