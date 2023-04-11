@@ -14,26 +14,26 @@ const ManageItems = () => {
         return <Spinner2></Spinner2>
     }
 
-    const handleDeleteItem = (id)=>{
-        
+    const handleDeleteItem = (id) => {
+
         console.log(items)
-        fetch(`http://localhost:5000/items/${id}`, {
-                        method: 'DELETE', 
-                        // headers: {
-                        //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-                        // }
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-                            swal(`Poof! Your item has been deleted!`, {
-                              icon: "success",
-                            });
-                          }
-                          const remaining = items?.filter((item)=> item._id!==id);
-                          setItems(remaining)
-                          
+        fetch(`https://bistro-boss-server.vercel.app/items/${id}`, {
+            method: 'DELETE',
+            // headers: {
+            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+            // }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    swal(`Poof! Your item has been deleted!`, {
+                        icon: "success",
                     });
+                }
+                const remaining = items?.filter((item) => item._id !== id);
+                setItems(remaining)
+
+            });
     }
     return (
         <>
@@ -69,8 +69,8 @@ const ManageItems = () => {
                                     <td>{item.name}</td>
                                     <td>{item.category}</td>
                                     <td>${item.price}</td>
-                                    <td><button onClick={() => navigate(`/dashboard/updateItem/${item._id}`,{state:{item:item}})} className='btn bg-[#d1a054] tooltip text-white border-0' data-tip='edit'><FaRegEdit /></button></td>
-                                    <td><button  className='btn bg-red-700 tooltip text-white border-0' onClick={() => handleDeleteItem(item._id)} data-tip='delete'><FaRegTrashAlt /></button></td>
+                                    <td><button onClick={() => navigate(`/dashboard/updateItem/${item._id}`, { state: { item: item } })} className='btn bg-[#d1a054] tooltip text-white border-0' data-tip='edit'><FaRegEdit /></button></td>
+                                    <td><button className='btn bg-red-700 tooltip text-white border-0' onClick={() => handleDeleteItem(item._id)} data-tip='delete'><FaRegTrashAlt /></button></td>
                                 </tr>)
                             }
                         </tbody>

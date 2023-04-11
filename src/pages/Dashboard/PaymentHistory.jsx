@@ -5,11 +5,11 @@ import useAuth from '../../Hooks/useAuth';
 import { useQuery } from '@tanstack/react-query';
 
 const PaymentHistory = () => {
-    const {user} = useAuth();
-    const {data: payments = [], refetch} = useQuery({
+    const { user } = useAuth();
+    const { data: payments = [], refetch } = useQuery({
         queryKey: ['payments'],
-        queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/payments?email=${user.email}`);
+        queryFn: async () => {
+            const res = await fetch(`https://bistro-boss-server.vercel.app/payments?email=${user.email}`);
             const data = await res.json();
             return data;
         }
@@ -31,23 +31,23 @@ const PaymentHistory = () => {
                         {/* head */}
                         <thead>
                             <tr>
-                                
+
                                 <th className='bg-[#d1a054] text-white'>Email</th>
                                 <th className='bg-[#d1a054] text-white'>Category</th>
                                 <th className='bg-[#d1a054] text-white'>Total Price</th>
                                 <th className='bg-[#d1a054] text-white'>Payment Date</th>
-                               
+
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 payments.map((payment, index) => <tr key={index}>
-                                    
+
                                     <td>{payment.email}</td>
                                     <td>{payment.category}</td>
                                     <td>${payment.total}</td>
                                     <td>{payment.date}</td>
-                                   
+
                                 </tr>)
                             }
                         </tbody>

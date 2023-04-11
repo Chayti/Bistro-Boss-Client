@@ -6,7 +6,7 @@ import { useLocation, useParams } from 'react-router-dom';
 const UpdateItem = () => {
 
     const imageHostKey = '40f387f08ab881d665744d10287c41b8';
-    const {id} = useParams();
+    const { id } = useParams();
     const location = useLocation()
     console.log(location.state.item)
     const [formData, setFormData] = useState({
@@ -55,36 +55,36 @@ const UpdateItem = () => {
                     formData.image = imgData.data.url;
                     console.log(formData);
 
-                  
+
                 }
             })
 
     };
-    
 
-   
 
-    const handleUpdate = (e)=> {
+
+
+    const handleUpdate = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:5000/items/${id}`, {
-            method: 'PATCH', 
+        fetch(`https://bistro-boss-server.vercel.app/items/${id}`, {
+            method: 'PATCH',
             headers: {
-            //     authorization: `bearer ${localStorage.getItem('accessToken')}`
-            'content-type': 'application/json',
+                //     authorization: `bearer ${localStorage.getItem('accessToken')}`
+                'content-type': 'application/json',
             },
             body: JSON.stringify(formData)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount > 0){
-                swal({
-                    title: "Yahhh!!! ❤️😍",
-                    text: "Item Updated",
-                    icon: "success",
-                })
-               handleReset() 
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    swal({
+                        title: "Yahhh!!! ❤️😍",
+                        text: "Item Updated",
+                        icon: "success",
+                    })
+                    handleReset()
+                }
+            })
     }
 
     return (
@@ -103,7 +103,7 @@ const UpdateItem = () => {
                                 type="text"
                                 defaultValue={location.state.item.name}
                                 onChange={handleChange}
-                                
+
                             />
                         </div>
                         <div className="w-full md:w-1/2 px-4">
@@ -120,7 +120,7 @@ const UpdateItem = () => {
                                 label="Price"
                                 name="price"
                                 type="number"
-                               
+
                                 defaultValue={location.state.item.price}
                                 onChange={handleChange}
                             />
@@ -137,9 +137,9 @@ const UpdateItem = () => {
                             name="recipe"
                             type="text"
                             rows="5"
-                            
+
                             defaultValue={location.state.item.recipe}
-                            
+
                             onChange={handleChange}
                         />
                     </div>
@@ -147,7 +147,7 @@ const UpdateItem = () => {
                         <input
                             type="file"
                             onChange={handleImageChange}
-                             />
+                        />
                     </div>
 
                     <div className="text-center mt-8">
