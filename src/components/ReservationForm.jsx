@@ -6,8 +6,8 @@ import useAuth from '../Hooks/useAuth';
 
 
 const ReservationForm = () => {
-    const {user} = useAuth();
-    const {email} = user;
+    const { user } = useAuth();
+    const { email } = user;
 
     const options = [
         '1 person',
@@ -21,34 +21,34 @@ const ReservationForm = () => {
         '9 person',
         '10 person'
     ]
-   
+
     const [phone, setPhone] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedTime, setSelectedTime] = useState(null);
     const [person, setPerson] = useState('');
     const navigate = useNavigate();
-   
-    
+
+
     const handleBooking = event => {
         event.preventDefault();
-        
+
         // [3, 4, 5].map((value, i) => console.log(value))
         const booking = {
-            image:'https://spotonwifi.com/wp-content/uploads/2020/08/WordPress-Table-Reservation-plugin-1000x562-1.jpg',
+            image: 'https://spotonwifi.com/wp-content/uploads/2020/08/WordPress-Table-Reservation-plugin-1000x562-1.jpg',
             bookingDate: selectedDate,
-            category:'reservation',
+            category: 'reservation',
             selectedTime,
-            name:`${person} guest`,
+            name: `${person} guest`,
             email,
             phone,
-            price:89
-            
+            price: 89
+
         }
 
         // TODO: send data to the server
         // and once data is saved then close the modal 
         // and display success toast
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://bistro-boss-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -63,9 +63,9 @@ const ReservationForm = () => {
                         title: "YAY!",
                         text: "Bookin Successful!",
                         icon: "success",
-                      });
+                    });
                 }
-                else{
+                else {
                     console.log('not nice!')
                 }
             })
@@ -91,7 +91,7 @@ const ReservationForm = () => {
 
                         <InputField
                             label="time"
-                            name = 'time'
+                            name='time'
                             type="time"
                             onChange={(e) => setSelectedTime(e.target.value)}
                         />

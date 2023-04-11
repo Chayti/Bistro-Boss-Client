@@ -7,10 +7,10 @@ import { useQuery } from '@tanstack/react-query';
 
 const ManageBookings = () => {
     const navigate = useNavigate();
-     const {data: bookings = [], refetch} = useQuery({
+    const { data: bookings = [], refetch } = useQuery({
         queryKey: ['bookings'],
-        queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/bookings',  {
+        queryFn: async () => {
+            const res = await fetch('https://bistro-boss-server.vercel.app/bookings', {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -20,15 +20,15 @@ const ManageBookings = () => {
         }
     });
 
-    const handleApproval = (id)=>{
-       
-        fetch(`http://localhost:5000/bookings/${id}`, {
+    const handleApproval = (id) => {
+
+        fetch(`https://bistro-boss-server.vercel.app/bookings/${id}`, {
             method: 'PATCH',
             headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                
-                }
-            
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+
+            }
+
         })
             .then(res => res.json())
             .then(data => {
@@ -40,13 +40,13 @@ const ManageBookings = () => {
                         icon: "success",
                     })
 
-                  
+
                 }
                 refetch()
             })
 
     };
-    
+
     return (
         <>
             <Helmet>
@@ -83,8 +83,8 @@ const ManageBookings = () => {
                                     <td>{booking.selectedTime}</td>
                                     <td>{booking.category}</td>
                                     <td>{booking.price}</td>
-                                    <td className={`font-bold ${index % 2 == 0 ? 'text-yellow-800' : 'text-green-800'}`}>{booking.status? 'Approved' : 'Pending'}</td>
-                                    <td><button onClick={()=>handleApproval(booking._id)} className={`btn rounded-full ${booking.status ? "opacity-50 cursor-not-allowed" : ""} bg-green-700 tooltip text-white border-0' data-tip='done/pending`}><TiTick /></button></td>
+                                    <td className={`font-bold ${index % 2 == 0 ? 'text-yellow-800' : 'text-green-800'}`}>{booking.status ? 'Approved' : 'Pending'}</td>
+                                    <td><button onClick={() => handleApproval(booking._id)} className={`btn rounded-full ${booking.status ? "opacity-50 cursor-not-allowed" : ""} bg-green-700 tooltip text-white border-0' data-tip='done/pending`}><TiTick /></button></td>
                                 </tr>)
                             }
                         </tbody>

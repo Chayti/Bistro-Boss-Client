@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
-const CheckoutForm = ({order}) => {
+const CheckoutForm = ({ order }) => {
     const [cardError, setCardError] = useState('');
     const [success, setSuccess] = useState('');
     const [processing, setProcessing] = useState(false);
@@ -10,26 +10,26 @@ const CheckoutForm = ({order}) => {
     const [clientSecret, setClientSecret] = useState("");
 
     const stripe = useStripe();
-   
+
     const elements = useElements();
-    const {formattedDate,email,name, total, category } = order;
+    const { formattedDate, email, name, total, category } = order;
     console.log(total)
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        if(total){
-            fetch("http://localhost:5000/create-payment-intent", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                
-            },
-            body: JSON.stringify({ total }),
-        })
-            .then((res) => res.json())
-            .then((data) => setClientSecret(data.clientSecret));
+        if (total) {
+            fetch("https://bistro-boss-server.vercel.app/create-payment-intent", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+
+                },
+                body: JSON.stringify({ total }),
+            })
+                .then((res) => res.json())
+                .then((data) => setClientSecret(data.clientSecret));
         }
     }, [total]);
-    
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -83,11 +83,11 @@ const CheckoutForm = ({order}) => {
                 category,
                 date: formattedDate
             }
-            fetch('http://localhost:5000/payments', {
+            fetch('https://bistro-boss-server.vercel.app/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
-                  
+
                 },
                 body: JSON.stringify(payment)
             })

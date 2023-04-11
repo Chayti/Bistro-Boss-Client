@@ -14,42 +14,42 @@ const MyBookings = () => {
     // const {data: bookings = [], refetch} = useQuery({
     //     queryKey: ['bookings'],
     //     queryFn: async() =>{
-    //         const res = await fetch(`http://localhost:5000/bookings?email=${user.email}`);
+    //         const res = await fetch(`https://bistro-boss-server.vercel.app/bookings?email=${user.email}`);
     //         const data = await res.json();
     //         return data;
     //     }
     // });
-    const [bookings,loading,setBookings] = useBookings();
+    const [bookings, loading, setBookings] = useBookings();
 
 
-    if(loading){
+    if (loading) {
         return <Spinner2></Spinner2>
     }
     const handleDeleteItem = booking => {
         const id = booking._id
-                      fetch(`http://localhost:5000/bookings/${booking.email}`, {
-                          method: 'DELETE', 
-                          headers: {
-                              authorization: `bearer ${localStorage.getItem('accessToken')}`
-                          }
-                      })
-                      .then(res => res.json())
-                      .then(data => {
-                          if (data.deletedCount > 0) {
-                              swal(`Poof! Your item has been deleted!`, {
-                                icon: "success",
-                              });
-                            }
-                            const remaining = bookings?.filter((booking)=> booking._id!==id);
-                            setBookings(remaining)
-                      });
-                  }
-                 
+        fetch(`https://bistro-boss-server.vercel.app/bookings/${booking.email}`, {
+            method: 'DELETE',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    swal(`Poof! Your item has been deleted!`, {
+                        icon: "success",
+                    });
+                }
+                const remaining = bookings?.filter((booking) => booking._id !== id);
+                setBookings(remaining)
+            });
+    }
+
     const total = bookings.reduce((acc, order) => acc + order.price, 0);
     console.log(bookings)
     return (
-   
-            <>
+
+        <>
             <Helmet>
                 <title>BB Restaurant |  My Bookings</title>
             </Helmet>
@@ -60,7 +60,7 @@ const MyBookings = () => {
 
                 <div className='flex justify-between items-center text-3xl text mb-4 font-bold'>
 
-                    <h1 >Total bookings: {bookings.length}</h1><h1>Total Price: ${total}</h1> <button onClick={() => navigate('/dashboard/payment',{state:{total:total, category:'Reservation'}})} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
+                    <h1 >Total bookings: {bookings.length}</h1><h1>Total Price: ${total}</h1> <button onClick={() => navigate('/dashboard/payment', { state: { total: total, category: 'Reservation' } })} className='btn bg-[#d1a054] py-2 border-0 px-5'>Pay</button>
                 </div>
                 <div className="overflow-x-auto">
                     <table className="table w-full">
@@ -94,7 +94,7 @@ const MyBookings = () => {
 
 
         </>
-      
+
     );
 };
 

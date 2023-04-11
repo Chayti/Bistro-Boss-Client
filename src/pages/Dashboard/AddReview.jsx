@@ -10,7 +10,7 @@ const AddReview = () => {
     const [formData, setFormData] = useState({
         name: '',
         details: '',
-        
+
     });
 
     const handleChange = (event) => {
@@ -24,45 +24,45 @@ const AddReview = () => {
         setFormData({
             name: '',
             details: '',
-           
-            
+
+
         });
     };
 
-    
-    const handleAddReview=(e)=>{
-        
+
+    const handleAddReview = (e) => {
+
         e.preventDefault()
-         formData.rating = rating
-        fetch('http://localhost:5000/reviews', {
-             method: 'POST',
+        formData.rating = rating
+        fetch('https://bistro-boss-server.vercel.app/reviews', {
+            method: 'POST',
             headers: {
-              'content-type': 'application/json',
-              },
-             body: JSON.stringify(formData)
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(res => res.json())
+            .then(res => {
+                if (res.insertedId) {
+                    swal({
+                        title: "Yahhh!!! ❤️😍",
+                        text: "Review Added",
+                        icon: "success",
+                    })
+                }
+                else {
+                    swal({
+                        title: "Sorry!! ",
+                        text: "Data not Added 😭 😭 😭",
+                        icon: "danger",
+                    })
+                }
+                handleReset();
             })
-             .then(res => res.json())
-             .then(res => {
-              if (res.insertedId) {
-               swal({
-                title: "Yahhh!!! ❤️😍",
-                text: "Review Added",
-                icon: "success",
-             })
-        }
-             else {
-                swal({
-                    title: "Sorry!! ",
-                    text: "Data not Added 😭 😭 😭",
-                    icon: "danger",
-                 })
-               }
-              handleReset();
-           })
-     }
-           
-    
-     
+    }
+
+
+
 
     return (
         <>
@@ -79,22 +79,21 @@ const AddReview = () => {
                     <Rating
                         emptySymbol={<FaStar color="#ccc" size="2em" />} // Set the empty star icon and color
                         fullSymbol={<FaStar color="#d1a054" size="2em" />} // Set the full star icon and color
-                        onChange={(rate) =>
-                            {
-                                swal({
+                        onChange={(rate) => {
+                            swal({
                                 title: "Thank you!💐",
                                 text: `You have given ${rate} ratings!!! ❤️😍`,
-                              
-                                })
-                                setRating(rate)
-                        
+
+                            })
+                            setRating(rate)
+
                         }}
                     />
                 </div>
                 <form className="rounded-lg p-8" onSubmit={handleAddReview}>
                     <div className="mb-4">
                         <label className="text-gray-700 font-semibold mb-1 block">
-                           Give your name.
+                            Give your name.
                         </label>
                         <input
                             className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
@@ -106,7 +105,7 @@ const AddReview = () => {
                             value={formData.name}
                         />
                     </div>
-                    
+
                     <div className="mb-4">
                         <label className="text-gray-700 font-semibold mb-1 block">
                             Kindly express your care in a short way.

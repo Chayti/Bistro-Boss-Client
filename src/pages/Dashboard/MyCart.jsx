@@ -19,7 +19,7 @@ const MyCart = () => {
 
     const handleDeleteItem = cart => {
         const id = cart._id
-        fetch(`http://localhost:5000/carts/${cart.email}`, {
+        fetch(`https://bistro-boss-server.vercel.app/carts/${cart.email}`, {
             method: 'DELETE',
 
         })

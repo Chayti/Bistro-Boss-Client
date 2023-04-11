@@ -11,8 +11,8 @@ const Registration = () => {
   const { user, createUser, updateUserProfile, verifyEmail } =
     useContext(AuthContext);
 
-    const [createdUserEmail, setCreatedUserEmail] = useState('')
-    const [token] = useToken(createdUserEmail);
+  const [createdUserEmail, setCreatedUserEmail] = useState('')
+  const [token] = useToken(createdUserEmail);
 
   const navigate = useNavigate();
 
@@ -53,8 +53,8 @@ const Registration = () => {
 
     updateUserProfile(profile)
       .then(() => {
-        
-       })
+
+      })
       .catch((error) => console.error(error));
   };
 
@@ -64,20 +64,20 @@ const Registration = () => {
       .catch((error) => console.error(error));
   };
 
-  const saveUser = (name, email) =>{
-    const user ={name, email};
-    fetch('http://localhost:5000/users', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(user)
+  const saveUser = (name, email) => {
+    const user = { name, email };
+    fetch('https://bistro-boss-server.vercel.app/users', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
     })
-    .then(res => res.json())
-    .then(data =>{
+      .then(res => res.json())
+      .then(data => {
         setCreatedUserEmail(email);
-    })
-}
+      })
+  }
   return (
     <div className="bg-authentication min-h-screen flex items-center">
       <section className="mx-auto p-12 h-full">
@@ -138,7 +138,7 @@ const Registration = () => {
             <div className="md:w-1/2 mx-auto">
               <p className="font-semibold text-center my-6">Or sign up with</p>
               {/* Separate component for Social login  */}
-              <SocialAuth saveUser= {saveUser} />
+              <SocialAuth saveUser={saveUser} />
             </div>
           </div>
 
