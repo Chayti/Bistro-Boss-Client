@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Card from '../shared/Card/Card';
 import './Menu.css'
 const Salad = ({ items }) => {
@@ -30,6 +31,10 @@ const Salad = ({ items }) => {
                         </div>
                     )
                 }
+            </div>
+
+            <div className="flex justify-center mt-10">
+                <Link to="/shop"><button className="btn btn-outline uppercase border-0 px-14 border-b-4 ">Order Your favourite items</button></Link>
             </div>
         </>
     );
