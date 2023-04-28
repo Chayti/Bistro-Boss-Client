@@ -27,7 +27,7 @@ const Dessert = ({ items }) => {
                 </div>
             </div> */}
 
-            <Parallax className="my-16" blur={{ min: -30, max: 30 }} bgImage={img1} strength={500}>
+            <Parallax className="my-16" blur={{ min: -30, max: 30 }} bgImage={img1} strength={200} smooth>
                 <Banner2 banner={{ title: 'Desserts', description: 'Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' }}></Banner2>
             </Parallax>
 
