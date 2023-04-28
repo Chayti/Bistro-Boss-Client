@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card3 = ({ children, icon }) => {
     // console.log(children, icon)
-    const { title, name, data } = children
+    const {  name, data } = children
     return (
 
         <div className=" border-solid border-2">

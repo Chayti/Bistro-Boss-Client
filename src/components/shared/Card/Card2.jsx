@@ -1,12 +1,16 @@
-import React from 'react';
+import React,{useState} from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
+import useCarts from '../../../Hooks/useCarts';
 
 const Cards = ({ children }) => {
     const { image, name, recipe, price } = children;
+
     const { user } = useAuth()
     const navigate = useNavigate()
+    
     const addToCart = (data) => {
+        
         if (user.email) {
             data.email = user.email;
             const { image, name, category, price, email } = data;
@@ -19,6 +23,8 @@ const Cards = ({ children }) => {
             })
                 .then(res => res.json())
                 .then(result => {
+                  
+                 
                     swal({
                         title: "Yay!",
                         text: `${name} has been added to your cart!`,

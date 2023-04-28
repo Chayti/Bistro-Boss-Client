@@ -4,8 +4,10 @@ import { FaRocket, FaStar } from "react-icons/fa";
 import Rating from 'react-rating';
 import swal from 'sweetalert';
 import Title from '../../components/shared/Title/Title';
+import useAuth from '../../Hooks/useAuth';
 
 const AddReview = () => {
+    const {user}=useAuth()
     const [rating, setRating] = useState(0)
     const [formData, setFormData] = useState({
         name: '',
@@ -34,6 +36,7 @@ const AddReview = () => {
 
         e.preventDefault()
         formData.rating = rating
+        formData.email = user.email;
         fetch('https://bistro-boss-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
@@ -91,6 +94,18 @@ const AddReview = () => {
                     />
                 </div>
                 <form className="rounded-lg p-8" onSubmit={handleAddReview}>
+                    <div className="mb-4">
+                      
+                        <input
+                            className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="Your Name"
+                           
+                            value={user.email}
+                        />
+                    </div>
                     <div className="mb-4">
                         <label className="text-gray-700 font-semibold mb-1 block">
                             Give your name.
