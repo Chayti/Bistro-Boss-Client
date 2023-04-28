@@ -1,14 +1,37 @@
-import React, { useContext } from 'react';
-import { FaUserCircle } from 'react-icons/fa';
+import React, { useContext, useEffect, useState } from 'react';
+import { FaShoppingCart, FaUserCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import './Header.css'
+import { useQuery } from '@tanstack/react-query';
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
 //fixed
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    // const [carts] = useCarts();
+    const { data: carts = [], refetch } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await fetch(`https://bistro-boss-server.vercel.app/carts?email=${user?.email}`, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
+            const data = await res.json();
+            
+            return data;
+            
+        },
+        
+        
+    });
 
+  
+    refetch()
+  
+   
+    
     return (
         <div>
             <div className="header navbar absolute z-10 bg-transparent text-white">
@@ -43,13 +66,17 @@ const Header = () => {
                         </div>
                     </a>
                 </div>
-                <div className="navbar-end hidden lg:flex px-10">
+                <div className="hidden lg:flex px-10">
                     <ul className="menu menu-horizontal px-1 active-style">
                         <li><NavLink to="/">HOME</NavLink></li>
-                        <li><NavLink to="/menu">OUR MENU</NavLink></li>
-                        <li><NavLink to="/shop">OUR SHOP</NavLink></li>
                         <li><NavLink to="/contact">CONTACT US</NavLink></li>
+                        
                         {user?.uid && <li><NavLink to="/dashboard">DASHBOARD</NavLink></li>}
+                        <li><NavLink to="/menu">OUR MENU</NavLink></li>
+                        <li><NavLink className='pr-1' to="/shop">OUR SHOP
+                        </NavLink></li>
+                        {user?.uid && <li><NavLink className='pl-0 mr-5' to="/dashboard/mycart"><FaShoppingCart/><div className="badge bg-red-600 absolute top-2 left-3">{carts?carts.length:0}</div></NavLink></li>}
+                        
                         {user?.uid ? (
                             <button
                                 onClick={logOut}
@@ -61,14 +88,14 @@ const Header = () => {
                                 SIGN IN
                             </NavLink></button>
                         )}
-
+                        
                     </ul>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className=" m-1">
                             {user?.uid
                                 ? (
                                     <div className="avatar lg:flex lg:items-center">
-                                        <div className="w-10 h-10 ml-4 lg:ml-9 lg:mr-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                                        <div className="w-10 h-10 ml-4 lg:ml-3 lg:mr-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                                             <img src={user?.photoURL || ""} alt="photoURL" />
                                         </div>
                                     </div>

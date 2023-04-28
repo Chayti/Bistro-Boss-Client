@@ -3,10 +3,13 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { FaBars, FaBook, FaCalendarAlt, FaCcAmazonPay, FaCreditCard, FaEnvelope, FaHome, FaRocket, FaShoppingBag, FaShoppingCart, FaTasks, FaUsers, FaUtensils } from 'react-icons/fa';
 import useAdmin from '../Hooks/useAdmin';
 import { AuthContext } from '../contexts/AuthProvider';
+import useCarts from '../Hooks/useCarts';
 
 const DashboardLayout = () => {
   const { user } = useContext(AuthContext);
   const [isAdmin] = useAdmin(user?.email)
+
+  const [carts] =useCarts()
   console.log(isAdmin)
   return (
     <div>
@@ -42,7 +45,7 @@ const DashboardLayout = () => {
               <li><NavLink to='/dashboard/user-home'><FaHome size={20} />User Home</NavLink></li>
             <li><NavLink to='/dashboard/reservation'><FaCalendarAlt size={20} />Reservation</NavLink></li>
             <li><NavLink to='/dashboard/paymentHistory'><FaCcAmazonPay size={20} />Payment History</NavLink></li>
-            <li><NavLink to='/dashboard/mycart'><FaShoppingCart size={20} />My Cart</NavLink></li>
+            <li><NavLink to='/dashboard/mycart'><FaShoppingCart size={20} />My Cart ({carts?carts.length:0})</NavLink></li>
             <li><NavLink to='/dashboard/mybookings'><FaUsers size={20} />My Bookings</NavLink></li>
             <li><NavLink to='/dashboard/addReview'><FaRocket size={20} />Add Review</NavLink></li>
             <hr />

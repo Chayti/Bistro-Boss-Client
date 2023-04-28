@@ -40,12 +40,11 @@ const MyCart = () => {
 
         navigate('/dashboard/payment', { state: { total: total, category: 'Food Order' } })
 
-
-
-
     }
 
-    const total = carts.reduce((acc, order) => acc + order.price, 0);
+   
+    const total = carts? carts?.reduce((acc, order) => acc + order.price, 0):0;
+  
     console.log(carts)
     return (
 
@@ -77,7 +76,7 @@ const MyCart = () => {
                         </thead>
                         <tbody>
                             {
-                                carts.map((cart, index) => <tr key={index}>
+                                carts?.map((cart, index) => <tr key={index}>
                                     <th>{index + 1}</th>
                                     <td><img className='h-14' src={cart.image} alt="" /></td>
                                     <td>{cart.name}</td>
