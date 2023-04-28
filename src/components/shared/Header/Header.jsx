@@ -22,12 +22,23 @@ const Header = () => {
                             <li><NavLink to="/menu">OUR MENU</NavLink></li>
                             <li><NavLink to="/shop">OUR SHOP</NavLink></li>
                             <li><NavLink to="/contact">CONTACT US</NavLink></li>
+                            {user?.uid && <li><NavLink to="/dashboard">DASHBOARD</NavLink></li>}
+                            {user?.uid ? (
+                                <button
+                                    onClick={logOut}
+                                >
+                                    SIGN OUT
+                                </button>
+                            ) : (
+                                <NavLink to="/login">
+                                    SIGN IN
+                                </NavLink>
+                            )}
                         </ul>
                     </div>
                     <a className="btn btn-ghost  uppercase text-xl font-serif ">
                         <div>
                             Bistro Boss
-
                             <small className='block text-xs font-thin ml-2' style={{ letterSpacing: '8px' }}>Restaurant</small>
                         </div>
                     </a>
@@ -38,6 +49,18 @@ const Header = () => {
                         <li><NavLink to="/menu">OUR MENU</NavLink></li>
                         <li><NavLink to="/shop">OUR SHOP</NavLink></li>
                         <li><NavLink to="/contact">CONTACT US</NavLink></li>
+                        {user?.uid && <li><NavLink to="/dashboard">DASHBOARD</NavLink></li>}
+                        {user?.uid ? (
+                            <button
+                                onClick={logOut}
+                            >
+                                SIGN OUT
+                            </button>
+                        ) : (
+                            <button><NavLink to="/login">
+                                SIGN IN
+                            </NavLink></button>
+                        )}
 
                     </ul>
                     <div className="dropdown dropdown-end">
@@ -50,10 +73,10 @@ const Header = () => {
                                         </div>
                                     </div>
                                 )
-                                : <FaUserCircle />
+                                : ""
                             }
                         </label>
-                        <ul tabIndex={0} className="active-style dropdown-content menu p-2 shadow rounded-box w-52 border-gray-100 border-2">
+                        {/* <ul tabIndex={0} className="active-style dropdown-content menu p-2 shadow rounded-box w-52 border-gray-100 border-2">
                             {user?.uid && <li><NavLink to="/dashboard">Dashboard</NavLink></li>}
                             <li>
                                 {user?.uid ? (
@@ -68,8 +91,7 @@ const Header = () => {
                                     </NavLink>
                                 )}
                             </li>
-
-                        </ul>
+                        </ul> */}
                     </div>
 
                 </div>
