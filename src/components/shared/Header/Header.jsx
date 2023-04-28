@@ -43,7 +43,7 @@ const Header = () => {
                         </div>
                     </a>
                 </div>
-                <div className="navbar-end hidden lg:flex px-10">
+                <div className="hidden lg:flex px-10">
                     <ul className="menu menu-horizontal px-1 active-style">
                         <li><NavLink to="/">HOME</NavLink></li>
                         <li><NavLink to="/menu">OUR MENU</NavLink></li>
