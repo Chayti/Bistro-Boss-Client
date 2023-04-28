@@ -1,7 +1,6 @@
 .bg-img{
     height: 100vh;
     width: 100%;
-  
 }
 
 .section{
@@ -31,19 +30,19 @@
       background-position: 100%; 
     }
 }
-
+/* 
 .bg-menu-banner{
     background-image: url('../../../assets/asset/menu/banner3.jpg');
-}
+} */
 
-.bg-shop-banner{
+/* .bg-shop-banner{
     background-image: url('../../../assets/asset/shop/banner2.jpg');
-}
+} */
 
-.bg-contact-banner{
+/* .bg-contact-banner{
     background-image: url('../../../assets/asset/contact/banner.jpg');
-}
+} */
 
-.bg-reservation-banner{
+/* .bg-reservation-banner{
     background-image: url('../../../assets/asset/reservation/category-pizza.jpg');
-}
+} */

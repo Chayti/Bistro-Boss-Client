@@ -4,6 +4,8 @@ import ContactForm from '../components/Contact/ContactForm';
 import ContactLocation from '../components/Contact/ContactLocation';
 import Banner2 from '../components/shared/Banner2/Banner2';
 import Title from '../components/shared/Title/Title';
+import { Parallax } from 'react-parallax';
+import img1 from '../assets/asset/contact/banner.jpg'
 
 const Contact = () => {
 
@@ -13,7 +15,9 @@ const Contact = () => {
                 <title>BB Restaurant |  Contact Us</title>
             </Helmet>
 
-            <Banner2 banner={{ title: 'CONTACT US', description: `Do you wanna connect with us?`, image: 'bg-contact-banner' }}></Banner2>
+            <Parallax blur={{ min: -30, max: 30 }} bgImage={img1} bgImageAlt="menu banner" strength={500}>
+                <Banner2 banner={{ title: 'CONTACT US', description: `Do you wanna connect with us?` }}></Banner2>
+            </Parallax>
 
             <Title type={{ smallHeading: "Visit Us", title: "OUR LOCATION", border: 'black' }}></Title>
             <ContactLocation></ContactLocation>
