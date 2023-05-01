@@ -26,7 +26,7 @@ const Menu = () => {
 
             {/* <Banner2 banner={{ title: 'Our Menu', description: 'Would you like to try a dish?', image: 'bg-menu-banner' }}></Banner2> */}
 
-            <Parallax blur={{ min: -30, max: 30 }} bgImage={img1} bgImageAlt="menu banner" strength={500}>
+            <Parallax blur={{ min: -30, max: 30 }} bgImage={img1} bgImageAlt="menu banner" strength={200}>
                 <Banner2 banner={{ title: 'Our Menu', description: 'Would you like to try a dish?' }}></Banner2>
             </Parallax>
 

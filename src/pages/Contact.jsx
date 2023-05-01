@@ -15,7 +15,7 @@ const Contact = () => {
                 <title>BB Restaurant |  Contact Us</title>
             </Helmet>
 
-            <Parallax blur={{ min: -30, max: 30 }} bgImage={img1} bgImageAlt="menu banner" strength={500}>
+            <Parallax blur={{ min: -30, max: 30 }} bgImage={img1} bgImageAlt="menu banner" strength={200}>
                 <Banner2 banner={{ title: 'CONTACT US', description: `Do you wanna connect with us?` }}></Banner2>
             </Parallax>
 
