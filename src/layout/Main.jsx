@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Footer from '../components/shared/Footer/Footer';
 import Header from '../components/shared/Header/Header';
 
+
 const Main = () => {
 
     const location = useLocation();
@@ -12,9 +13,12 @@ const Main = () => {
 
     return (
         <div>
+           
             {(!isLoginPage && !isRegisterPage) && <Header />}
             <Outlet />
             {(!isLoginPage && !isRegisterPage) && <Footer />}
+           
+            
         </div>
     );
 };

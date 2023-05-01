@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const PaymentHistory = () => {
     const { user } = useAuth();
-    const { data: payments = [], refetch } = useQuery({
+    const { data: payments = [] } = useQuery({
         queryKey: ['payments'],
         queryFn: async () => {
             const res = await fetch(`https://bistro-boss-server.vercel.app/payments?email=${user.email}`);

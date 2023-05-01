@@ -3,7 +3,11 @@ import useAuth from '../../../Hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import useCarts from '../../../Hooks/useCarts';
 
+
 const Cards = ({ children }) => {
+    const [,,refetch]= useCarts()
+    
+    console.log(refetch)
     const { image, name, recipe, price } = children;
 
     const { user } = useAuth()
@@ -31,6 +35,7 @@ const Cards = ({ children }) => {
                         icon: "success",
                         button: "Aww yiss!",
                     });
+                    refetch();
                 })
         }
         else {

@@ -9,22 +9,25 @@ import Menu from '../components/Home/Menu';
 import Testimonials from '../components/Home/Testimonials';
 import Banner from '../components/shared/Banner/Banner';
 
+
 const Home = () => {
     return (
         <div >
 
-            <Helmet>
+          
+           <Helmet>
                 <title>Bistro Boss Restaurant </title>
             </Helmet>
-
+            
             <Banner banner={{ title: 'Bistro Boss', description: 'ABC Main Street, Uni 21, Bangladesh' }}></Banner>
-            <Category></Category>
+          <Category></Category>
             <About></About>
             <Menu></Menu>
             <CallUs></CallUs>
             <ChefRecommends></ChefRecommends>
             <LatestNews></LatestNews>
             <Testimonials></Testimonials>
+        
         </div>
     );
 };

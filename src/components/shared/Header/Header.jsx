@@ -4,11 +4,22 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import './Header.css'
 import { useQuery } from '@tanstack/react-query';
+import useCarts from '../../../Hooks/useCarts';
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
 //fixed
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+<<<<<<< HEAD
+    const [carts,, refetch] = useCarts();
+    
+
+//    refetch()
+    
+  
+   
+    
+=======
     // const [carts] = useCarts();
     const { data: carts = [], refetch } = useQuery({
         queryKey: ['users'],
@@ -32,6 +43,7 @@ const Header = () => {
 
 
 
+>>>>>>> c2ae6ff018b11cf31dd7ede9b8b74045e100c47c
     return (
         <div>
             <div className="header navbar absolute z-10 bg-transparent text-white">

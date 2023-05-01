@@ -15,9 +15,9 @@ const AdminHome = () => {
     const [items, loading] = useItems();
     const [users] = useUsers();
     const [orders] = useOrders();
-    const [revenue] = usePayment();
+    const [revenue, isLoading] = usePayment();
 
-    if (loading) {
+    if (isLoading) {
         return <Spinner2></Spinner2>
     }
 
