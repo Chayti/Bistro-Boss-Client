@@ -8,7 +8,7 @@ import { GiCook } from "react-icons/gi";
 import useItems from "../../Hooks/useItems";
 import Spinner2 from "../../components/shared/Spinner/Spinner2";
 import useUsers from "../../Hooks/useUsers";
-import useOrders from "../../Hooks/useOrders";
+// import useOrders from "../../Hooks/useOrders";
 import usePayment from "../../Hooks/usePayment";
 
 const AdminHome = () => {
