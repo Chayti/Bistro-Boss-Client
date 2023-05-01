@@ -9,14 +9,14 @@ import useCarts from '../../../Hooks/useCarts';
 //fixed
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [carts,, refetch] = useCarts();
-    
+    const [carts, , refetch] = useCarts();
 
-//    refetch()
-    
-  
-   
-    
+
+    //    refetch()
+
+
+
+
     return (
         <div>
             <div className="header navbar absolute z-10 bg-transparent text-white">
