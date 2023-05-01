@@ -19,19 +19,19 @@ const Header = () => {
                 }
             });
             const data = await res.json();
-            
+
             return data;
-            
+
         },
-        
-        
+
+
     });
 
-  
+
     refetch()
-  
-   
-    
+
+
+
     return (
         <div>
             <div className="header navbar absolute z-10 bg-transparent text-white">
@@ -42,18 +42,20 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="bg-transparent menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 active-style">
                             <li><NavLink to="/">HOME</NavLink></li>
-                            <li><NavLink to="/menu">OUR MENU</NavLink></li>
-                            <li><NavLink to="/shop">OUR SHOP</NavLink></li>
                             <li><NavLink to="/contact">CONTACT US</NavLink></li>
                             {user?.uid && <li><NavLink to="/dashboard">DASHBOARD</NavLink></li>}
+                            <li><NavLink to="/menu">OUR MENU</NavLink></li>
+                            <li><NavLink to="/shop">OUR SHOP</NavLink></li>
+                            {user?.uid && <li><NavLink className='pl-0 mr-5' to="/dashboard/mycart"><FaShoppingCart /><div className="badge bg-red-600 absolute top-2 left-3">{carts ? carts.length : 0}</div></NavLink></li>}
                             {user?.uid ? (
                                 <button
+                                    className="ml-5"
                                     onClick={logOut}
                                 >
                                     SIGN OUT
                                 </button>
                             ) : (
-                                <NavLink to="/login">
+                                <NavLink className="ml-5" to="/login">
                                     SIGN IN
                                 </NavLink>
                             )}
@@ -70,25 +72,26 @@ const Header = () => {
                     <ul className="menu menu-horizontal px-1 active-style">
                         <li><NavLink to="/">HOME</NavLink></li>
                         <li><NavLink to="/contact">CONTACT US</NavLink></li>
-                        
+
                         {user?.uid && <li><NavLink to="/dashboard">DASHBOARD</NavLink></li>}
                         <li><NavLink to="/menu">OUR MENU</NavLink></li>
                         <li><NavLink className='pr-1' to="/shop">OUR SHOP
                         </NavLink></li>
-                        {user?.uid && <li><NavLink className='pl-0 mr-5' to="/dashboard/mycart"><FaShoppingCart/><div className="badge bg-red-600 absolute top-2 left-3">{carts?carts.length:0}</div></NavLink></li>}
-                        
+                        {user?.uid && <li><NavLink className='pl-0' to="/dashboard/mycart"><FaShoppingCart /><div className="badge bg-red-600 absolute top-2 left-3">{carts ? carts.length : 0}</div></NavLink></li>}
+
                         {user?.uid ? (
                             <button
+                                className="ml-5"
                                 onClick={logOut}
                             >
                                 SIGN OUT
                             </button>
                         ) : (
-                            <button><NavLink to="/login">
+                            <button className="ml-5"><NavLink to="/login">
                                 SIGN IN
                             </NavLink></button>
                         )}
-                        
+
                     </ul>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className=" m-1">

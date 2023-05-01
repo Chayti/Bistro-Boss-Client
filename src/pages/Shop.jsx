@@ -13,7 +13,7 @@ const Shop = () => {
             <Helmet>
                 <title>BB Restaurant |  Shop</title>
             </Helmet>
-            <Parallax blur={{ min: -30, max: 30 }} bgImage={img1} bgImageAlt="menu banner" strength={500}>
+            <Parallax blur={{ min: -30, max: 30 }} bgImage={img1} bgImageAlt="menu banner" strength={200}>
                 <Banner2 banner={{ title: 'Our Shop', description: 'Hey! Would you like to try a dish?' }}></Banner2>
             </Parallax>
             <Tabs shopData={shopData}></Tabs>
