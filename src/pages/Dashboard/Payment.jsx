@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51KDCwXHsUlB2Uq2855r2Lk24SnqFjg4GSPtaL
 
 const Payment = () => {
     const date = new Date();
-    const now = new Date(); // create a new Date object with the current date and time
+    
 
     const options = {
     weekday: 'long',
@@ -20,12 +20,12 @@ const Payment = () => {
     timeZone: 'Asia/Dhaka'
     };
 
-    const formattedDate = now.toLocaleDateString('en-US', options);
+    const formattedDate = date.toLocaleDateString('en-US', options);
 
 
     const location = useLocation();
     const {user} = useAuth();
-    const order = {total:location.state.total,name:user.displayName, email:user.email, formattedDate:formattedDate,category:location.state.category}
+    const order = {total:location.state.couponPrice,name:user.displayName, email:user.email, formattedDate:formattedDate,category:location.state.category}
     return (
         <>
             <Helmet>
@@ -34,7 +34,7 @@ const Payment = () => {
             <h3 className="text-7xl mt-18 text-center text-animation text">Payment</h3>
             <div className='w-9/12 rounded-xl  mt-14'>
 
-                <p className="text-xl text-center mb-10">Please pay <strong>${location.state.total}</strong> for your order</p>
+                <p className="text-xl text-center mb-10">Please pay <strong>${location.state.couponPrice}</strong> for your order</p>
                 <div className='w-6/12 mt-5 mx-auto '>
                     <Elements stripe={stripePromise}>
                         <CheckoutForm

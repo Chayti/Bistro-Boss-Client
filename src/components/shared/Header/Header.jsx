@@ -4,31 +4,17 @@ import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import './Header.css'
 import { useQuery } from '@tanstack/react-query';
+import useCarts from '../../../Hooks/useCarts';
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
 //fixed
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-    // const [carts] = useCarts();
-    const { data: carts = [], refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch(`https://bistro-boss-server.vercel.app/carts?email=${user?.email}`, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
-            const data = await res.json();
-            
-            return data;
-            
-        },
-        
-        
-    });
+    const [carts,, refetch] = useCarts();
+    
 
-  
-    refetch()
+//    refetch()
+    
   
    
     

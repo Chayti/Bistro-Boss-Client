@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import useAuth from '../../Hooks/useAuth';
 
 const CheckoutForm = ({ order }) => {
     const [cardError, setCardError] = useState('');
@@ -8,7 +9,9 @@ const CheckoutForm = ({ order }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
+    const {user}=useAuth()
 
+    
     const stripe = useStripe();
 
     const elements = useElements();
@@ -95,6 +98,16 @@ const CheckoutForm = ({ order }) => {
                 .then(data => {
                     console.log(data);
                     if (data.insertedId) {
+                        fetch(`https://bistro-boss-server.vercel.app/carts?email=${user.email}&delete=true`, {
+                            method: 'DELETE',
+                
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log(data)
+                               
+                                
+                            });
                         setSuccess('Congrats! your payment completed');
                         setTransactionId(paymentIntent.id);
                     }
@@ -131,9 +144,11 @@ const CheckoutForm = ({ order }) => {
                     }}
                 />
                 <button
+                    
                     className='btn px-20 py-2 flex mx-auto btn-sm mt-14 btn-primary '
                     type="submit"
                     disabled={!stripe || !clientSecret || processing}
+                    
                 >
                     Pay
                 </button>

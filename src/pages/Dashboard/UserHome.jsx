@@ -13,7 +13,6 @@ import useReviews from '../../Hooks/useReviews';
  
   const { user } = useContext(AuthContext);
   const [bookings] = useBookings();
-  const [revenue] = usePayment();
   const [carts] = useCarts();
   const [reviews] = useReviews();
 
@@ -50,7 +49,6 @@ import useReviews from '../../Hooks/useReviews';
               <li className='flex items-center text-[#0088FE]'><FaCartPlus className=' mr-2' /> Orders:{carts.length} </li>
               <li className='flex items-center text-[#00C49F]'><FaRegStar className=' mr-2' /> Reviews: {reviews.length}</li>
               <li className='flex items-center text-[#FFBB28]'><FaCalendarAlt className=' mr-2' /> Bookings: {bookings.length} </li>
-              <li className='flex items-center text-[#FF8042] '><FaCcAmazonPay className='mr-2' /> Payment: {revenue.length}</li>
             </ul>
           </div>
         </div>
