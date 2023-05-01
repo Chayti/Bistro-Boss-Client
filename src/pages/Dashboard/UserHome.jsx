@@ -7,12 +7,17 @@ import { FaCalendarAlt, FaCartPlus, FaCcAmazonPay, FaPhone, FaRegListAlt, FaRegS
 import Card4 from '../../components/shared/Card/Card4';
 import useBookings from '../../Hooks/useBookings';
 import useCarts from '../../Hooks/useCarts';
+import usePayment from '../../Hooks/usePayment';
+import useReviews from '../../Hooks/useReviews';
   const UserHome = () => {
-  const navigate = useNavigate();
+ 
   const { user } = useContext(AuthContext);
   const [bookings] = useBookings();
+  const [revenue] = usePayment();
   const [carts] = useCarts();
-  console.log(user)
+  const [reviews] = useReviews();
+
+  console.log(reviews)
   return (
 
     <div className='h-screen  pt-10 w-full'>
@@ -43,9 +48,9 @@ import useCarts from '../../Hooks/useCarts';
             <h3 className='text-animation text-3xl mb-5 '>---Your Activities---</h3>
             <ul className='w-full text-2xl'>
               <li className='flex items-center text-[#0088FE]'><FaCartPlus className=' mr-2' /> Orders:{carts.length} </li>
-              <li className='flex items-center text-[#00C49F]'><FaRegStar className=' mr-2' /> Reviews: 2</li>
+              <li className='flex items-center text-[#00C49F]'><FaRegStar className=' mr-2' /> Reviews: {reviews.length}</li>
               <li className='flex items-center text-[#FFBB28]'><FaCalendarAlt className=' mr-2' /> Bookings: {bookings.length} </li>
-              <li className='flex items-center text-[#FF8042] '><FaCcAmazonPay className='mr-2' /> Payment: 3</li>
+              <li className='flex items-center text-[#FF8042] '><FaCcAmazonPay className='mr-2' /> Payment: {revenue.length}</li>
             </ul>
           </div>
         </div>
