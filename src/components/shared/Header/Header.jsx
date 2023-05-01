@@ -3,7 +3,6 @@ import { FaShoppingCart, FaUserCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import './Header.css'
-import { useQuery } from '@tanstack/react-query';
 import useCarts from '../../../Hooks/useCarts';
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
