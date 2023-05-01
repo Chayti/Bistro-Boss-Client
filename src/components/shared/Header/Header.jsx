@@ -3,14 +3,12 @@ import { FaShoppingCart, FaUserCircle } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import './Header.css'
-import { useQuery } from '@tanstack/react-query';
 import useCarts from '../../../Hooks/useCarts';
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
 //fixed
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-<<<<<<< HEAD
     const [carts,, refetch] = useCarts();
     
 
@@ -19,31 +17,6 @@ const Header = () => {
   
    
     
-=======
-    // const [carts] = useCarts();
-    const { data: carts = [], refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch(`https://bistro-boss-server.vercel.app/carts?email=${user?.email}`, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
-            const data = await res.json();
-
-            return data;
-
-        },
-
-
-    });
-
-
-    refetch()
-
-
-
->>>>>>> c2ae6ff018b11cf31dd7ede9b8b74045e100c47c
     return (
         <div>
             <div className="header navbar absolute z-10 bg-transparent text-white">

@@ -60,7 +60,7 @@ const MyCart = () => {
         e.preventDefault()
         setIsDisabled(!isDisabled)
         
-          fetch(`http://localhost:5000/coupons?coupon_code=${couponCode}`)
+          fetch(`https://bistro-boss-server.vercel.app/coupons?coupon_code=${couponCode}`)
           .then(res=>res.json())
           .then(data=>{
            
