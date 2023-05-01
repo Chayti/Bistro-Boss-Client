@@ -10,40 +10,14 @@ import useCarts from '../../../Hooks/useCarts';
 //fixed
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
-<<<<<<< HEAD
-    const [carts,, refetch] = useCarts();
-    
-
-//    refetch()
-    
-  
-   
-    
-=======
-    // const [carts] = useCarts();
-    const { data: carts = [], refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch(`https://bistro-boss-server.vercel.app/carts?email=${user?.email}`, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
-            const data = await res.json();
-
-            return data;
-
-        },
+    const [carts, , refetch] = useCarts();
 
 
-    });
-
-
-    refetch()
+    //    refetch()
 
 
 
->>>>>>> c2ae6ff018b11cf31dd7ede9b8b74045e100c47c
+
     return (
         <div>
             <div className="header navbar absolute z-10 bg-transparent text-white">
