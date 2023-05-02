@@ -15,23 +15,24 @@ const CheckoutForm = ({ order }) => {
     const stripe = useStripe();
 
     const elements = useElements();
+  
     const { formattedDate, email, name, total, category } = order;
-    console.log(total)
+    // console.log(total)
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         if (total) {
-            fetch("https://bistro-boss-server.vercel.app/create-payment-intent", {
+            fetch("http://localhost:5000/create-payment-intent", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
 
                 },
-                body: JSON.stringify({ total }),
+                body: JSON.stringify({ order }),
             })
                 .then((res) => res.json())
                 .then((data) => setClientSecret(data.clientSecret));
         }
-    }, [total]);
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -86,7 +87,7 @@ const CheckoutForm = ({ order }) => {
                 category,
                 date: formattedDate
             }
-            fetch('https://bistro-boss-server.vercel.app/payments', {
+            fetch('http://localhost:5000/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -98,7 +99,7 @@ const CheckoutForm = ({ order }) => {
                 .then(data => {
                     console.log(data);
                     if (data.insertedId) {
-                        fetch(`https://bistro-boss-server.vercel.app/carts?email=${user.email}&delete=true`, {
+                        fetch(`http://localhost:5000/carts?email=${user.email}&delete=true`, {
                             method: 'DELETE',
                 
                         })
