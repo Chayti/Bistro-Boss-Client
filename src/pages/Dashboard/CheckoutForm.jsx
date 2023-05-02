@@ -9,24 +9,24 @@ const CheckoutForm = ({ order }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
-    const {user}=useAuth()
+    const { user } = useAuth()
 
-    
+
     const stripe = useStripe();
 
     const elements = useElements();
     const { formattedDate, email, name, total, category } = order;
-    console.log(total)
+    // console.log(order)
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         if (total) {
-            fetch("https://bistro-boss-server.vercel.app/create-payment-intent", {
+            fetch("http://localhost:5000/create-payment-intent", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
 
                 },
-                body: JSON.stringify({ total }),
+                body: JSON.stringify({ order }),
             })
                 .then((res) => res.json())
                 .then((data) => setClientSecret(data.clientSecret));
@@ -86,7 +86,7 @@ const CheckoutForm = ({ order }) => {
                 category,
                 date: formattedDate
             }
-            fetch('https://bistro-boss-server.vercel.app/payments', {
+            fetch('http://localhost:5000/payments', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -98,15 +98,15 @@ const CheckoutForm = ({ order }) => {
                 .then(data => {
                     console.log(data);
                     if (data.insertedId) {
-                        fetch(`https://bistro-boss-server.vercel.app/carts?email=${user.email}&delete=true`, {
+                        fetch(`http://localhost:5000/carts?email=${user.email}&delete=true`, {
                             method: 'DELETE',
-                
+
                         })
                             .then(res => res.json())
                             .then(data => {
                                 console.log(data)
-                               
-                                
+
+
                             });
                         setSuccess('Congrats! your payment completed');
                         setTransactionId(paymentIntent.id);
@@ -144,11 +144,11 @@ const CheckoutForm = ({ order }) => {
                     }}
                 />
                 <button
-                    
+
                     className='btn px-20 py-2 flex mx-auto btn-sm mt-14 btn-primary '
                     type="submit"
                     disabled={!stripe || !clientSecret || processing}
-                    
+
                 >
                     Pay
                 </button>

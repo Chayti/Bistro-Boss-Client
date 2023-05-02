@@ -14,7 +14,7 @@ const MyBookings = () => {
     // const {data: bookings = [], refetch} = useQuery({
     //     queryKey: ['bookings'],
     //     queryFn: async() =>{
-    //         const res = await fetch(`https://bistro-boss-server.vercel.app/bookings?email=${user.email}`);
+    //         const res = await fetch(`http://localhost:5000/bookings?email=${user.email}`);
     //         const data = await res.json();
     //         return data;
     //     }
@@ -27,7 +27,7 @@ const MyBookings = () => {
     }
     const handleDeleteItem = booking => {
         const id = booking._id
-        fetch(`https://bistro-boss-server.vercel.app/bookings/${booking.email}`, {
+        fetch(`http://localhost:5000/bookings/${booking.email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

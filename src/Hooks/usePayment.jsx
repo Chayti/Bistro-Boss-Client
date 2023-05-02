@@ -5,7 +5,7 @@ const usePayment = () => {
     const [revenue, setRevenue] = useState([]);
 
     useEffect(() => {
-        fetch(`https://bistro-boss-server.vercel.app/allPayments`)
+        fetch(`http://localhost:5000/allPayments`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)

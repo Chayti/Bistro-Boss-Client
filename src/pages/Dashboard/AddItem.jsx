@@ -74,7 +74,7 @@ const AddItem = () => {
                     formData.image = imgData.data.url;
                     // console.log(formData);
 
-                    fetch('https://bistro-boss-server.vercel.app/addItems', {
+                    fetch('http://localhost:5000/addItems', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
