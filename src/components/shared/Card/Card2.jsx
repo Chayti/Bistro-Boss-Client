@@ -20,7 +20,7 @@ const Cards = ({ children }) => {
         if (user.email) {
             data.email = user.email;
             const { image, name, category, price, email } = data;
-            fetch('https://bistro-boss-server.vercel.app/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

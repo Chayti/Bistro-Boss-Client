@@ -17,7 +17,7 @@ const ManageItems = () => {
     const handleDeleteItem = (id) => {
 
         console.log(items)
-        fetch(`https://bistro-boss-server.vercel.app/items/${id}`, {
+        fetch(`http://localhost:5000/items/${id}`, {
             method: 'DELETE',
             // headers: {
             //     authorization: `bearer ${localStorage.getItem('accessToken')}`

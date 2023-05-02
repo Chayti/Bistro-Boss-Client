@@ -9,7 +9,7 @@ const PaymentHistory = () => {
     const { data: payments = [] } = useQuery({
         queryKey: ['payments'],
         queryFn: async () => {
-            const res = await fetch(`https://bistro-boss-server.vercel.app/payments?email=${user.email}`);
+            const res = await fetch(`http://localhost:5000/payments?email=${user.email}`);
             const data = await res.json();
             return data;
         }

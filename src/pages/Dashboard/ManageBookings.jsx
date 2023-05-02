@@ -10,7 +10,7 @@ const ManageBookings = () => {
     const { data: bookings = [], refetch } = useQuery({
         queryKey: ['bookings'],
         queryFn: async () => {
-            const res = await fetch('https://bistro-boss-server.vercel.app/bookings', {
+            const res = await fetch('http://localhost:5000/bookings', {
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
                 }
@@ -22,7 +22,7 @@ const ManageBookings = () => {
 
     const handleApproval = (id) => {
 
-        fetch(`https://bistro-boss-server.vercel.app/bookings/${id}`, {
+        fetch(`http://localhost:5000/bookings/${id}`, {
             method: 'PATCH',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

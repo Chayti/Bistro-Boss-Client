@@ -14,7 +14,7 @@ const Testimonials = () => {
     const { data: reviews = [], refetch } = useQuery({
         queryKey: ['reviews'],
         queryFn: async () => {
-            const res = await fetch("https://bistro-boss-server.vercel.app/reviews");
+            const res = await fetch("http://localhost:5000/reviews");
             const data = await res.json();
             return data;
         }

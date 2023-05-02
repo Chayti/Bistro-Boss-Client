@@ -5,19 +5,15 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 import './Header.css'
 import useCarts from '../../../Hooks/useCarts';
 import useAdmin from '../../../Hooks/useAdmin';
+
 // https://daisyui.com/components/navbar/
 // responsive (dropdown menu on small screen, center menu on large screen)
 //fixed
+
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const [carts, isLoading, refetch] = useCarts();
     const [isAdmin] = useAdmin(user?.email);
-    if (isLoading) console.log(isAdmin)
-
-    //    refetch()
-
-
-
 
     return (
         <div>
@@ -33,7 +29,7 @@ const Header = () => {
                             {user?.uid && <li><NavLink to="/dashboard">DASHBOARD</NavLink></li>}
                             <li><NavLink to="/menu">OUR MENU</NavLink></li>
                             <li><NavLink to="/shop">OUR SHOP</NavLink></li>
-                            {user?.uid && !isAdmin && <li><NavLink className='pl-0 mr-5' to="/dashboard/mycart"><FaShoppingCart /><div className="badge bg-red-600 absolute top-2 left-3">{carts ? carts.length : 0}</div></NavLink></li>}
+                            {user?.uid && !isAdmin && <li><NavLink className='pl-0 mr-5' to="/dashboard/mycart"><FaShoppingCart /><div className="badge bg-red-600 absolute top-2 left-3">{carts?.length ? carts.length : 0}</div></NavLink></li>}
                             {user?.uid ? (
                                 <button
                                     className="ml-5"
@@ -64,7 +60,7 @@ const Header = () => {
                         <li><NavLink to="/menu">OUR MENU</NavLink></li>
                         <li><NavLink className='pr-1' to="/shop">OUR SHOP
                         </NavLink></li>
-                        {user?.uid && !isAdmin && <li><NavLink className='pl-0' to="/dashboard/mycart"><FaShoppingCart /><div className="badge bg-red-600 absolute top-2 left-3">{carts ? carts.length : 0}</div></NavLink></li>}
+                        {user?.uid && !isAdmin && <li><NavLink className='pl-0 mr-5' to="/dashboard/mycart"><FaShoppingCart /><div className="badge bg-red-600 absolute top-2 left-3">{carts?.length ? carts.length : 0}</div></NavLink></li>}
 
                         {user?.uid ? (
                             <button

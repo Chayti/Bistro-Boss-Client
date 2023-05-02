@@ -15,11 +15,11 @@ const Login = () => {
 
   const [token] = useToken(loginUserEmail);
   const from = location.state?.from?.pathname || "/";
-  
+
 
   if (token) {
     navigate(from, { replace: true });
-  } 
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,9 +30,9 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user.accessToken);
+        // console.log(user.accessToken);
         setLoginUserEmail(user.email);
-        
+
         form.reset();
         setError("");
 
@@ -45,7 +45,7 @@ const Login = () => {
         setLoading(false);
       });
   };
- 
+
 
   return (
     <div className="bg-authentication min-h-screen flex items-center">

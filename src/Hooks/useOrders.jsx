@@ -5,7 +5,7 @@
 //     const [orders, setOrders] = useState([]);
 
 //     useEffect(() => {
-//         fetch(`https://bistro-boss-server.vercel.app/orders`)
+//         fetch(`http://localhost:5000/orders`)
 //             .then(res => res.json())
 //             .then(data => {
 //                 setOrders(data)
