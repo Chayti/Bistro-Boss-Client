@@ -25,7 +25,7 @@ const Payment = () => {
 
     const location = useLocation();
     const { user } = useAuth();
-    const order = { total: location.state.couponPrice, coupon: location.state.coupon, name: user.displayName, email: user.email, formattedDate: formattedDate, category: location.state.category }
+    const order = { total: location.state.couponPrice, coupon: location.state.coupon, name: user.displayName, email: user.email, formattedDate: formattedDate, category: location.state.category, amount:location.state.amount }
     return (
         <>
             <Helmet>

@@ -48,7 +48,7 @@ const ReservationForm = () => {
         // TODO: send data to the server
         // and once data is saved then close the modal 
         // and display success toast
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://bistro-boss-server.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

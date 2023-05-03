@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Title from '../../components/shared/Title/Title';
 import useCarts from '../../Hooks/useCarts';
 import Spinner2 from '../../components/shared/Spinner/Spinner2';
-import useAuth from '../../Hooks/useAuth';
+
 
 const MyCart = () => {
     const navigate = useNavigate();
@@ -15,9 +15,10 @@ const MyCart = () => {
     const [couponCode, setCouponCode] = useState('');
     const [couponPrice, setCouponPrice] = useState(0);
     const [couponPercent, setCouponPercent] = useState(0);
+  
     console.log(couponCode)
     let total = carts ? carts?.reduce((acc, order) => acc + order.price, 0) : 0;
-    const { user } = useAuth()
+ 
 
     const handleApplyCoupon = () => {
         setShowInput(!showInput);
@@ -33,7 +34,7 @@ const MyCart = () => {
 
     const handleDeleteItem = (cart) => {
 
-        fetch(`http://localhost:5000/carts?email=${cart.email}&id=${cart._id}&delete=false`, {
+        fetch(`https://bistro-boss-server.vercel.app/carts?email=${cart.email}&id=${cart._id}&delete=false`, {
             method: 'DELETE',
 
         })
@@ -52,18 +53,20 @@ const MyCart = () => {
 
 
     const handlePayment = () => {
-
-        navigate('/dashboard/payment', { state: { couponPrice: couponPrice ? couponPrice : total, category: 'Food Order', coupon: couponPercent } })
+     
+        navigate('/dashboard/payment', { state: { couponPrice: couponPrice ? couponPrice : total, category: 'Food Order', coupon: couponPercent,amount:total  } })
         // handleDeleteItem(true)
     }
 
     const handleValidateCoupon = (e) => {
+
         e.preventDefault()
         setIsDisabled(!isDisabled)
-
-        fetch(`http://localhost:5000/coupons?coupon_code=${couponCode}`)
+        
+        fetch(`https://bistro-boss-server.vercel.app/coupons?coupon_code=${couponCode}`)
             .then(res => res.json())
             .then(data => {
+                
                 setCouponPercent(data[0].percentage)
                 if (data[0]?.coupon_code) {
                     console.log(data[0].percentage)

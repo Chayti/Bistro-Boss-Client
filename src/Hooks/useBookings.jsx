@@ -9,7 +9,7 @@ const useBookings = () => {
     const [bookings, setBookings] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings?email=${user.email}`, {
+        fetch(`https://bistro-boss-server.vercel.app/bookings?email=${user.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
             }
