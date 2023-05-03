@@ -9,7 +9,7 @@ const PaymentHistory = () => {
     const { data: payments = [] } = useQuery({
         queryKey: ['payments'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/payments?email=${user.email}`);
+            const res = await fetch(`https://bistro-boss-server.vercel.app/payments?email=${user.email}`);
             const data = await res.json();
             return data;
         }
@@ -34,6 +34,7 @@ const PaymentHistory = () => {
 
                                 <th className='bg-[#d1a054] text-white'>Email</th>
                                 <th className='bg-[#d1a054] text-white'>Category</th>
+                                <th className='bg-[#d1a054] text-white'>Coupon</th>
                                 <th className='bg-[#d1a054] text-white'>Total Price</th>
                                 <th className='bg-[#d1a054] text-white'>Payment Date</th>
 
@@ -45,6 +46,7 @@ const PaymentHistory = () => {
 
                                     <td>{payment.email}</td>
                                     <td>{payment.category}</td>
+                                    <td>{payment.order?.coupon? `${payment.order?.coupon}%`:'NIL'}</td>
                                     <td>${payment.total}</td>
                                     <td>{payment.date}</td>
 

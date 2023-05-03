@@ -8,7 +8,7 @@ const useItems = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/items')
+        fetch('https://bistro-boss-server.vercel.app/items')
             .then(res => res.json())
             .then(data => {
                 setItems(data)
