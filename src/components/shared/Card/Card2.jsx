@@ -1,24 +1,26 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import useCarts from '../../../Hooks/useCarts';
+import useAdmin from '../../../Hooks/useAdmin';
 
 
 const Cards = ({ children }) => {
-    const [,,refetch]= useCarts()
-    
-    console.log(refetch)
-    const { image, name, recipe, price } = children;
+    const [, , refetch] = useCarts()
 
     const { user } = useAuth()
+    const [isAdmin] = useAdmin(user?.email)
+
+    // console.log(refetch)
+    const { image, name, recipe, price } = children;
     const navigate = useNavigate()
-    
+
     const addToCart = (data) => {
-        
+
         if (user.email) {
             data.email = user.email;
             const { image, name, category, price, email } = data;
-            fetch('https://bistro-boss-server.vercel.app/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -27,8 +29,8 @@ const Cards = ({ children }) => {
             })
                 .then(res => res.json())
                 .then(result => {
-                  
-                 
+
+
                     swal({
                         title: "Yay!",
                         text: `${name} has been added to your cart!`,
@@ -53,7 +55,9 @@ const Cards = ({ children }) => {
                     <h2 className="card-title">{name}</h2>
                     <p>{recipe}</p>
                     <div className="card-actions justify-center">
-                        <button onClick={() => addToCart(children)} className="btn  uppercase bg-gray-300 border-b-2 border-0 border-yellow-700 text-yellow-700 ">Add to cart</button>
+                        <button
+                            disabled={isAdmin ? true : false}
+                            onClick={() => addToCart(children)} className="btn  uppercase bg-gray-300 border-b-2 border-0 border-yellow-700 text-yellow-700 ">Add to cart</button>
                     </div>
                 </div>
             </div>

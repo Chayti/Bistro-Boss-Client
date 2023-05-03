@@ -9,15 +9,14 @@ const CheckoutForm = ({ order }) => {
     const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState("");
-    const {user}=useAuth()
+    const { user } = useAuth()
 
-    
+
     const stripe = useStripe();
 
     const elements = useElements();
-  
     const { formattedDate, email, name, total, category } = order;
-    // console.log(total)
+    // console.log(order)
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         if (total) {
@@ -32,7 +31,7 @@ const CheckoutForm = ({ order }) => {
                 .then((res) => res.json())
                 .then((data) => setClientSecret(data.clientSecret));
         }
-    }, []);
+    }, [total]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -101,13 +100,13 @@ const CheckoutForm = ({ order }) => {
                     if (data.insertedId) {
                         fetch(`http://localhost:5000/carts?email=${user.email}&delete=true`, {
                             method: 'DELETE',
-                
+
                         })
                             .then(res => res.json())
                             .then(data => {
                                 console.log(data)
-                               
-                                
+
+
                             });
                         setSuccess('Congrats! your payment completed');
                         setTransactionId(paymentIntent.id);
@@ -145,11 +144,11 @@ const CheckoutForm = ({ order }) => {
                     }}
                 />
                 <button
-                    
+
                     className='btn px-20 py-2 flex mx-auto btn-sm mt-14 btn-primary '
                     type="submit"
                     disabled={!stripe || !clientSecret || processing}
-                    
+
                 >
                     Pay
                 </button>

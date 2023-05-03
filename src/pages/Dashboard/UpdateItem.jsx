@@ -66,7 +66,7 @@ const UpdateItem = () => {
 
     const handleUpdate = (e) => {
         e.preventDefault()
-        fetch(`https://bistro-boss-server.vercel.app/items/${id}`, {
+        fetch(`http://localhost:5000/items/${id}`, {
             method: 'PATCH',
             headers: {
                 //     authorization: `bearer ${localStorage.getItem('accessToken')}`

@@ -10,22 +10,22 @@ const stripePromise = loadStripe('pk_test_51KDCwXHsUlB2Uq2855r2Lk24SnqFjg4GSPtaL
 
 const Payment = () => {
     const date = new Date();
-    
+
 
     const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'Asia/Dhaka'
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'Asia/Dhaka'
     };
 
     const formattedDate = date.toLocaleDateString('en-US', options);
 
 
     const location = useLocation();
-    const {user} = useAuth();
-    const order = {total:location.state.couponPrice,name:user.displayName, email:user.email, formattedDate:formattedDate,category:location.state.category}
+    const { user } = useAuth();
+    const order = { total: location.state.couponPrice, coupon: location.state.coupon, name: user.displayName, email: user.email, formattedDate: formattedDate, category: location.state.category }
     return (
         <>
             <Helmet>
@@ -38,7 +38,7 @@ const Payment = () => {
                 <div className='w-6/12 mt-5 mx-auto '>
                     <Elements stripe={stripePromise}>
                         <CheckoutForm
-                        order={order}
+                            order={order}
                         />
                     </Elements>
                 </div>

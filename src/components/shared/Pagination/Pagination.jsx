@@ -12,7 +12,7 @@ const Pagination = ({ category }) => {
     const [page, setPage] = useState(0)
 
     async function fetchItems(page = 0) {
-        const url = `https://bistro-boss-server.vercel.app/items?page=${page}&size=6&category=${category}`;
+        const url = `http://localhost:5000/items?page=${page}&size=6&category=${category}`;
         const { data } = await axios.get(url)
         // console.log(data)
         return data

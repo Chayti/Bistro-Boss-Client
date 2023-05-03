@@ -7,7 +7,7 @@ import Title from '../../components/shared/Title/Title';
 import useAuth from '../../Hooks/useAuth';
 
 const AddReview = () => {
-    const {user}=useAuth()
+    const { user } = useAuth()
     const [rating, setRating] = useState(0)
     const [formData, setFormData] = useState({
         name: '',
@@ -37,7 +37,7 @@ const AddReview = () => {
         e.preventDefault()
         formData.rating = rating
         formData.email = user.email;
-        fetch('https://bistro-boss-server.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -95,14 +95,14 @@ const AddReview = () => {
                 </div>
                 <form className="rounded-lg p-8" onSubmit={handleAddReview}>
                     <div className="mb-4">
-                      
+
                         <input
                             className="block w-full rounded-md py-2 px-3 text-gray-700 placeholder-gray-400"
                             id="email"
                             name="email"
                             type="email"
                             placeholder="Your Name"
-                           
+
                             value={user.email}
                         />
                     </div>
