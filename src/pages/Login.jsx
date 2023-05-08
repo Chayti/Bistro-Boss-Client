@@ -5,11 +5,13 @@ import illustration from "../assets/others/authentication2.png";
 import SocialAuth from "../components/SocialAuth";
 import { AuthContext } from "../contexts/AuthProvider";
 import useToken from "../Hooks/useToken";
-
+import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 const Login = () => {
   const [error, setError] = useState("");
   const { user, signIn, setLoading } = useContext(AuthContext);
   const [loginUserEmail, setLoginUserEmail] = useState('');
+
+  const [disabled, setDisabled] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -26,13 +28,13 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-
+   
     signIn(email, password)
       .then((result) => {
         const user = result.user;
         // console.log(user.accessToken);
         setLoginUserEmail(user.email);
-
+        
         form.reset();
         setError("");
 
@@ -45,8 +47,22 @@ const Login = () => {
         setLoading(false);
       });
   };
+useEffect(()=>{
+  loadCaptchaEnginge(6)
+},[])
+const handleCaptcha = (e) =>{
+  const captcha = e.target.value
+  console.log(captcha)
+    if (validateCaptcha(captcha)==true) {
 
+      setDisabled(false)
+  }
 
+  else {
+    
+      setDisabled(true)
+  }
+}
   return (
     <div className="bg-authentication min-h-screen flex items-center">
       {
@@ -90,11 +106,24 @@ const Login = () => {
                   className="input input-bordered w-full max-w-xs"
                 />
               </div>
+             
+              <LoadCanvasTemplate />
+              <input
+                  type="text"
+                  name="text"
+                  placeholder="Type here"
+                  onBlur={handleCaptcha}
+                  className="input input-bordered w-full max-w-xs"
+                />
               <div className="form-control w-full max-w-xs mb-6">
                 <input
+                
                   type="submit"
+                  disabled={disabled} 
+                  className={`bg-[#d1a054] mt-5 text-white font-bold py-2 px-4 rounded ${disabled ? 'opacity-50 cursor-not-allowed':'cursor-pointer'}`}
+
                   value={"Sign In"}
-                  className="input input-bordered text-white w-full max-w-xs bg-[#d1a054] cursor-pointer"
+                  
                 />
               </div>
             </form>
@@ -104,7 +133,7 @@ const Login = () => {
                 New here? <Link to='/register' className="font-bold">Create a New Account</Link>
               </p>
             </div>
-
+            
             <div className="md:w-1/2 mx-auto">
               <p className="font-semibold text-center my-6">Or sign in with</p>
               {/* Separate component for Social login  */}

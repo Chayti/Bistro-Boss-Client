@@ -19,7 +19,7 @@ const ChefRecommends = () => {
             <Title type={{ smallHeading: 'Should Try', title: 'Chef Recommends' }}></Title>
 
 
-            <div className="grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center md:w-10/12 md:mx-auto">
+            <div className=" grid md:grid-cols-3 gap-x-2 gap-y-10 mt-10 place-items-center md:w-10/12 md:mx-auto">
 
                 {
                     specials.slice(0,3).map((special, index) => <Chef
