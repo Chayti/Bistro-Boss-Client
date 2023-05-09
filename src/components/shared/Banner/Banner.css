@@ -11,3 +11,30 @@
     
 
 }
+
+/* 
+.legend {
+    position: absolute;
+   top: 20px !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: rgb(0, 0, 0) 23.0533px -2.71px 17.4091px !important;
+    font-size: 70px !important;
+    font-family: 'Cinzel', serif !important;
+    background: transparent !important;
+    color: #fff !important;
+    font-weight: bold;
+    padding: 10px;
+  }
+   */
+   .carousel .carousel {
+  
+    width: 100% !important;
+   
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-around !important;
+    
+  }
