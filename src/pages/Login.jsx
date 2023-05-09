@@ -107,7 +107,7 @@ const handleCaptcha = (e) =>{
                 />
               </div>
              
-              <LoadCanvasTemplate />
+              < LoadCanvasTemplate reloadColor="red" />
               <input
                   type="text"
                   name="text"
