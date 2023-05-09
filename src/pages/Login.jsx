@@ -107,8 +107,8 @@ const Login = () => {
                   className="input input-bordered w-full max-w-xs"
                 />
               </div>
-
-              <LoadCanvasTemplate />
+             
+              < LoadCanvasTemplate reloadColor="red" />
               <input
                 type="text"
                 name="text"
