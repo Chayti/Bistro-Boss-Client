@@ -80,7 +80,7 @@ const Registration = () => {
   }
   return (
     <div className="bg-authentication min-h-screen flex items-center">
-      <section className="mx-auto p-12 h-full">
+      <section className="mx-auto p-12 my-10 login-div">
         <div className="grid md:grid-cols-2">
           <div className="">
             <Helmet>
