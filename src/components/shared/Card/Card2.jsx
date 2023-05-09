@@ -3,7 +3,8 @@ import useAuth from '../../../Hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import useCarts from '../../../Hooks/useCarts';
 import useAdmin from '../../../Hooks/useAdmin';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cards = ({ children }) => {
     const [, , refetch] = useCarts()
@@ -30,13 +31,23 @@ const Cards = ({ children }) => {
                 .then(res => res.json())
                 .then(result => {
 
-
-                    swal({
-                        title: "Yay!",
-                        text: `${name} has been added to your cart!`,
-                        icon: "success",
-                        button: "Aww yiss!",
+                    toast.success(`${name} has been added to your cart! 🛒`, {
+                        position: "bottom-right",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: 0,
+                        theme: "colored",
                     });
+
+                    // swal({
+                    //     title: "Yay!",
+                    //     text: `${name} has been added to your cart!`,
+                    //     icon: "success",
+                    //     button: "Aww yiss!",
+                    // });
                     refetch();
                 })
         }
@@ -60,6 +71,19 @@ const Cards = ({ children }) => {
                             onClick={() => addToCart(children)} className="btn  uppercase bg-gray-300 border-b-2 border-0 border-yellow-700 text-yellow-700 ">Add to cart</button>
                     </div>
                 </div>
+                <ToastContainer
+                    position="top-right"
+                    autoClose={1000}
+                    limit={1}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="colored"
+                />
             </div>
         </div>
 
