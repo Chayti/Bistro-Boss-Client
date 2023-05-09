@@ -29,6 +29,7 @@
     "react-icons": "^4.8.0",
     "react-parallax": "^3.5.1",
     "react-rating": "^2.0.5",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.9.0",
     "react-simple-captcha": "^9.0.2",
     "recharts": "^2.5.0",
