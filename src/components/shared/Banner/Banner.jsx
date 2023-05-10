@@ -10,6 +10,7 @@ import SliderFive from '../../../assets/asset/home/05.png'
 
 const Banner = ({ banner }) => {
     return (
+        // follow index.css to apply thumbnail customization
         <Carousel autoPlay >
             <div><img src={SliderOne} /></div>
             <div><img src={SliderTwo} /></div>
