@@ -5,8 +5,6 @@ const useItems = () => {
     const [items, setItems] = useState({});
     const [loading, setLoading] = useState(true);
 
-
-
     useEffect(() => {
         fetch('https://bistro-boss-server.vercel.app/items')
             .then(res => res.json())
